@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgentleConsulting builds custom automation systems for Amazon and Bol.com sellers. Stop doing busywork. Start scaling.">
+  <title>AgentleConsulting — Automation with a Human Hand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage: #6B9E78;
+      --slate: #2D3A45;
+      --amber: #D4956A;
+      --cream: #F8F5F0;
+      --stone: #EDE9E2;
+      --pearl: #FEFCFA;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--slate);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--stone);
+      z-index: 100;
+      padding: 0 24px;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      position: relative;
+    }
+    .logo-arc {
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--sage);
+      border-bottom: none;
+      border-right: none;
+      border-radius: 50% 0 0 0;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 4px;
+      left: 0;
+    }
+    .logo-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--amber);
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+    }
+    .logo-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--slate);
+      letter-spacing: 0.3px;
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      background: var(--sage) !important;
+      color: var(--pearl) !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #5a8a68 !important; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0 90px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--stone);
+      color: var(--slate);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      color: var(--slate);
+      max-width: 800px;
+      margin: 0 auto 24px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sage);
+    }
+    .hero-sub {
+      font-size: 19px;
+      color: #5a6b77;
+      max-width: 580px;
+      margin: 0 auto 40px;
+    }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--sage);
+      color: var(--pearl);
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 0.2s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: #5a8a68; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--slate);
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      border: 2px solid var(--stone);
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--sage); color: var(--sage); }
+    .hero-trust {
+      margin-top: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-trust span {
+      font-size: 13px;
+      color: #8899a6;
+      font-weight: 500;
+    }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--stone);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--slate);
+    }
+    .trust-pill svg { flex-shrink: 0; }
+
+    /* PROBLEM */
+    .problem {
+      background: var(--slate);
+      color: var(--pearl);
+      padding: 90px 0;
+    }
+    .problem h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .problem-sub {
+      text-align: center;
+      font-size: 18px;
+      opacity: 0.7;
+      max-width: 520px;
+      margin: 0 auto 56px;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .problem-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .problem-card-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+    .problem-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--pearl);
+    }
+    .problem-card p { font-size: 15px; opacity: 0.75; line-height: 1.6; }
+
+    /* SERVICES */
+    .services { padding: 100px 0; }
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(30px, 4vw, 46px);
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      text-align: center;
+      font-size: 18px;
+      color: #5a6b77;
+      max-width: 540px;
+      margin: 0 auto 60px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+    .pricing-card {
+      background: var(--pearl);
+      border: 1px solid var(--stone);
+      border-radius: 16px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .pricing-card:hover { box-shadow: 0 12px 40px rgba(45,58,69,0.1); }
+    .pricing-card.featured {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(107,158,120,0.15);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--sage);
+      color: var(--pearl);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 100px;
+    }
+    .pricing-tier { font-size: 13px; font-weight: 600; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .pricing-name { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--slate); margin-bottom: 8px; }
+    .pricing-desc { font-size: 15px; color: #5a6b77; margin-bottom: 24px; line-height: 1.6; }
+    .pricing-price { margin-bottom: 28px; }
+    .pricing-amount { font-family: 'Fraunces', serif; font-size: 40px; font-weight: 800; color: var(--slate); }
+    .pricing-amount span { font-size: 16px; font-weight: 400; opacity: 0.6; }
+    .pricing-unit { font-size: 14px; color: #8899a6; }
+    .pricing-early { font-size: 12px; color: var(--amber); font-weight: 600; margin-top: 4px; }
+    .pricing-divider { height: 1px; background: var(--stone); margin: 24px 0; }
+    .pricing-features { list-style: none; flex: 1; }
+    .pricing-features li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--slate);
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--sage);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-cta {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .btn-outline {
+      display: inline-block;
+      width: 100%;
+      padding: 14px;
+      border: 2px solid var(--sage);
+      color: var(--sage);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    .btn-outline:hover { background: var(--sage); color: var(--pearl); }
+    .btn-outline-dark {
+      border-color: var(--slate);
+      color: var(--slate);
+    }
+    .btn-outline-dark:hover { background: var(--slate); color: var(--pearl); }
+
+    /* PROCESS */
+    .process { background: var(--stone); padding: 90px 0; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .process-step { text-align: center; }
+    .step-number {
+      width: 52px;
+      height: 52px;
+      background: var(--sage);
+      color: var(--pearl);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 auto 18px;
+    }
+    .process-step h3 { font-size: 19px; margin-bottom: 10px; color: var(--slate); }
+    .process-step p { font-size: 15px; color: #5a6b77; line-height: 1.6; }
+
+    /* ABOUT / STORY */
+    .about { padding: 100px 0; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; }
+    .about h2 { font-size: clamp(28px, 4vw, 42px); color: var(--slate); margin-bottom: 24px; }
+    .about p { font-size: 16px; color: #4a5a66; margin-bottom: 18px; line-height: 1.8; }
+    .about-story { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--slate); border-left: 3px solid var(--amber); padding-left: 24px; line-height: 1.7; margin: 28px 0; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+    .stat-box { background: var(--stone); border-radius: 12px; padding: 20px; }
+    .stat-number { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 800; color: var(--sage); }
+    .stat-label { font-size: 13px; color: #5a6b77; margin-top: 4px; }
+    .about-visual {
+      background: var(--slate);
+      border-radius: 20px;
+      padding: 48px 40px;
+      color: var(--pearl);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: var(--sage);
+      opacity: 0.1;
+      border-radius: 50%;
+    }
+    .about-visual h3 { font-family: 'Fraunces', serif; font-size: 26px; margin-bottom: 20px; }
+    .about-visual ul { list-style: none; }
+    .about-visual li {
+      font-size: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .about-visual li:last-child { border: none; }
+    .about-visual li::before {
+      content: '→';
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    /* WHY US */
+    .why { background: var(--cream); padding: 0 0 100px; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .why-card {
+      padding: 32px 28px;
+      border: 1px solid var(--stone);
+      border-radius: 14px;
+      background: var(--pearl);
+    }
+    .why-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(107,158,120,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+    .why-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--slate); }
+    .why-card p { font-size: 15px; color: #5a6b77; line-height: 1.6; }
+
+    /* CTA */
+    .cta-section {
+      background: var(--slate);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: clamp(30px, 4.5vw, 50px);
+      color: var(--pearl);
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .cta-section p {
+      font-size: 18px;
+      color: rgba(254,252,250,0.65);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .cta-section .btn-primary {
+      font-size: 17px;
+      padding: 17px 40px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--stone);
+      padding: 48px 0 36px;
+      border-top: 1px solid rgba(45,58,69,0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .footer-brand p { font-size: 14px; color: #5a6b77; margin-top: 14px; line-height: 1.7; }
+    .footer-col h4 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--slate); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { text-decoration: none; color: #5a6b77; font-size: 14px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--sage); }
+    .footer-bottom {
+      border-top: 1px solid rgba(45,58,69,0.1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: #8899a6; }
+    .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <div class="logo-arc"></div>
+          <div class="logo-dot"></div>
+        </div>
+        <span class="logo-text">AgentleConsulting</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tag">For Amazon & Bol.com Sellers in Europe</div>
+      <h1>Stop running your business.<br><em>Start growing it.</em></h1>
+      <p class="hero-sub">We build the automation systems that let Amazon and Bol.com sellers step back from the chaos — and actually run a business again.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book a Free 30-Min Discovery Call</a>
+        <a href="#services" class="btn-secondary">See How It Works</a>
+      </div>
+      <div class="hero-trust">
+        <span>Trusted by serious SMB sellers</span>
+        <div class="trust-pill">
+          <svg width="14" height="14" fill="none" stroke="#D4956A" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          €50K–€50M revenue range
+        </div>
+        <div class="trust-pill">
+          <svg width="14" height="14" fill="none" stroke="#D4956A" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Netherlands-based
+        </div>
+        <div class="trust-pill">
+          <svg width="14" height="14" fill="none" stroke="#D4956A" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          No dev team required
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <h2>Sound familiar?</h2>
+      <p class="problem-sub">You're not doing it wrong. You just haven't had the right systems built yet.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-card-icon">⏱️</div>
+          <h3>3–4 hours lost daily</h3>
+          <p>Copy-pasting between Amazon Seller Central, your inventory spreadsheet, and your supplier portal. Every. Single. Day.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">😤</div>
+          <h3>Errors that compound</h3>
+          <p>Manual data entry causes stockouts, mis-shipments, and repricing wars. Small mistakes that cost real money.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">📊</div>
+          <h3>Expensive agencies, slow results</h3>
+          <p>You hired a consultant. They charged you €5,000 for a PDF roadmap and disappeared. The work never got done.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-icon">🌙</div>
+          <h3>No evenings, no weekends</h3>
+          <p>Your business is supposed to give you freedom. Instead it's eating your life. The irony isn't lost on you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-label">Our Packages</div>
+      <h2 class="section-title">Three ways to stop drowning.</h2>
+      <p class="section-sub">From a single strategy session to a full-time automation partner — pick the level that fits where you are right now.</p>
+      <div class="pricing-grid">
+        <!-- Discover -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Tier 1</div>
+          <div class="pricing-name">Discover</div>
+          <div class="pricing-desc">A 2-week sprint to map your automation opportunities — with a prioritized roadmap and 2 demo workflows. No commitment to implement.</div>
+          <div class="pricing-price">
+            <div class="pricing-amount">€1,750 <span>one-time</span></div>
+            <div class="pricing-early">Early-bird pricing — 5 spots left</div>
+          </div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>60-minute discovery call with Ali</li>
+            <li>Full audit of your current tool stack (up to 10 tools)</li>
+            <li>Top 5 automation opportunities identified</li>
+            <li>Prioritized automation roadmap (PDF)</li>
+            <li>2 demo workflows — built, video-walkthrough</li>
+            <li>30-day email follow-up support</li>
+            <li>€500 discount on Automate if you book within 60 days</li>
+          </ul>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn-outline btn-outline-dark">Book Discovery Call →</a>
+          </div>
+        </div>
+        <!-- Automate -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Tier 2</div>
+          <div class="pricing-name">Automate</div>
+          <div class="pricing-desc">We build 3–5 custom workflows — done for you. Order processing, inventory sync, repricing, and more. Live in 4–6 weeks.</div>
+          <div class="pricing-price">
+            <div class="pricing-amount">€6,950 <span>one-time</span></div>
+            <div class="pricing-early">Early-bird pricing — 5 spots left</div>
+          </div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Everything in Discover, executed</li>
+            <li>3–5 custom workflows built (you choose from roadmap)</li>
+            <li>n8n or Make.com setup and configuration</li>
+            <li>Amazon SP-API + Bol.com API connections</li>
+            <li>Shopify / Google Sheets / Slack integrations</li>
+            <li>Step-by-step workflow documentation</li>
+            <li>60-minute team training session</li>
+            <li>30-day post-launch support (SLA: 24h)</li>
+            <li>2 revision rounds per workflow</li>
+          </ul>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn-primary" style="display:block; text-align:center;">Start Automating →</a>
+          </div>
+        </div>
+        <!-- Transform -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Tier 3</div>
+          <div class="pricing-name">Transform</div>
+          <div class="pricing-desc">We become your external automation team. Ongoing maintenance, new workflows every quarter, and direct access to Ali.</div>
+          <div class="pricing-price">
+            <div class="pricing-amount">€2,500 <span>/month</span></div>
+            <div class="pricing-early">12-month lock-in — early-bird rate</div>
+          </div>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>4h/month dedicated strategy call</li>
+            <li>Unlimited workflow maintenance (bug fixes, API updates)</li>
+            <li>2 new workflows built per quarter</li>
+            <li>Monthly performance report (hours saved, errors avoided)</li>
+            <li>WhatsApp + Slack direct line (4h SLA)</li>
+            <li>Quarterly strategy review</li>
+            <li>Priority access to new AI agent capabilities</li>
+            <li>EU AI Act compliance check annually</li>
+          </ul>
+          <div class="pricing-cta">
+            <a href="#contact" class="btn-outline btn-outline-dark">Start the Conversation →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">From stuck to automated in 6 weeks.</h2>
+      <p class="section-sub">No technical knowledge needed. We handle the building. You handle the approving.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Discovery Call</h3>
+          <p>We map your current setup, identify your biggest time drains, and find the highest-ROI automation opportunities.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>We Build</h3>
+          <p>Our team opens our laptops and builds your custom workflows. You watch the demos. You approve the output.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>We Train</h3>
+          <p>60-minute walkthrough of your new system. Your team learns how to operate it. Documentation is provided.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>You Scale</h3>
+          <p>Workflows run. You get your evenings back. Optional Transform retainer keeps everything running and improving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="about-label">Our Story</div>
+          <h2>Automation with a human hand on the wheel.</h2>
+          <p class="about-story">We started AgentleConsulting because we were tired of watching talented sellers drown in work that software should handle. If you're selling on Amazon or Bol.com, you didn't get into e-commerce to spend your evenings copy-pasting inventory numbers into spreadsheets.</p>
+          <p>We build the automation systems that make a growing seller's life manageable again — not with generic tools, but with systems built for your specific workflow. We implement, we test, we hand over something that works.</p>
+          <p>We believe automation should serve people, not replace them. The goal isn't to make humans irrelevant — it's to give them their time back.</p>
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="stat-number">40+</div>
+              <div class="stat-label">Sellers helped</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">10–20h</div>
+              <div class="stat-label">Recovered per week</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">&lt;3mo</div>
+              <div class="stat-label">Average ROI payback</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Systems still running</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <h3>What we automate</h3>
+          <ul>
+            <li>Order processing and status updates</li>
+            <li>Inventory sync across Amazon, Bol.com, Shopify</li>
+            <li>Competitive repricing — 24/7</li>
+            <li>Review request sequences</li>
+            <li>Supplier data ingestion</li>
+            <li>Customer message auto-responses</li>
+            <li>Stockout detection and alerts</li>
+            <li>Monthly reporting dashboards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-label">Why Agentle</div>
+      <h2 class="section-title">We implement. We don't just advise.</h2>
+      <p class="section-sub">Most consultants hand you a PDF and a roadmap. We open our laptops, build your automations, and hand you the keys.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Built for your exact workflow</h3>
+          <p>No cookie-cutter solutions. We map your specific process, then build the automation around how you actually work.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🛠️</div>
+          <h3>We maintain it</h3>
+          <p>When Amazon changes their API or Bol.com updates their feed, we fix it. That's the Transform retainer — ongoing care built in.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💡</div>
+          <h3>No technical knowledge needed</h3>
+          <p>You approve the output. We handle the n8n workflows, API connections, and error handling. You just run your business.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📈</div>
+          <h3>Measured by hours saved</h3>
+          <p>We track time recovered, error reduction, and tasks automated — not reports delivered. If it doesn't save you time, we haven't finished.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Ready to stop running your business by hand?</h2>
+      <p>Book a free 30-minute discovery call. No obligation. No sales pitch. Just 30 minutes mapping your highest-ROI automation opportunities.</p>
+      <a href="mailto:hello@agentleconsulting.com" class="btn-primary">Book Your Free Discovery Call →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="margin-bottom: 4px;">
+            <div class="logo-icon">
+              <div class="logo-arc"></div>
+              <div class="logo-dot"></div>
+            </div>
+            <span class="logo-text">AgentleConsulting</span>
+          </a>
+          <p>Custom automation systems for Amazon and Bol.com sellers in Europe. We build, we test, we hand over — and we stay to maintain it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Discover Sprint</a></li>
+            <li><a href="#services">Automate Package</a></li>
+            <li><a href="#services">Transform Retainer</a></li>
+            <li><a href="#contact">Free Discovery Call</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="mailto:hello@agentleconsulting.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AgentleConsulting. Amsterdam, Netherlands.</p>
+        <p class="footer-tagline">Automation with a Human Hand</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
