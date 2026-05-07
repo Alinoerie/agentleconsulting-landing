@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: From 4 Hours to 12 Minutes — AgentleConsulting</title>
+  <meta name="description" content="How a €2.4M Dutch Amazon seller automated their order processing and reclaimed 19 hours per week. A real breakdown of the problem, the solution, and the results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage: #6B9E78;
+      --slate: #2D3A45;
+      --amber: #D4956A;
+      --cream: #F8F5F0;
+      --stone: #EDE9E2;
+      --pearl: #FEFCFA;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--slate);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--slate);
+    }
+    .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--stone);
+      z-index: 100;
+      padding: 0 24px;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc {
+      width: 28px; height: 28px; border: 3px solid var(--sage);
+      border-bottom: none; border-right: none; border-radius: 50% 0 0 0;
+      transform: rotate(-45deg); position: absolute; top: 4px; left: 0;
+    }
+    .logo-dot {
+      width: 9px; height: 9px; background: var(--amber); border-radius: 50%;
+      position: absolute; top: 2px; right: 2px;
+    }
+    .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      background: var(--sage) !important; color: var(--pearl) !important;
+      padding: 9px 20px; border-radius: 6px; font-weight: 600 !important;
+      font-size: 14px !important; transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #5a8a68 !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .case-hero {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--stone);
+    }
+    .case-label {
+      display: inline-block;
+      background: var(--stone);
+      color: var(--slate);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .case-hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--slate);
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .case-hero h1 em {
+      font-style: italic;
+      color: var(--sage);
+    }
+    .case-sub {
+      font-size: 18px;
+      color: #5a6b77;
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+    .case-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .case-meta-item {}
+    .case-meta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 4px;
+    }
+    .case-meta-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    /* BODY */
+    .case-body { padding: 60px 0 80px; }
+    .case-body h2 { font-size: 26px; margin-top: 48px; margin-bottom: 16px; }
+    .case-body h3 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+    .case-body p { margin-bottom: 18px; color: #3a4a55; }
+    .case-body ul { margin-bottom: 18px; padding-left: 24px; }
+    .case-body li { margin-bottom: 8px; color: #3a4a55; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-left: 4px solid var(--amber);
+      padding: 8px 0 8px 28px;
+      margin: 40px 0;
+    }
+    .pull-quote p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--slate) !important;
+      margin-bottom: 12px !important;
+    }
+    .pull-quote cite {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      color: #8899a6;
+    }
+
+    /* RESULTS TABLE */
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 40px 0;
+      font-size: 15px;
+    }
+    .results-table th {
+      background: var(--slate);
+      color: var(--pearl);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 20px;
+      text-align: left;
+    }
+    .results-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--stone);
+      vertical-align: middle;
+    }
+    .results-table tr:nth-child(even) td { background: rgba(237,233,226,0.35); }
+    .results-table td:first-child { font-weight: 500; color: var(--slate); }
+    .before { color: #8899a6; text-decoration: line-through; }
+    .after { color: var(--sage); font-weight: 700; }
+
+    /* CTA BLOCK */
+    .cta-block {
+      background: var(--slate);
+      color: var(--pearl);
+      border-radius: 16px;
+      padding: 40px 48px;
+      margin: 56px 0;
+      text-align: center;
+    }
+    .cta-block h3 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--pearl); margin-bottom: 12px; }
+    .cta-block p { font-size: 16px; color: rgba(254,252,250,0.75); margin-bottom: 24px; }
+    .btn-primary {
+      background: var(--sage); color: var(--pearl); padding: 14px 28px;
+      border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;
+      transition: background 0.2s; display: inline-block; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: #5a8a68; }
+
+    footer { background: var(--stone); padding: 48px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 14px; color: #8899a6; }
+    footer a { color: var(--sage); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">
+      <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+      <span class="logo-text">AgentleConsulting</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Free Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="container">
+    <div class="case-label">Case Study</div>
+    <h1>From <em>4 Hours</em> to <em>12 Minutes</em> Per Day</h1>
+    <p class="case-sub">How a €2.4M Dutch Amazon business automated their order processing and reclaimed 19 hours every week.</p>
+    <div class="case-meta">
+      <div class="case-meta-item">
+        <div class="case-meta-label">Client</div>
+        <div class="case-meta-value">Dutch Kitchenware Brand</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Platform</div>
+        <div class="case-meta-value">Amazon EU</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Revenue</div>
+        <div class="case-meta-value">€2.4M annually</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Team</div>
+        <div class="case-meta-value">3 people</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Time Saved</div>
+        <div class="case-meta-value">19 hours/week</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article class="case-body">
+  <div class="container">
+
+<h2>The Problem</h2>
+
+<p>Every morning, the same ritual. One of the operations staff arrived at 7:30 AM and spent the next four hours processing the previous day's Amazon orders: logging into Seller Central, extracting each order individually, matching tracking numbers, updating the shared spreadsheet, and sending individual confirmation emails to each customer. Then repeating the same process for any orders that came in overnight.</p>
+
+<p>"We knew there had to be a better way," the owner told us. "But every time I looked into automation tools, it seemed like either they didn't fit our specific setup, or the setup cost more than the time savings would be worth. So we just kept doing it manually."</p>
+
+<p>Time cost: <strong>4 hours every morning</strong>. 20 hours per week. 1,040 hours per year. That's 26 full work weeks — equivalent to having a part-time employee dedicated entirely to order processing.</p>
+
+<h2>The Solution</h2>
+
+<p>We built a custom n8n workflow that connected directly to their Amazon Seller Central account via the SP-API. When an order was confirmed and a tracking number generated, the system automatically:</p>
+
+<ul>
+  <li>Extracted the order details and tracking number</li>
+  <li>Compiled all new orders from the previous 24 hours into a single batch report</li>
+  <li>Sent each customer a personalized confirmation email with their tracking number and expected delivery window</li>
+  <li>Updated the internal operations spreadsheet automatically</li>
+  <li>Flagged orders with special circumstances — multi-item, international, gift-wrapped — for human review</li>
+</ul>
+
+<p>The customer still got a tracking update. Same information, same timing. They just didn't get it from a person manually copy-pasting data at 7:30 in the morning.</p>
+
+<h2>The Implementation</h2>
+
+<h3>Week 1 — Discovery and Mapping</h3>
+
+<p>We spent the first week mapping the actual process — not the theoretical one. The theoretical process had 6 steps. The actual process had 14, because there were edge cases the owner had just learned to handle manually over four years: international orders, partial shipments, customers who requested gift wrapping through Amazon's system, carriers that didn't provide tracking in real-time.</p>
+
+<p>We documented all 14 steps. We identified the 4 that were purely mechanical — always the same, no judgment required — and the 10 that involved some form of human decision. We automated the 4. We flagged the 10.</p>
+
+<h3>Week 2 — Build and Sandbox Testing</h3>
+
+<p>The workflow was built in n8n and tested against 90 days of historical order data before touching live data. We caught 3 edge cases the sandbox flagged — including one involving Amazon's own carrier redirects that would have caused silent failures in 12% of international orders.</p>
+
+<h3>Week 3 — Soft Launch</h3>
+
+<p>The workflow went live for a 2-week parallel-run period. For every order the automated system processed, the manual process ran simultaneously. Results matched 98.3% of the time. The 1.7% discrepancies were all flagged for human review — exactly as designed.</p>
+
+<h3>Week 4 — Full Handover</h3>
+
+<p>Manual processing was retired. The team now reviews the automated batch report each morning in 12 minutes — confirming the system's work rather than doing it. The flagged edge cases — about 3–5 per day — are handled individually.</p>
+
+<p>The owner's comment at the 30-day check-in: "It feels like cheating."</p>
+
+<h2>The Results</h2>
+
+<table class="results-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Before</th>
+      <th>After</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Morning order processing</td>
+      <td><span class="before">4 hours</span></td>
+      <td><span class="after">12 minutes</span></td>
+    </tr>
+    <tr>
+      <td>Weekly hours on order admin</td>
+      <td><span class="before">20 hours</span></td>
+      <td><span class="after">1 hour</span></td>
+    </tr>
+    <tr>
+      <td>Annual hours on order processing</td>
+      <td><span class="before">1,040 hours</span></td>
+      <td><span class="after">52 hours</span></td>
+    </tr>
+    <tr>
+      <td>Customer confirmation timing</td>
+      <td><span class="before">24–48 hour delay</span></td>
+      <td><span class="after">Same day as shipment</span></td>
+    </tr>
+    <tr>
+      <td>Manual data entry errors</td>
+      <td><span class="before">~3 per week</span></td>
+      <td><span class="after">0</span></td>
+    </tr>
+    <tr>
+      <td>Morning start for ops staff</td>
+      <td><span class="before">7:30 AM</span></td>
+      <td><span class="after">9:00 AM</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The 12-minute morning review means the ops team now starts their actual work at 9 AM instead of mid-morning. Over a year, that's <strong>520 extra working hours</strong> — time that went back into the business.</p>
+
+<div class="pull-quote">
+  <p>"I genuinely didn't think this was possible at our scale. I thought automation was for big companies with dedicated IT teams. What Agentle built for us in four weeks has changed how I think about the business entirely."</p>
+  <cite>— Owner, Dutch Kitchenware Brand (composite)</cite>
+</div>
+
+<h2>Could This Be You?</h2>
+
+<p>If you're spending more than 10 hours a week on manual admin work — processing orders, updating inventory, responding to routine customer messages — there's a very high probability that 3 or 4 specific workflows would cut that to under 2 hours.</p>
+
+<p>The difference between "we've looked into automation" and "automation is running while we sleep" is usually just: someone who understands both your business and the tools, who maps the actual process before building anything.</p>
+
+<div class="cta-block">
+  <h3>Want to find out what's automate-able in your business?</h3>
+  <p>Book a free 30-minute discovery call. We'll map your top 3 automation opportunities — without obligation.</p>
+  <a href="/#contact" class="btn-primary">Book a Free Discovery Call →</a>
+</div>
+
+<p>Read more about our process: <a href="/#process">how we work</a>, or <a href="/blog">our latest thinking on automation</a>.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <p>© 2026 AgentleConsulting · <a href="/">agentleconsulting.com</a></p>
+    <p>Automation with a Human Hand</p>
+  </div>
+</footer>
+
+</body>
+</html>
