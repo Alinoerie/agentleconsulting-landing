@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Three automation packages for Amazon and Bol.com sellers — from a 2-week discovery sprint to a full-time automation partner. Find the right fit for where you are.">
+  <title>Services & Packages — AgentleConsulting</title>
+  <link rel="canonical" href="https://website-three-beryl-40.vercel.app/services/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Services & Packages — AgentleConsulting">
+  <meta property="og:description" content="Three automation packages for Amazon and Bol.com sellers. From a 2-week discovery sprint to a full-time automation partner.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --sage: #6B9E78;
+      --slate: #2D3A45;
+      --amber: #D4956A;
+      --cream: #F8F5F0;
+      --stone: #EDE9E2;
+      --pearl: #FEFCFA;
+      --text: #4a5a66;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.75; font-size: 17px; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container--narrow { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav { background: var(--cream); border-bottom: 1px solid var(--stone); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    nav .container { display: flex; align-items: center; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+    .logo-text { font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; margin-left: auto; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--sage); }
+    .nav-cta { background: var(--sage); color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* PAGE HERO */
+    .page-hero { padding: 72px 0 64px; background: var(--cream); }
+    .page-hero .section-label { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; }
+    .page-hero h1 { font-size: clamp(32px, 5vw, 54px); color: var(--slate); margin-bottom: 20px; }
+    .page-hero p { font-size: 19px; color: var(--text); max-width: 600px; }
+
+    /* PACKAGES GRID */
+    .packages { padding: 0 0 80px; }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .packages-grid { grid-template-columns: 1fr; } }
+
+    .pkg-card { background: var(--pearl); border: 1px solid var(--stone); border-radius: 16px; padding: 36px 32px; position: relative; }
+    .pkg-card.featured { border-color: var(--sage); box-shadow: 0 0 0 1px var(--sage); }
+    .pkg-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--sage); color: var(--pearl); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
+    .pkg-tier { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--slate); margin-bottom: 8px; }
+    .pkg-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: var(--slate); margin-bottom: 12px; }
+    .pkg-desc { font-size: 15px; color: var(--text); margin-bottom: 24px; line-height: 1.6; }
+    .pkg-price { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--stone); }
+    .pkg-amount { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 800; color: var(--slate); }
+    .pkg-amount span { font-size: 16px; font-weight: 400; color: var(--text); }
+    .pkg-note { font-size: 12px; color: var(--amber); font-weight: 600; margin-top: 4px; }
+    .pkg-features { list-style: none; margin-bottom: 28px; }
+    .pkg-features li { font-size: 14px; color: var(--text); padding: 7px 0; border-bottom: 1px solid rgba(237,233,226,0.6); display: flex; gap: 10px; align-items: flex-start; }
+    .pkg-features li::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .pkg-cta { display: block; text-align: center; padding: 13px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; }
+    .pkg-cta--primary { background: var(--sage); color: var(--pearl); }
+    .pkg-cta--primary:hover { background: #4d7a5c; }
+    .pkg-cta--outline { border: 2px solid var(--slate); color: var(--slate); }
+    .pkg-cta--outline:hover { background: var(--stone); }
+
+    /* PACKAGE DEEP-DIVES */
+    .deep-dive { padding: 72px 0; border-top: 1px solid var(--stone); }
+    .deep-dive:nth-child(even) { background: var(--stone); }
+    .dd-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 48px; }
+    @media (max-width: 768px) { .dd-header { grid-template-columns: 1fr; gap: 24px; } }
+    .dd-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
+    .dd-title { font-size: clamp(26px, 4vw, 40px); color: var(--slate); margin-bottom: 16px; }
+    .dd-desc { font-size: 16px; color: var(--text); line-height: 1.7; }
+    .dd-price-block { background: var(--pearl); border-radius: 12px; padding: 28px; text-align: center; }
+    .dd-price-label { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
+    .dd-price { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 800; color: var(--slate); }
+    .dd-price span { font-size: 16px; font-weight: 400; }
+    .dd-price-note { font-size: 13px; color: var(--amber); margin-top: 6px; }
+    .dd-deliverables { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .dd-deliverable { background: var(--pearl); border-radius: 10px; padding: 20px 22px; }
+    .dd-deliverable h4 { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: var(--slate); margin-bottom: 6px; }
+    .dd-deliverable p { font-size: 14px; color: var(--text); }
+    .dd-process { margin-top: 40px; }
+    .dd-process h3 { font-size: 20px; color: var(--slate); margin-bottom: 20px; }
+    .dd-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 768px) { .dd-steps { grid-template-columns: repeat(2, 1fr); } }
+    .dd-step { background: var(--pearl); border-radius: 10px; padding: 20px 18px; }
+    .dd-step-num { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 800; color: var(--sage); margin-bottom: 6px; }
+    .dd-step h4 { font-size: 15px; font-weight: 700; color: var(--slate); margin-bottom: 4px; }
+    .dd-step p { font-size: 13px; color: var(--text); }
+
+    /* CTA STRIP */
+    .cta-strip { background: var(--slate); padding: 64px 0; }
+    .cta-strip .container { text-align: center; }
+    .cta-strip h2 { font-size: clamp(26px, 4vw, 40px); color: var(--pearl); margin-bottom: 14px; }
+    .cta-strip p { font-size: 17px; color: rgba(254,252,250,0.7); margin-bottom: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-primary { display: inline-block; background: var(--sage); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+    .btn-primary:hover { background: #4d7a5c; }
+
+    /* FAQ */
+    .faq { padding: 72px 0; }
+    .faq h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 40px; text-align: center; }
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--stone); padding: 24px 0; }
+    .faq-item h4 { font-size: 17px; font-weight: 600; color: var(--slate); margin-bottom: 10px; }
+    .faq-item p { font-size: 15px; color: var(--text); }
+
+    /* FOOTER */
+    footer { background: var(--stone); padding: 40px 0 32px; border-top: 1px solid rgba(45,58,69,0.1); }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    footer p { font-size: 13px; color: #8899a6; }
+    .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); font-size: 14px; }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: #8899a6; text-decoration: none; }
+    .footer-links a:hover { color: var(--sage); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+        <span class="logo-text">AgentleConsulting</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html" class="active">Services</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../blog/what-is-ecommerce-automation.html">Blog</a></li>
+        <li><a href="../book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Our Packages</p>
+      <h1>Three ways to stop drowning in operational chaos.</h1>
+      <p>From a single strategy sprint to a full-time automation partner — pick the level that fits where you are right now. No enterprise minimums, no black-box retainers.</p>
+    </div>
+  </section>
+
+  <!-- PACKAGES GRID -->
+  <section class="packages">
+    <div class="container">
+      <div class="packages-grid">
+
+        <!-- DISCOVER -->
+        <div class="pkg-card">
+          <p class="pkg-tier">Tier 1 — Start Here</p>
+          <h2 class="pkg-name">Discover</h2>
+          <p class="pkg-desc">A focused 2-week sprint to map your automation opportunities — with a prioritized roadmap and 2 live demo workflows. No commitment to implement.</p>
+          <div class="pkg-price">
+            <div class="pkg-amount">€1,750 <span>one-time</span></div>
+            <div class="pkg-note">Early-bird — 5 spots left</div>
+          </div>
+          <ul class="pkg-features">
+            <li>60-minute discovery call with Ali</li>
+            <li>Full audit of your current tool stack (up to 10 tools)</li>
+            <li>Top 5 automation opportunities identified and ranked</li>
+            <li>Prioritized automation roadmap (PDF)</li>
+            <li>2 demo workflows — built, tested, video-walkthrough</li>
+            <li>30-day email follow-up support</li>
+            <li>€500 discount on Automate if you book within 60 days</li>
+          </ul>
+          <a href="../book.html" class="pkg-cta pkg-cta--outline">Book Discovery Call →</a>
+        </div>
+
+        <!-- AUTOMATE -->
+        <div class="pkg-card featured">
+          <div class="pkg-badge">Most Popular</div>
+          <p class="pkg-tier">Tier 2 — Done For You</p>
+          <h2 class="pkg-name">Automate</h2>
+          <p class="pkg-desc">We build 3–5 custom workflows — done for you. Order processing, inventory sync, repricing, and more. Live in 4–6 weeks.</p>
+          <div class="pkg-price">
+            <div class="pkg-amount">€6,950 <span>one-time</span></div>
+            <div class="pkg-note">Early-bird — 5 spots left</div>
+          </div>
+          <ul class="pkg-features">
+            <li>Everything in Discover, fully executed</li>
+            <li>3–5 custom workflows built (you choose from roadmap)</li>
+            <li>n8n or Make.com setup and configuration</li>
+            <li>Amazon SP-API + Bol.com API connections</li>
+            <li>Shopify / Google Sheets / Slack integrations</li>
+            <li>Step-by-step workflow documentation</li>
+            <li>60-minute team training session</li>
+            <li>30-day post-launch support (SLA: 24h)</li>
+            <li>2 revision rounds per workflow</li>
+          </ul>
+          <a href="../book.html" class="pkg-cta pkg-cta--primary">Start Automating →</a>
+        </div>
+
+        <!-- TRANSFORM -->
+        <div class="pkg-card">
+          <p class="pkg-tier">Tier 3 — Ongoing Partner</p>
+          <h2 class="pkg-name">Transform</h2>
+          <p class="pkg-desc">A dedicated automation consultant embedded in your business — building, maintaining, and iterating your workflows every month. Starting at 10h/week.</p>
+          <div class="pkg-price">
+            <div class="pkg-amount">From €2,500 <span>/month</span></div>
+            <div class="pkg-note">6-month minimum commitment</div>
+          </div>
+          <ul class="pkg-features">
+            <li>Dedicated automation consultant (Ali or senior analyst)</li>
+            <li>10–20 hours per month of workflow work</li>
+            <li>Priority Slack channel — response within 4 business hours</li>
+            <li>New workflow builds included each month</li>
+            <li>Existing workflow maintenance and iteration</li>
+            <li>Monthly strategy review call (60 min)</li>
+            <li>Quarterly ROI reporting</li>
+            <li>No minimum additional spend on tools</li>
+          </ul>
+          <a href="../book.html" class="pkg-cta pkg-cta--outline">Apply for Transform →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCOVER DEEP DIVE -->
+  <section class="deep-dive">
+    <div class="container">
+      <div class="dd-header">
+        <div>
+          <p class="dd-eyebrow">Tier 1 — 2-Week Sprint</p>
+          <h2 class="dd-title">Discover: Know where to focus before spending a cent.</h2>
+          <p class="dd-desc">Most sellers have a vague idea that "automation could help" but no clear picture of where to start — or what a proper system actually looks like. Discover gives you that picture: a ranked roadmap of opportunities, built from a forensic analysis of your current setup.</p>
+        </div>
+        <div class="dd-price-block">
+          <p class="dd-price-label">Investment</p>
+          <p class="dd-price">€1,750 <span>one-time</span></p>
+          <p class="dd-price-note">Early-bird pricing — 5 spots left</p>
+        </div>
+      </div>
+      <h3 style="font-size:18px; color:var(--slate); margin-bottom:20px;">What's delivered</h3>
+      <div class="dd-deliverables">
+        <div class="dd-deliverable">
+          <h4>🔍 Tool Audit</h4>
+          <p>We map every tool in your stack — Shopify, Repricer, inventory software, Slack, spreadsheets — and identify where data is getting stuck or falling through the cracks.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>📋 Opportunity Roadmap</h4>
+          <p>A prioritised PDF ranking your top 5 automation opportunities by estimated time savings vs. build complexity. You decide what to act on.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>⚙️ 2 Demo Workflows</h4>
+          <p>We build 2 working prototypes — live in your environment — so you can see exactly what "done" looks like before committing to more.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>🎥 Walkthrough + Handoff</h4>
+          <p>Screen recordings explaining how each demo works, plus documentation your team can reference without needing technical knowledge.</p>
+        </div>
+      </div>
+      <div class="dd-process">
+        <h3>How it works</h3>
+        <div class="dd-steps">
+          <div class="dd-step">
+            <div class="dd-step-num">Week 1</div>
+            <h4>Kickoff + Audit</h4>
+            <p>60-min call to understand your setup. We audit your tools and identify the top opportunities.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Day 7–9</div>
+            <h4>Build Demos</h4>
+            <p>We build 2 demo workflows in your n8n or Make.com environment — live, not screenshots.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Day 10</div>
+            <h4>Roadmap Delivery</h4>
+            <p>You receive the prioritised PDF roadmap plus a walkthrough recording of both demos.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Ongoing</div>
+            <h4>30-Day Support</h4>
+            <p>Email support for 30 days. €500 credit toward Automate if you book within 60 days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMATE DEEP DIVE -->
+  <section class="deep-dive" style="background: var(--stone);">
+    <div class="container">
+      <div class="dd-header">
+        <div>
+          <p class="dd-eyebrow">Tier 2 — 4–6 Week Build</p>
+          <h2 class="dd-title">Automate: 3–5 workflows, built and delivered.</h2>
+          <p class="dd-desc">You have the roadmap. Now you need someone to build it without disrupting your business. Automate is a fixed-price, fixed-scope build — we agree on which 3–5 workflows to tackle, we build them, we test them in your environment, and we train your team.</p>
+        </div>
+        <div class="dd-price-block">
+          <p class="dd-price-label">Investment</p>
+          <p class="dd-price">€6,950 <span>one-time</span></p>
+          <p class="dd-price-note">Early-bird pricing — 5 spots left</p>
+        </div>
+      </div>
+      <h3 style="font-size:18px; color:var(--slate); margin-bottom:20px;">What's delivered</h3>
+      <div class="dd-deliverables">
+        <div class="dd-deliverable">
+          <h4>🔌 API Connections</h4>
+          <p>Amazon SP-API, Bol.com, Shopify, WooCommerce — we handle the integrations. You approve the connections.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>⚙️ 3–5 Live Workflows</h4>
+          <p>Built in n8n or Make.com (your choice). Each workflow is documented, tested, and running in your account before handoff.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>👥 Team Training</h4>
+          <p>60-minute live training session with your team. Everyone leaves knowing how to monitor, pause, and restart each workflow.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>🛡️ 30-Day Support</h4>
+          <p>Bug fixes and SLA response within 24 hours for 30 days post-launch. Two rounds of revisions per workflow included.</p>
+        </div>
+      </div>
+      <div class="dd-process">
+        <h3>How it works</h3>
+        <div class="dd-steps">
+          <div class="dd-step">
+            <div class="dd-step-num">Week 1</div>
+            <h4>Scope Lock</h4>
+            <p>60-min call to finalise which 3–5 workflows you're building. We agree on scope in writing.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Week 2–3</div>
+            <h4>Build Phase</h4>
+            <p>We build workflows in a staging environment. You review at each milestone — no surprises at the end.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Week 4–5</div>
+            <h4>Testing + Training</h4>
+            <p>Workflows go live in your environment. We run through error scenarios and train your team.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Week 6</div>
+            <h4>Go Live + Handoff</h4>
+            <p>Documentation delivered, team trained, support window begins. You have running workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORM DEEP DIVE -->
+  <section class="deep-dive">
+    <div class="container">
+      <div class="dd-header">
+        <div>
+          <p class="dd-eyebrow">Tier 3 — Monthly Retainer</p>
+          <h2 class="dd-title">Transform: An automation partner, not a vendor.</h2>
+          <p class="dd-desc">Some businesses need more than a project — they need someone embedded in their operations who understands their specific setup and can continuously improve it. Transform is a dedicated monthly engagement: a senior automation consultant working in your business every week.</p>
+        </div>
+        <div class="dd-price-block">
+          <p class="dd-price-label">Starting from</p>
+          <p class="dd-price">€2,500 <span>/month</span></p>
+          <p class="dd-price-note">6-month minimum · 10–20h/month included</p>
+        </div>
+      </div>
+      <h3 style="font-size:18px; color:var(--slate); margin-bottom:20px;">What's delivered</h3>
+      <div class="dd-deliverables">
+        <div class="dd-deliverable">
+          <h4>📆 Weekly Sprint Cycles</h4>
+          <p>Each week has a clear deliverable. You always know what's being worked on and why — visible in your project tracker.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>💬 Priority Slack Channel</h4>
+          <p>Direct line to Ali or a senior analyst. 4-business-hour response SLA during working hours.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>📊 Monthly ROI Reporting</h4>
+          <p>Hours saved, workflows added or improved, errors caught. Concrete numbers, not just activity logs.</p>
+        </div>
+        <div class="dd-deliverable">
+          <h4>🔄 Continuous Improvement</h4>
+          <p>We proactively identify new automation opportunities each month — you decide which to build.</p>
+        </div>
+      </div>
+      <div class="dd-process">
+        <h3>How it works</h3>
+        <div class="dd-steps">
+          <div class="dd-step">
+            <div class="dd-step-num">Month 1</div>
+            <h4>Onboarding Sprint</h4>
+            <p>We audit your full tool stack, map every workflow, and build a 6-month automation roadmap.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Ongoing</div>
+            <h4>Weekly Builds</h4>
+            <p>10–20h/month of focused build work. New features, integrations, and optimisations every sprint.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Monthly</div>
+            <h4>Strategy Call</h4>
+            <p>60-minute review of what's been built, what's next, and how much time you've saved.</p>
+          </div>
+          <div class="dd-step">
+            <div class="dd-step-num">Quarterly</div>
+            <h4>ROI Report</h4>
+            <p>Structured report: hours saved, error reduction, cost of tools vs. time recovered.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container--narrow">
+      <h2>Common questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>Do I need to commit to Automate if I do Discover first?</h4>
+          <p>No. Discover is standalone. You get the roadmap and 2 demo workflows — what you do next is entirely your decision. We offer a €500 discount if you book Automate within 60 days, but there's no obligation.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if my workflows need changes after the 30-day support window?</h4>
+          <p>Transform clients get ongoing maintenance included. One-off changes for Automate clients are quoted separately — typically a small fixed fee depending on scope.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I switch from Automate to Transform mid-build?</h4>
+          <p>Yes. If partway through an Automate engagement you decide you'd rather have an ongoing partner, we credit the Automate fee against the Transform minimum. Just ask.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What tools do you build workflows in?</h4>
+          <p>n8n (open-source, self-hosted or cloud) and Make.com. We recommend based on your stack and budget — not as a upsell. If you already have a preference, we work with it.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if an automation breaks my existing process?</h4>
+          <p>We test every workflow in staging before going live, and we build rollback procedures. During the 30-day post-launch support window, we fix anything that breaks — fast.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What's the minimum commitment for Transform?</h4>
+          <p>6 months. Automation work compounds over time — the first few months are onboarding and building the foundation. After 6 months, you can continue month-to-month or wind down with 30 days' notice.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you work with sellers outside the Netherlands?</h4>
+          <p>Yes. We've worked with sellers across Europe, the UK, and the US. Everything is remote-first. Language: English or Dutch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Not sure which tier fits?</h2>
+      <p>Book a free 30-minute discovery call. We'll map where you are, what you need, and which tier makes sense. No sales pressure.</p>
+      <a href="../book.html" class="btn-primary">Book a Free Call →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 AgentleConsulting. Amsterdam, Netherlands.</p>
+      <ul class="footer-links">
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+      </ul>
+      <p class="footer-tagline">Automation with a Human Hand</p>
+    </div>
+  </footer>
+</body>
+</html>

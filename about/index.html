@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgentleConsulting helps Amazon and Bol.com sellers automate their operations — without the enterprise price tag. Founded in Amsterdam. Built by sellers, for sellers.">
+  <title>About — AgentleConsulting</title>
+  <link rel="canonical" href="https://website-three-beryl-40.vercel.app/about/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta property="og:title" content="About — AgentleConsulting">
+  <meta property="og:description" content="We help Amazon and Bol.com sellers automate their operations — without the enterprise price tag. Built by sellers, for sellers.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --sage: #6B9E78;
+      --slate: #2D3A45;
+      --amber: #D4956A;
+      --cream: #F8F5F0;
+      --stone: #EDE9E2;
+      --pearl: #FEFCFA;
+      --text: #4a5a66;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.75; font-size: 17px; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container--narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav { background: var(--cream); border-bottom: 1px solid var(--stone); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    nav .container { display: flex; align-items: center; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+    .logo-text { font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; margin-left: auto; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--sage); }
+    .nav-cta { background: var(--sage); color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* PAGE HERO */
+    .page-hero { padding: 80px 0 72px; }
+    .page-hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; }
+    .page-hero h1 { font-size: clamp(34px, 5vw, 56px); color: var(--slate); margin-bottom: 20px; max-width: 700px; }
+    .page-hero .lead { font-size: 20px; color: var(--text); max-width: 600px; line-height: 1.65; }
+
+    /* STORY */
+    .story { padding: 72px 0; background: var(--pearl); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .story-text p { color: var(--text); margin-bottom: 18px; font-size: 16px; line-height: 1.75; }
+    .story-text p:last-child { margin-bottom: 0; }
+    .story-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-card { background: var(--cream); border-radius: 12px; padding: 24px 20px; text-align: center; }
+    .stat-number { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 800; color: var(--slate); line-height: 1; }
+    .stat-label { font-size: 13px; color: var(--text); margin-top: 6px; }
+
+    /* VALUES */
+    .values { padding: 72px 0; }
+    .values h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 12px; text-align: center; }
+    .values-sub { text-align: center; color: var(--text); font-size: 17px; margin-bottom: 48px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } }
+    .value-card { background: var(--pearl); border: 1px solid var(--stone); border-radius: 14px; padding: 28px 24px; }
+    .value-icon { font-size: 32px; margin-bottom: 14px; }
+    .value-card h3 { font-size: 19px; color: var(--slate); margin-bottom: 8px; }
+    .value-card p { font-size: 15px; color: var(--text); }
+
+    /* WHO WE SERVE */
+    .who { padding: 72px 0; background: var(--stone); }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    @media (max-width: 768px) { .who-grid { grid-template-columns: 1fr; } }
+    .who h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 20px; }
+    .who p { color: var(--text); margin-bottom: 16px; font-size: 16px; }
+    .who-list { list-style: none; margin-top: 20px; }
+    .who-list li { padding: 9px 0; border-bottom: 1px solid rgba(45,58,69,0.1); font-size: 15px; color: var(--text); display: flex; align-items: center; gap: 10px; }
+    .who-list li::before { content: '✓'; color: var(--sage); font-weight: 700; }
+    .who-platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .platform-card { background: var(--pearl); border-radius: 12px; padding: 24px 20px; text-align: center; }
+    .platform-name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--slate); margin-bottom: 6px; }
+    .platform-note { font-size: 13px; color: var(--text); }
+
+    /* PRINCIPLES */
+    .principles { padding: 72px 0; }
+    .principles h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 40px; text-align: center; }
+    .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 600px) { .principles-grid { grid-template-columns: 1fr; } }
+    .principle { background: var(--pearl); border: 1px solid var(--stone); border-radius: 12px; padding: 28px 26px; }
+    .principle h4 { font-size: 17px; font-weight: 700; color: var(--slate); margin-bottom: 8px; }
+    .principle p { font-size: 15px; color: var(--text); }
+
+    /* FOUNDER */
+    .founder { padding: 72px 0; background: var(--slate); }
+    .founder-card { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 700px) { .founder-card { grid-template-columns: 1fr; } }
+    .founder-avatar { width: 160px; height: 160px; background: var(--stone); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 56px; font-weight: 800; color: var(--sage); flex-shrink: 0; }
+    .founder-info h2 { font-size: clamp(24px, 4vw, 36px); color: var(--pearl); margin-bottom: 6px; }
+    .founder-title { font-size: 14px; font-weight: 600; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .founder-info p { color: rgba(254,252,250,0.7); font-size: 16px; margin-bottom: 12px; line-height: 1.7; }
+    .founder-info p:last-child { margin-bottom: 0; }
+
+    /* CTA */
+    .cta-strip { background: var(--cream); padding: 72px 0; text-align: center; border-top: 1px solid var(--stone); }
+    .cta-strip h2 { font-size: clamp(26px, 4vw, 40px); color: var(--slate); margin-bottom: 14px; }
+    .cta-strip p { font-size: 17px; color: var(--text); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-primary { display: inline-block; background: var(--sage); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+    .btn-primary:hover { background: #4d7a5c; }
+
+    /* FOOTER */
+    footer { background: var(--stone); padding: 40px 0 32px; border-top: 1px solid rgba(45,58,69,0.1); }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    footer p { font-size: 13px; color: #8899a6; }
+    .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); font-size: 14px; }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: #8899a6; text-decoration: none; }
+    .footer-links a:hover { color: var(--sage); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+        <span class="logo-text">AgentleConsulting</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="index.html" class="active">About</a></li>
+        <li><a href="../blog/what-is-ecommerce-automation.html">Blog</a></li>
+        <li><a href="../book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Our Story</p>
+      <h1>Automation with a human hand on the wheel.</h1>
+      <p class="lead">We started AgentleConsulting because we were tired of watching talented sellers drown in work that software should handle.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-text">
+          <p>We started AgentleConsulting because we were tired of watching talented sellers drown in work that software should handle. If you're selling on Amazon or Bol.com, you didn't get into e-commerce to spend your evenings copy-pasting inventory numbers into spreadsheets.</p>
+          <p>We build the automation systems that make a growing seller's life manageable again — not with generic tools, but with systems built for your specific workflow. We implement, we test, we hand over something that works.</p>
+          <p>We believe automation should serve people, not replace them. The goal isn't to make humans irrelevant — it's to give them their time back.</p>
+          <p>Everything we build is transparent: you know what's running, why it's running, and how to take over if you ever want to. No black-box retainers. No vendor lock-in.</p>
+        </div>
+        <div class="story-stats">
+          <div class="stat-card">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Sellers helped</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10–20h</div>
+            <div class="stat-label">Recovered per week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">&lt;3mo</div>
+            <div class="stat-label">Avg. ROI payback</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Systems still running</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="container">
+      <h2>How we work</h2>
+      <p class="values-sub">Three principles that guide every engagement.</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>Built for your workflow</h3>
+          <p>We don't copy-paste templates. Every workflow is designed around how your specific business runs — your tools, your processes, your edge cases.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔍</div>
+          <h3>No black boxes</h3>
+          <p>You get full documentation and training. When we're done, you can see exactly what every workflow does — and modify it yourself if you want to.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📈</div>
+          <h3>Measured by time saved</h3>
+          <p>We don't measure success by workflows deployed. We measure it by hours reclaimed — and we report that monthly so you know what you're paying for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="who">
+    <div class="container">
+      <div class="who-grid">
+        <div>
+          <h2>Who we work with.</h2>
+          <p>We work exclusively with e-commerce sellers — primarily on Amazon and Bol.com — who are past the survival stage and ready to scale without scaling their workload.</p>
+          <p>You're doing six to seven figures and handling operations manually. You've already optimised what you can with off-the-shelf tools. But there's a layer of messy, business-specific work that no SaaS tool handles — and it's eating your evenings.</p>
+          <ul class="who-list">
+            <li>Amazon and Bol.com sellers, €200K–€5M+ revenue</li>
+            <li>European sellers — Netherlands, Germany, Belgium, France</li>
+            <li>Selling private label or branded products</li>
+            <li>Already using Shopify, WooCommerce, or a custom stack</li>
+            <li>Team of 1–10 people, often founder-led</li>
+            <li>Feeling the ceiling — can't grow without growing the workload</li>
+          </ul>
+        </div>
+        <div>
+          <div class="who-platforms">
+            <div class="platform-card">
+              <div class="platform-name">Amazon</div>
+              <div class="platform-note">SP-API automation, repricing, inventory sync, review flows</div>
+            </div>
+            <div class="platform-card">
+              <div class="platform-name">Bol.com</div>
+              <div class="platform-note">Orders, returns, catalogue management, pricing</div>
+            </div>
+            <div class="platform-card">
+              <div class="platform-name">Shopify</div>
+              <div class="platform-note">Orders, inventory, customer data, reporting</div>
+            </div>
+            <div class="platform-card">
+              <div class="platform-name">+ Others</div>
+              <div class="platform-note">Repricer, ERP, supplier portals, Google Sheets, Slack</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="principles">
+    <div class="container--narrow">
+      <h2>What we believe about automation</h2>
+      <div class="principles-grid">
+        <div class="principle">
+          <h4>Automation should be invisible when it's working.</h4>
+          <p>The best workflows are the ones your team stops noticing — because the thing they used to do manually just... doesn't need doing anymore.</p>
+        </div>
+        <div class="principle">
+          <h4>Every business is a custom case.</h4>
+          <p>Template automations break. A workflow built for your specific catalogue structure, supplier cadence, and customer behavior actually holds.</p>
+        </div>
+        <div class="principle">
+          <h4>The goal is a business you can step back from.</h4>
+          <p>Not to build a fully autonomous operation — but to have a business that runs without requiring you to be the bottleneck on every decision.</p>
+        </div>
+        <div class="principle">
+          <h4>You should never be locked in.</h4>
+          <p>Every workflow we build is documented. If you want to move it, modify it, or take it over completely — you can. We don't use proprietary platforms to trap clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder">
+    <div class="container">
+      <div class="founder-card">
+        <div class="founder-avatar">A</div>
+        <div class="founder-info">
+          <h2>Ali</h2>
+          <p class="founder-title">Founder, AgentleConsulting</p>
+          <p>Former e-commerce operator turned automation engineer. Spent years building and breaking workflows for Amazon and Bol.com businesses before realising the real leverage was in teaching sellers to automate their own operations — then doing it for them when they needed it done right.</p>
+          <p>Based in Amsterdam. Works with sellers across Europe in English and Dutch. Believes every seller deserves to run their business, not be run by it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2>Ready to automate your business?</h2>
+      <p>Book a free 30-minute discovery call. We'll figure out where you are and which package fits.</p>
+      <a href="../book.html" class="btn-primary">Book a Free Call →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 AgentleConsulting. Amsterdam, Netherlands.</p>
+      <ul class="footer-links">
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+      </ul>
+      <p class="footer-tagline">Automation with a Human Hand</p>
+    </div>
+  </footer>
+</body>
+</html>
