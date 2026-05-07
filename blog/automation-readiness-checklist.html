@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Your E-commerce Business Ready for Automation? (Free Checklist) — AgentleConsulting</title>
+  <meta name="description" content="Take this 5-minute self-assessment to find out whether your Amazon or Bol.com business is ready for automation — and which workflows to tackle first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --sage: #6B9E78; --slate: #2D3A45; --amber: #D4956A; --cream: #F8F5F0; --stone: #EDE9E2; --pearl: #FEFCFA; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.7; font-size: 17px; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; color: var(--slate); }
+    .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+    nav { position: sticky; top: 0; background: var(--cream); border-bottom: 1px solid var(--stone); z-index: 100; padding: 0 24px; }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+    .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta { background: var(--sage) !important; color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #5a8a68 !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-header { padding: 80px 0 60px; border-bottom: 1px solid var(--stone); }
+    .article-meta { font-size: 13px; font-weight: 600; color: var(--sage); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(30px, 5vw, 48px); color: var(--slate); max-width: 680px; margin-bottom: 20px; }
+    .article-header h1 em { font-style: italic; color: var(--sage); }
+    .article-sub { font-size: 18px; color: #5a6b77; max-width: 580px; margin-bottom: 32px; }
+    .article-byline { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #8899a6; }
+    .article-byline strong { color: var(--slate); font-weight: 600; }
+    .article-body { padding: 60px 0 80px; }
+    .article-body h2 { font-size: 28px; margin-top: 48px; margin-bottom: 18px; }
+    .article-body h3 { font-size: 22px; margin-top: 32px; margin-bottom: 14px; }
+    .article-body p { margin-bottom: 18px; color: #3a4a55; }
+    .article-body ul, .article-body ol { margin-bottom: 18px; padding-left: 24px; }
+    .article-body li { margin-bottom: 10px; color: #3a4a55; }
+    .article-body strong { color: var(--slate); font-weight: 600; }
+    .checklist { margin: 32px 0; }
+    .check-section { background: var(--pearl); border: 1px solid var(--stone); border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; }
+    .check-section h4 { font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 14px; }
+    .check-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+    .check-box { width: 20px; height: 20px; border: 2px solid var(--stone); border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+    .check-text { font-size: 15px; color: #3a4a55; }
+    .score-block { background: var(--slate); color: var(--pearl); border-radius: 12px; padding: 28px 32px; margin: 36px 0; }
+    .score-block h4 { font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 16px; color: var(--pearl); }
+    .score-block p { color: rgba(254,252,250,0.8) !important; margin-bottom: 12px !important; }
+    .score-block strong { color: var(--pearl) !important; }
+    .workflow-priority { border: 1px solid var(--stone); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+    .workflow-priority-header { background: var(--slate); padding: 14px 20px; }
+    .workflow-priority-header h4 { font-family: 'Fraunces', serif; font-size: 16px; color: var(--pearl); margin: 0; }
+    .workflow-priority-body { padding: 16px 20px; }
+    .workflow-priority-body p { margin-bottom: 0 !important; font-size: 15px !important; }
+    .cta-block { background: var(--sage); color: var(--pearl); border-radius: 16px; padding: 40px 48px; margin: 56px 0; text-align: center; }
+    .cta-block h3 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--pearl); margin-bottom: 12px; }
+    .cta-block p { font-size: 16px; color: rgba(254,252,250,0.85); margin-bottom: 24px; }
+    .btn-dark { background: var(--slate); color: var(--pearl); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; display: inline-block; border: none; cursor: pointer; }
+    .btn-dark:hover { background: #1d2530; }
+    footer { background: var(--stone); padding: 48px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 14px; color: #8899a6; }
+    footer a { color: var(--sage); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">
+      <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+      <span class="logo-text">AgentleConsulting</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Free Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="container">
+    <div class="article-meta">Free Checklist · 6 min read</div>
+    <h1>Is Your <em>E-commerce Business</em> Ready for Automation?</h1>
+    <p class="article-sub">Take 5 minutes to answer these questions. You'll know whether automation is worth exploring — and which workflows to tackle first.</p>
+    <div class="article-byline">
+      <span>By <strong>AgentleConsulting</strong></span>
+      <span>·</span>
+      <span>May 7, 2026</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+  <div class="container">
+
+<p>This isn't a sales tool. It's a genuine self-assessment. If you answer these questions honestly, you'll know whether automation makes sense for your business right now — and if so, where to start.</p>
+
+<p>Work through each section. Check the boxes that apply to you.</p>
+
+<h2>Section 1: Time Investment</h2>
+
+<div class="checklist">
+
+<div class="check-section">
+  <h4>How much time do repetitive tasks eat each week?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">I spend more than 10 hours per week on manual admin tasks (order processing, inventory updates, customer messages, data entry)</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">I spend 5–10 hours per week on repetitive admin tasks</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">I spend less than 5 hours per week on repetitive tasks</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">I'm not sure — I've never tracked it</div></div>
+</div>
+
+<div class="check-section">
+  <h4>Which tasks are you doing manually?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Order processing and shipment tracking updates</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Inventory synchronization across platforms (Amazon, Bol.com, Shopify)</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Customer message responses (order status, returns, FAQs)</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Review request emails</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Competitor price monitoring</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Reporting and data compilation</div></div>
+</div>
+
+</div>
+
+<h2>Section 2: Business Maturity</h2>
+
+<div class="checklist">
+
+<div class="check-section">
+  <h4>How established are your processes?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">My processes are consistent — I do the same tasks the same way every day</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">My processes are mostly consistent but change occasionally when I find a better way</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">My processes are still evolving — I'm iterating on how I do things</div></div>
+</div>
+
+<div class="check-section">
+  <h4>What's your order volume?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">More than 100 orders per week</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">50–100 orders per week</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">20–50 orders per week</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Fewer than 20 orders per week</div></div>
+</div>
+
+<div class="check-section">
+  <h4>How many platforms are you selling on?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Two or more platforms (Amazon + Bol.com, or Amazon + Shopify + others)</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">One platform (Amazon or Bol.com only)</div></div>
+</div>
+
+</div>
+
+<h2>Section 3: Team & Capacity</h2>
+
+<div class="checklist">
+
+<div class="check-section">
+  <h4>Who handles admin work right now?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">Me (the owner) — I'm doing admin work myself</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">One to two staff members</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">A team of 3 or more</div></div>
+</div>
+
+<div class="check-section">
+  <h4>What's your team's technical comfort level?</h4>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">We can figure out new software tools on our own</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">We need someone to set things up, then we can manage them</div></div>
+  <div class="check-row"><div class="check-box"></div><div class="check-text">We need everything managed and maintained for us</div></div>
+</div>
+
+</div>
+
+<h2>Your Score</h2>
+
+<div class="score-block">
+  <h4>5+ boxes checked in Section 1 + consistent processes?</h4>
+  <p>You're a strong candidate for automation. Your time investment is significant enough that automating your top 2–3 workflows will produce measurable results quickly.</p>
+  <p><strong>Start with:</strong> Order processing → Inventory sync → Review request automation</p>
+</div>
+
+<div class="score-block">
+  <h4>5+ boxes in Section 1 + evolving processes?</h4>
+  <p>You're close, but not quite ready. Document your current processes first, get them stable, then automate. Automating a moving target produces a broken automation.</p>
+  <p><strong>Start with:</strong> Spend 2 weeks documenting your existing workflow before exploring automation tools.</p>
+</div>
+
+<div class="score-block">
+  <h4>Fewer than 5 boxes in Section 1?</h4>
+  <p>You may not be ready yet. Automation makes most sense when you're spending 10+ hours per week on repetitive tasks. If you're under that threshold, the investment may not pay back fast enough to justify it.</p>
+  <p><strong>Revisit:</strong> When your order volume grows or your time spent on admin increases.</p>
+</div>
+
+<h2>Your Next Workflow to Automate</h2>
+
+<p>Based on your checklist answers, here's the highest-ROI starting point:</p>
+
+<div class="workflow-priority">
+  <div class="workflow-priority-header"><h4>If you checked "Order processing and shipment tracking updates"</h4></div>
+  <div class="workflow-priority-body"><p>Start here. This is the highest-ROI first automation for most Amazon and Bol.com sellers. An automated order-to-confirmation workflow typically saves 10–16 hours per week and takes 2–4 hours to build.</p></div>
+</div>
+
+<div class="workflow-priority">
+  <div class="workflow-priority-header"><h4>If you checked "Inventory synchronization across platforms"</h4></div>
+  <div class="workflow-priority-body"><p>Inventory sync is your starting point. Multi-platform sellers who don't have automated inventory sync almost always have stock discrepancies — and Amazon penalties for overselling are costly. This is typically a 4–8 hour build.</p></div>
+</div>
+
+<div class="workflow-priority">
+  <div class="workflow-priority-header"><h4>If you checked "Customer message responses"</h4></div>
+  <div class="workflow-priority-body"><p>This is where AI agents add the most value. A routing and auto-response system for routine messages (order status, return requests, FAQs) typically saves 3–8 hours per week. This is a medium-complexity build — plan for 3–6 hours.</p></div>
+</div>
+
+<h2>The Bottom Line</h2>
+
+<p>If you're spending 10+ hours per week on repetitive tasks, your processes are consistent, and you're on at least one major platform — automation is almost certainly worth exploring. The first workflow you automate will typically pay for itself within 4–8 weeks.</p>
+
+<p>If you're spending less than 5 hours per week on admin, or if your processes are still changing significantly month to month — you're not ready yet. Come back when the business has stabilized.</p>
+
+<div class="cta-block">
+  <h3>Want a professional assessment of your automation readiness?</h3>
+  <p>Book a free 30-minute discovery call. We'll look at your specific situation and tell you honestly what to tackle first.</p>
+  <a href="/#contact" class="btn-dark">Book a Free Discovery Call →</a>
+</div>
+
+<p>Or download our full <a href="#">Automation Readiness Guide</a> — the 20-page workbook that goes deeper than this checklist, including process documentation templates and a GDPR compliance overview.</p>
+
+<p>Continue reading: <a href="/blog/automation-jargon-explained.html">Automation Jargon Explained</a> — the vocabulary you need to hold your own in any automation conversation.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <p>© 2026 AgentleConsulting · <a href="/">agentleconsulting.com</a></p>
+    <p>Automation with a Human Hand</p>
+  </div>
+</footer>
+
+</body>
+</html>

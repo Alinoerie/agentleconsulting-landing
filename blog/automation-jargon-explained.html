@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Jargon Explained: Webhooks, APIs, Zaps, and Nodes — Without the Gobbledygook — AgentleConsulting</title>
+  <meta name="description" content="If you've ever nodded along when someone said 'we'll hook into your API' without knowing what that meant — this is for you. Automation jargon, explained plainly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --sage: #6B9E78; --slate: #2D3A45; --amber: #D4956A; --cream: #F8F5F0; --stone: #EDE9E2; --pearl: #FEFCFA; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.7; font-size: 17px; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; color: var(--slate); }
+    .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+    nav { position: sticky; top: 0; background: var(--cream); border-bottom: 1px solid var(--stone); z-index: 100; padding: 0 24px; }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+    .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta { background: var(--sage) !important; color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #5a8a68 !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-header { padding: 80px 0 60px; border-bottom: 1px solid var(--stone); }
+    .article-meta { font-size: 13px; font-weight: 600; color: var(--sage); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(30px, 5vw, 48px); color: var(--slate); max-width: 680px; margin-bottom: 20px; }
+    .article-header h1 em { font-style: italic; color: var(--sage); }
+    .article-sub { font-size: 18px; color: #5a6b77; max-width: 580px; margin-bottom: 32px; }
+    .article-byline { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #8899a6; }
+    .article-byline strong { color: var(--slate); font-weight: 600; }
+    .article-body { padding: 60px 0 80px; }
+    .article-body h2 { font-size: 28px; margin-top: 48px; margin-bottom: 18px; }
+    .article-body h3 { font-size: 22px; margin-top: 32px; margin-bottom: 14px; }
+    .article-body p { margin-bottom: 18px; color: #3a4a55; }
+    .article-body ul, .article-body ol { margin-bottom: 18px; padding-left: 24px; }
+    .article-body li { margin-bottom: 10px; color: #3a4a55; }
+    .article-body strong { color: var(--slate); font-weight: 600; }
+    .term-card { background: var(--pearl); border: 1px solid var(--stone); border-radius: 12px; padding: 28px 32px; margin: 28px 0; }
+    .term-card-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 12px; }
+    .term-name { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: var(--sage); }
+    .term-alias { font-size: 13px; color: #8899a6; }
+    .term-card p { margin-bottom: 12px !important; color: #3a4a55 !important; }
+    .term-example { background: var(--stone); border-radius: 8px; padding: 14px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--slate); margin-top: 14px; }
+    .term-example strong { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; }
+    .callout { background: var(--stone); border-left: 4px solid var(--sage); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin-bottom: 0 !important; font-size: 15px; color: var(--slate) !important; }
+    .callout strong { color: var(--slate) !important; }
+    .cta-block { background: var(--slate); color: var(--pearl); border-radius: 16px; padding: 40px 48px; margin: 56px 0; text-align: center; }
+    .cta-block h3 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--pearl); margin-bottom: 12px; }
+    .cta-block p { font-size: 16px; color: rgba(254,252,250,0.75); margin-bottom: 24px; }
+    .btn-primary { background: var(--sage); color: var(--pearl); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; display: inline-block; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #5a8a68; }
+    footer { background: var(--stone); padding: 48px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 14px; color: #8899a6; }
+    footer a { color: var(--sage); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">
+      <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+      <span class="logo-text">AgentleConsulting</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Free Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="container">
+    <div class="article-meta">Automation Basics · 8 min read</div>
+    <h1><em>Automation Jargon</em> Explained: Webhooks, APIs, Zaps, and Nodes</h1>
+    <p class="article-sub">If you've ever nodded along when someone said "we'll hook into your API" without knowing what that meant — this is for you. No gobbledygook.</p>
+    <div class="article-byline">
+      <span>By <strong>AgentleConsulting</strong></span>
+      <span>·</span>
+      <span>May 7, 2026</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+  <div class="container">
+
+<p>Every industry has its jargon. Automation is no exception. The problem is that the jargon exists partly because the concepts are genuinely technical — and partly because people use complex words to sound authoritative about simple things.</p>
+
+<p>This post is an explainer for the uninitiated. My goal: by the end, you'll understand every term an automation consultant might throw at you, and you'll be able to hold your own in a conversation about how your systems work.</p>
+
+<h2>API — Application Programming Interface</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">API</div>
+    <div class="term-alias">also called: endpoint, integration</div>
+  </div>
+  <p>An API is a way for two software systems to talk to each other. It's not a physical cable or a single thing — it's more like a waiter in a restaurant. You (your system) look at the menu (the API documentation), place an order (make a request), and the waiter (the API) goes to the kitchen (Amazon's servers) and brings back your food (data).</p>
+  <p>Every time you check your phone for package tracking, an API is involved. When your inventory tool syncs with Amazon, an API is how they communicate.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "We'll use Amazon's SP-API to automatically pull your order data every hour."
+  </div>
+</div>
+
+<h2>Webhook</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-card-header">
+      <div class="term-name">Webhook</div>
+      <div class="term-alias">also called: push notification, event trigger</div>
+    </div>
+  </div>
+  <p>A webhook is a way for one system to automatically notify another system when something happens — without that second system having to check repeatedly.</p>
+  <p>The difference between an API and a webhook: an API is a request — "tell me X." A webhook is a push — "something happened, here is X."</p>
+  <p>Think of it like a doorbell versus a guard checking a gate. With an API, your system rings Amazon's doorbell every 5 minutes asking "did anything happen?" With a webhook, Amazon rings your doorbell the moment something happens.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "When Amazon confirms a shipment, their system sends a webhook to our workflow, which triggers the customer notification."
+  </div>
+</div>
+
+<h2>Trigger</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">Trigger</div>
+    <div class="term-alias">also called: event, starting point</div>
+  </div>
+  <p>A trigger is the event that starts an automation. It's the "when X happens" in "when X happens, do Y."</p>
+  <p>Every workflow has a trigger — something has to happen first to kick things off. A new order. A shipment confirmation. A customer message. A timer reaching a specific time.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "The trigger for this workflow is a new order in Seller Central."
+  </div>
+</div>
+
+<h2>Action</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">Action</div>
+    <div class="term-alias">also called: task, step, output</div>
+  </div>
+  <p>An action is what happens as a result of the trigger — the "do Y" in "when X happens, do Y." A workflow can have multiple actions in sequence.</p>
+  <p>Actions can be things like: send an email, update a spreadsheet, add a tag to a contact, generate a report, send a Slack message. Most automation platforms have hundreds of possible actions.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "The trigger is a new order. The first action is to add the customer to our email list. The second action is to send them a welcome email."
+  </div>
+</div>
+
+<h2>Workflow</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">Workflow</div>
+    <div class="term-alias">also called: automation, process, flow, Zap</div>
+  </div>
+  <p>A workflow is the complete sequence: trigger + all the steps + all the actions. It's the full automation from start to finish.</p>
+  <p>A simple workflow might be: "Trigger: new order in Amazon → Action: add row to Google Sheet." A complex workflow might have 30 steps, multiple conditions, and several branching paths.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "The order processing workflow has 6 steps: it pulls the order, extracts the data, checks inventory, notifies the warehouse, sends the customer confirmation, and logs it all in a spreadsheet."
+  </div>
+</div>
+
+<h2>Node</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">Node</div>
+    <div class="term-alias">also called: step, module (Make/n8n terminology)</div>
+  </div>
+  <p>A node is a single step in a workflow. If a workflow is a recipe, each node is one ingredient or one action in the recipe.</p>
+  <p>In Make and n8n, workflows are visual — you see boxes connected by lines. Each box is a node. The lines show the data flowing from one step to the next.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "That workflow has 8 nodes: Amazon trigger, data extraction, inventory check, warehouse notification, email composer, send email, spreadsheet update, error handler."
+  </div>
+</div>
+
+<h2>Zap</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">Zap</div>
+    <div class="term-alias">Zapier-specific terminology</div>
+  </div>
+  <p>A Zap is Zapier's term for a single automation — one trigger and one or more actions. It's essentially a workflow, but the word "Zap" is Zapier-specific. (Like how Google calls a search result "a result" but everyone else does too.)</p>
+  <div class="term-example">
+    <strong>Example:</strong> "I set up a Zap that watches for new Amazon orders and creates a row in our Google Sheet automatically."
+  </div>
+</div>
+
+<h2>SP-API</h2>
+
+<div class="term-card">
+  <div class="term-card-header">
+    <div class="term-name">SP-API</div>
+    <div class="term-alias">Selling Partner API — Amazon's official API</div>
+  </div>
+  <p>SP-API is Amazon's official programming interface — the way external tools connect to Amazon Seller Central. It's the only legitimate way to build production-grade integrations with Amazon's seller data.</p>
+  <p>Any serious automation for Amazon sellers uses the SP-API. Tools that don't use SP-API are either using unofficial workarounds (which Amazon can disable at any time) or have limited functionality.</p>
+  <div class="term-example">
+    <strong>Example:</strong> "We connect to your Amazon account via the SP-API, which gives us secure, authorized access to your orders, inventory, and pricing data."
+  </div>
+</div>
+
+<h2>What All of This Means for Your Business</h2>
+
+<p>You don't need to understand the technical details of how APIs and webhooks work in order to benefit from automation. But understanding the vocabulary helps you:</p>
+
+<ul>
+  <li>Ask better questions when evaluating automation partners</li>
+  <li>Understand what you're being quoted for when someone proposes an automation build</li>
+  <li>Troubleshoot problems when they arise</li>
+  <li>Know whether someone is overselling you on complexity or being genuinely thorough</li>
+</ul>
+
+<div class="callout">
+  <p><strong>The one question to ask any automation consultant:</strong> "What triggers this workflow, and what happens if something goes wrong at each step?" If they can't answer both clearly, keep looking.</p>
+</div>
+
+<p>If any of this is still unclear, or if there's a term you encountered that wasn't covered here — reply to this post or reach out directly. This stuff shouldn't be mysterious.</p>
+
+<div class="cta-block">
+  <h3>Want to see what this looks like in your business?</h3>
+  <p>Book a free 30-minute discovery call. We'll walk through your workflows without the jargon.</p>
+  <a href="/#contact" class="btn-primary">Book a Free Discovery Call →</a>
+</div>
+
+<p>Continue reading: <a href="/blog/automate-amazon-business-2025.html">How to Automate Your Amazon Business in 2025: The Complete Workflow Guide</a> — the practical implementation guide that follows from understanding these concepts.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <p>© 2026 AgentleConsulting · <a href="/">agentleconsulting.com</a></p>
+    <p>Automation with a Human Hand</p>
+  </div>
+</footer>
+
+</body>
+</html>
