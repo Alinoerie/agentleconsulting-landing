@@ -36,6 +36,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://website-three-beryl-40.vercel.app/blog/bolcom-automation-untapped-opportunity.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://website-three-beryl-40.vercel.app/blog/eu-ai-act-explained-ecommerce-sellers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://website-three-beryl-40.vercel.app/blog/what-is-agentic-ai-smb-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://website-three-beryl-40.vercel.app/case-study-kitchenware.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
