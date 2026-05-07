@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Agentic AI? A Plain-English Guide for SMBs Who've Heard the Hype — AgentleConsulting</title>
+  <meta name="description" content="Agentic AI is the hottest term in tech right now. Here's what it actually means, how it's different from regular automation, and whether it's relevant to your Amazon or Bol.com business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --sage: #6B9E78; --slate: #2D3A45; --amber: #D4956A; --cream: #F8F5F0; --stone: #EDE9E2; --pearl: #FEFCFA; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.7; font-size: 17px; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; color: var(--slate); }
+    .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+    nav { position: sticky; top: 0; background: var(--cream); border-bottom: 1px solid var(--stone); z-index: 100; padding: 0 24px; }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+    .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta { background: var(--sage) !important; color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #5a8a68 !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+    .article-header { padding: 80px 0 60px; border-bottom: 1px solid var(--stone); }
+    .article-meta { font-size: 13px; font-weight: 600; color: var(--sage); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 16px; }
+    .article-header h1 { font-size: clamp(30px, 5vw, 48px); color: var(--slate); max-width: 680px; margin-bottom: 20px; }
+    .article-header h1 em { font-style: italic; color: var(--sage); }
+    .article-sub { font-size: 18px; color: #5a6b77; max-width: 580px; margin-bottom: 32px; }
+    .article-byline { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #8899a6; }
+    .article-byline strong { color: var(--slate); font-weight: 600; }
+    .article-body { padding: 60px 0 80px; }
+    .article-body h2 { font-size: 28px; margin-top: 48px; margin-bottom: 18px; }
+    .article-body h3 { font-size: 22px; margin-top: 32px; margin-bottom: 14px; }
+    .article-body p { margin-bottom: 18px; color: #3a4a55; }
+    .article-body ul, .article-body ol { margin-bottom: 18px; padding-left: 24px; }
+    .article-body li { margin-bottom: 10px; color: #3a4a55; }
+    .article-body strong { color: var(--slate); font-weight: 600; }
+    .comparison-card { background: var(--pearl); border: 1px solid var(--stone); border-radius: 12px; padding: 24px 28px; margin: 24px 0; }
+    .comparison-card h4 { font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 10px; }
+    .comparison-card p { margin-bottom: 0 !important; font-size: 15px !important; }
+    .callout { background: var(--stone); border-left: 4px solid var(--sage); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+    .callout p { margin-bottom: 0 !important; font-size: 15px; color: var(--slate) !important; }
+    .callout strong { color: var(--slate) !important; }
+    .cta-block { background: var(--slate); color: var(--pearl); border-radius: 16px; padding: 40px 48px; margin: 56px 0; text-align: center; }
+    .cta-block h3 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--pearl); margin-bottom: 12px; }
+    .cta-block p { font-size: 16px; color: rgba(254,252,250,0.75); margin-bottom: 24px; }
+    .btn-primary { background: var(--sage); color: var(--pearl); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; display: inline-block; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #5a8a68; }
+    footer { background: var(--stone); padding: 48px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 14px; color: #8899a6; }
+    footer a { color: var(--sage); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">
+      <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+      <span class="logo-text">AgentleConsulting</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Free Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="container">
+    <div class="article-meta">Agentic AI · 10 min read</div>
+    <h1>What Is <em>Agentic AI?</em> A Plain-English Guide for SMBs Who've Heard the Hype</h1>
+    <p class="article-sub">Agentic AI is the hottest term in tech. Here's what it actually means, how it's different from what you're already using, and whether it matters for your business.</p>
+    <div class="article-byline">
+      <span>By <strong>AgentleConsulting</strong></span>
+      <span>·</span>
+      <span>May 7, 2026</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+  <div class="container">
+
+<p>Every month, a new term escapes the tech world and lands in business conversations. "Agentic AI" is this year's. You've probably seen it — probably in a headline promising that AI agents are about to transform e-commerce, replace your VA, or automate your entire business while you sleep.</p>
+
+<p>Some of that's real. Some of it's hype. This post separates the two.</p>
+
+<h2>The Short Version</h2>
+
+<p><strong>Agentic AI = AI that can pursue a goal independently, making decisions along the way, instead of just following a script.</strong></p>
+
+<p>That's the core distinction. Everything else follows from it.</p>
+
+<h2>What "Agentic" Actually Means</h2>
+
+<p>The word "agentic" comes from the concept of an agent — something that acts independently to achieve a goal. An agentic AI is one that can:</p>
+
+<ul>
+  <li><strong>Set its own sub-goals</strong> to achieve a larger objective you give it</li>
+  <li><strong>Use multiple tools</strong> in sequence to complete a task</li>
+  <li><strong>Make decisions</strong> based on context, not just rules</li>
+  <li><strong>Adapt</strong> when the situation changes or something goes wrong</li>
+  <li><strong>Continue acting</strong> until the goal is achieved, rather than executing a single response</li>
+</ul>
+
+<p>The difference from standard AI (like a chatbot that answers questions) is the difference between a receptionist who follows a script and an executive who handles a problem until it's resolved.</p>
+
+<h2>How This Differs From What You're Already Using</h2>
+
+<div class="comparison-card">
+  <h4>Rules-Based Automation</h4>
+  <p><strong>Trigger:</strong> "When X happens, do Y." <strong>Behavior:</strong> Exactly what you programmed, every time. <strong>Handles exceptions:</strong> No — stops or errors. <strong>Example:</strong> When Amazon confirms a shipment, send the customer a tracking email with their tracking number.</p>
+</div>
+
+<div class="comparison-card">
+  <h4>Standard AI (Generative AI)</h4>
+  <p><strong>Trigger:</strong> You give it input. <strong>Behavior:</strong> Generates a response based on training data. <strong>Handles exceptions:</strong> Partially — can handle variations in input, but doesn't take actions. <strong>Example:</strong> You paste customer feedback into ChatGPT and ask for a summary of common complaints.</p>
+</div>
+
+<div class="comparison-card">
+  <h4>Agentic AI</h4>
+  <p><strong>Trigger:</strong> You give it a goal. <strong>Behavior:</strong> Plans steps, uses tools, makes decisions, adapts. <strong>Handles exceptions:</strong> Yes — course-corrects when something goes wrong. <strong>Example:</strong> "Handle all customer messages today. Respond accurately, escalate anything serious, update our tracking system for any changes, and summarize what happened at the end of the day."</p>
+</div>
+
+<h2>What This Looks Like in Practice</h2>
+
+<h3>Example 1: Customer Service</h3>
+
+<p><strong>Rules-based automation:</strong> Responds to messages matching specific keywords with templated answers. Breaks if the customer says anything unexpected.</p>
+
+<p><strong>Agentic AI:</strong> Reads each message, understands the customer's specific situation, generates an appropriate response, takes action (refund, replacement, tracking update) within defined guardrails, and escalates anything outside its parameters with full context attached.</p>
+
+<h3>Example 2: Inventory Management</h3>
+
+<p><strong>Rules-based automation:</strong> Syncs inventory numbers on a schedule. Alerts you when stock drops below a threshold. Doesn't know why the stock dropped or what to do about it.</p>
+
+<p><strong>Agentic AI:</strong> Monitors inventory continuously. When stock drops unexpectedly, investigates — was it a sales spike, a return, a data error? Adjusts reorder parameters based on sales velocity. Flags anomalies that need human attention. Produces a daily summary of inventory health and recommended actions.</p>
+
+<h3>Example 3: Order Exception Handling</h3>
+
+<p><strong>Rules-based automation:</strong> Processes orders through the standard workflow. Flags anything that doesn't match the standard pattern for human review. Can't resolve the exception itself.</p>
+
+<p><strong>Agentic AI:</strong> Processes orders through the standard workflow. When it encounters an exception, it has the context to decide what to do: hold the order, reroute it, process a partial shipment, or escalate with a recommended resolution. Doesn't need a human to resolve routine exceptions.</p>
+
+<h2>What This Means for Your E-commerce Business</h2>
+
+<p>Agentic AI becomes relevant when the task involves:</p>
+
+<ul>
+  <li>More than one decision point</li>
+  <li>Context and judgment about what "normal" looks like</li>
+  <li>Multiple tools or systems that need to be coordinated</li>
+  <li>Exception handling that's too complex for simple rules</li>
+  <li>Situations where two reasonable responses could be correct depending on context</li>
+</ul>
+
+<p>For most Amazon and Bol.com sellers, the highest-value agentic AI applications are:</p>
+
+<ul>
+  <li><strong>Customer service at scale:</strong> An agentic system that can handle the full range of customer inquiries — not just FAQs, but exceptions and complaints</li>
+  <li><strong>Exception handling:</strong> An agentic layer on top of your rules-based automation that handles the edge cases that would otherwise require human intervention</li>
+  <li><strong>Supplier and inventory management:</strong> An agentic system that monitors, investigates, and recommends rather than just reporting</li>
+</ul>
+
+<h2>The Honest Limitations</h2>
+
+<p>Agentic AI isn't magic. Here's what it can't do:</p>
+
+<ul>
+  <li><strong>It can make mistakes</strong> — particularly in unusual situations where its training data doesn't prepare it well. Unlike rules-based automation (which either works or fails clearly), agentic AI can produce plausible-sounding wrong answers.</li>
+  <li><strong>It's harder to debug</strong> — when something goes wrong with rules-based automation, you can trace the logic step by step. When an agentic system makes a bad decision, understanding why is more complex.</li>
+  <li><strong>It's more expensive to run</strong> — agentic AI uses significantly more computational resources than simple automation, and costs scale with usage volume.</li>
+  <li><strong>It requires careful setup</strong> — defining the goal correctly, setting appropriate guardrails, and testing for edge cases takes real work. You can't just "add AI" and expect it to work.</li>
+</ul>
+
+<div class="callout">
+  <p><strong>The honest assessment:</strong> Agentic AI is real and it's powerful. But it's not a replacement for solid automation foundations. The sellers who get the most value from agentic AI are the ones who have already built their rules-based automation well — so the agent can focus on the exceptions and judgment calls, not the volume work.</p>
+</div>
+
+<h2>When to Consider Agentic AI</h2>
+
+<p>Agentic AI is worth exploring when:</p>
+
+<ul>
+  <li>You're spending more than 10 hours per week on tasks that require judgment (not just rules)</li>
+  <li>You have a team of 3+ people whose primary role involves exception handling or customer communication</li>
+  <li>Your rules-based automation has hit its ceiling — it handles the routine perfectly but you're still drowning in exceptions</li>
+  <li>You have enough volume that the cost of the AI is justified by the time recovered</li>
+</ul>
+
+<p>Agentic AI is probably premature when:</p>
+
+<ul>
+  <li>Your core operations are still manual</li>
+  <li>You don't have a clear goal for what the AI should achieve</li>
+  <li>Your volume is too low to justify the cost</li>
+  <li>You don't have the technical support to set it up and maintain it properly</li>
+</ul>
+
+<h2>The Right Sequence</h2>
+
+<p>If you're building an e-commerce automation strategy, here's the right order:</p>
+
+<ol>
+  <li><strong>Rules-based automation first:</strong> Order processing, inventory sync, basic notifications. These handle the volume, run reliably, and give you a foundation.</li>
+  <li><strong>AI-assisted tools second:</strong> AI-powered customer message routing, intelligent triage, content generation. These layer on top of the automation.</li>
+  <li><strong>Agentic AI third:</strong> When your foundations are solid and you've identified specific judgment-heavy tasks that are consuming too much human time.</li>
+</ol>
+
+<p>Skipping to agentic AI without the foundation is like trying to run before you can walk. The foundation matters.</p>
+
+<div class="cta-block">
+  <h3>Curious whether agentic AI applies to your business?</h3>
+  <p>Book a free 30-minute discovery call. We'll tell you honestly whether agentic AI makes sense for your current situation — and if not, what to do first.</p>
+  <a href="/#contact" class="btn-primary">Book a Free Discovery Call →</a>
+</div>
+
+<p>Continue reading: <a href="/blog/ai-agents-vs-workflow-automation.html">AI Agents vs. Workflow Automation: What's the Difference</a> — the more detailed comparison of agentic vs. rules-based approaches. Or <a href="/blog/20-hour-work-week-ai-agents-amazon-sellers.html">The 20-Hour Work Week</a> — how AI agents are actually changing what sellers can automate today.</p>
+
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <p>© 2026 AgentleConsulting · <a href="/">agentleconsulting.com</a></p>
+    <p>Automation with a Human Hand</p>
+  </div>
+</footer>
+
+</body>
+</html>
