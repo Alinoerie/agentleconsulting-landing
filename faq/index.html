@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Answers to the 20 most common questions about e-commerce automation — covering pricing, timelines, platforms, GDPR, AI agents, and how to get started.">
+  <meta name="description" content="Answers to the 20 most common questions about workflow automation for growing SMBs — covering pricing, timelines, integrations, GDPR, AI agents, and how to get started.">
   <title>FAQ — AgentleConsulting</title>
   <link rel="canonical" href="https://agentleconsulting.vercel.app/faq/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <meta property="og:title" content="FAQ — AgentleConsulting">
-  <meta property="og:description" content="Answers to the 20 most common questions about e-commerce automation.">
+  <meta property="og:description" content="Answers to the 20 most common questions about workflow automation for growing SMBs.">
   <meta property="og:type" content="website">
   <style>
     :root { --sage: #6B9E78; --slate: #2D3A45; --amber: #D4956A; --cream: #F8F5F0; --stone: #EDE9E2; --pearl: #FEFCFA; --text: #4a5a66; }
@@ -100,7 +100,7 @@
     <div class="toc">
       <h2>Jump to a question</h2>
       <div class="toc-grid">
-        <a href="#q1">1. What is e-commerce automation?</a>
+        <a href="#q1">1. What is workflow automation for SMBs?</a>
         <a href="#q2">2. How long does implementation take?</a>
         <a href="#q3">3. Do I need technical skills?</a>
         <a href="#q4">4. How much does automation cost?</a>
@@ -109,9 +109,9 @@
         <a href="#q7">7. What platforms do you work with?</a>
         <a href="#q8">8. What happens if something breaks?</a>
         <a href="#q9">9. Which tasks should I automate first?</a>
-        <a href="#q10">10. Can you automate Amazon messages?</a>
+        <a href="#q10">10. Can you automate customer message handling?</a>
         <a href="#q11">11. How does automation affect my team?</a>
-        <a href="#q12">12. What if Amazon changes their API?</a>
+        <a href="#q12">12. What if my platforms change their APIs?</a>
         <a href="#q13">13. Zapier vs Make vs n8n?</a>
         <a href="#q14">14. Can I automate my repricing?</a>
         <a href="#q15">15. How do I track if it's working?</a>
@@ -124,9 +124,9 @@
     </div>
 
 <details id="q1">
-<summary>What is e-commerce automation?</summary>
+<summary>What is workflow automation for SMBs?</summary>
 <div class="faq-body">
-<p>E-commerce automation is using software to handle repetitive tasks that would otherwise require manual work — like processing orders, updating inventory, or sending tracking confirmations.</p>
+<p>Workflow automation is using software to handle repetitive tasks that would otherwise require manual work — like processing orders, updating inventory, sending notifications, or routing customer messages.</p>
 <p>The goal isn't to replace you or your team. It's to handle the tasks that eat your time without requiring your attention. When done right, automation handles the volume so you can handle the decisions.</p>
 <p>For small and medium businesses, automation typically covers: order processing, inventory sync, customer notifications, repricing, review requests, and customer message routing.</p>
 <p>The most common question we get is "do I need technical skills?" The answer: you need to understand your business. We handle the technical build. You stay focused on growing.</p>
@@ -140,7 +140,7 @@
 <p>The <strong>Discover Sprint</strong> — our 2-week initial engagement — is designed to get you from "interested" to "seeing your first automated workflow in production" in 14 days. That includes the discovery session, the build, and the handoff.</p>
 <p>For a full multi-workflow automation system (the <strong>Automate Package</strong>), the typical timeline is 4–6 weeks from signed agreement to full live operation.</p>
 <p>The <strong>Transform retainer</strong> is ongoing — we add 2 new workflows per quarter and maintain everything we've built.</p>
-<p>The main variable is complexity. A simple order-to-email workflow might be live in 3 days. A cross-channel inventory sync across Amazon, Bol.com, and a 3PL takes longer.</p>
+<p>The main variable is complexity. A simple data-sync workflow might be live in 3 days. A multi-system integration across your CRM, ERP, and supplier portals takes longer.</p>
 </div>
 </details>
 
@@ -150,7 +150,7 @@
 <p>No. That's explicitly not a requirement for working with us.</p>
 <p>We ask that you understand your business — which processes you follow, where the pain points are, what you need the system to do. You don't need to know how to build it.</p>
 <p>We handle the n8n workflows, API connections, integrations, and technical architecture. We test everything in a sandbox before it touches your live store. We document everything we build.</p>
-<p>What we do need from you: access to the platforms involved (Amazon Seller Central, Bol.com, your inventory system), a clear description of what you're currently doing manually, and someone on your team who can be the day-to-day contact for testing and feedback.</p>
+<p>What we do need from you: access to the platforms involved (your web store, CRM, inventory system, or supplier portals), a clear description of what you're currently doing manually, and someone on your team who can be the day-to-day contact for testing and feedback.</p>
 </div>
 </details>
 
@@ -182,7 +182,7 @@
 <div class="faq-body">
 <p>Data security matters, especially for e-commerce businesses who are working with customer data.</p>
 <ul>
-<li>We never store Amazon login credentials. We use official e-commerce APIs with OAuth, which gives limited scoped access — not full account access.</li>
+<li>We never store platform login credentials. We use official APIs with OAuth, which gives limited scoped access — not full account access.</li>
 <li>Client data is processed only for the specific purpose of building and maintaining the automation. We don't use client data for any other purpose.</li>
 <li>For any workflow involving EU customer data, we ensure the automation is designed to be GDPR-compliant — data minimization, no unnecessary retention, clear purpose limitation.</li>
 <li>We can provide a Data Processing Agreement (DPA) for clients who require one for their own compliance.</li>
@@ -194,15 +194,14 @@
 <details id="q7">
 <summary>What platforms do you work with?</summary>
 <div class="faq-body">
-<p>We specialize in e-commerce platforms — Amazon and Bol.com in particular. Specific integrations we've built:</p>
+<p>We work with a broad range of platforms and systems. Specific integrations we've built:</p>
 <ul>
-<li><strong>Amazon Seller Central (SP-API):</strong> orders, inventory, pricing, reviews</li>
-<li><strong>Bol.com Seller Portal:</strong> product feed, orders, inventory, returns</li>
-<li><strong>Shopify:</strong> orders, inventory, customer data</li>
-<li><strong>WooCommerce:</strong> orders, product data</li>
-<li><strong>Inventory management systems:</strong> Cin7, TradeGecko, custom 3PL APIs</li>
-<li><strong>Communication tools:</strong> Gmail, WhatsApp Business, Intercom</li>
-<li><strong>Spreadsheets:</strong> Google Sheets, Excel (for reporting)</li>
+<li><strong>Web stores:</strong> Shopify, WooCommerce, Magento, custom e-commerce platforms</li>
+<li><strong>Marketplaces:</strong> Amazon, Bol.com, eBay, Etsy</li>
+<li><strong>Inventory & ERP:</strong> Cin7, TradeGecko, Lightspeed, Exact, SAP</li>
+<li><strong>Communication:</strong> Gmail, WhatsApp Business, Intercom, Slack</li>
+<li><strong>Reporting:</strong> Google Sheets, Excel, Power BI</li>
+<li><strong>Custom tools:</strong> Any REST API or webhook-connected system</li>
 </ul>
 <p>If your platform isn't listed, ask. We assess new integrations on a case-by-case basis.</p>
 </div>
@@ -228,14 +227,14 @@
 <ul>
 <li><strong>Most repetitive:</strong> Same steps, different data. Not "build a new strategy" — "process this order." The more consistent the pattern, the easier and more reliable the automation.</li>
 <li><strong>Most frequent:</strong> Daily or multiple times per week. A task you do once a month isn't worth automating now.</li>
-<li><strong>Most interruptive:</strong> The task that stops you from doing real work. If checking Amazon messages interrupts your morning every 20 minutes, that's your priority.</li>
+<li><strong>Most interruptive:</strong> The task that stops you from doing real work. If checking inbox messages interrupts your morning every 20 minutes, that's your priority.</li>
 </ul>
 <p>The discovery call is specifically designed to help you identify and prioritize your highest-ROI automation opportunities.</p>
 </div>
 </details>
 
 <details id="q10">
-<summary>Can you automate my Amazon customer messages?</summary>
+<summary>Can you automate customer message handling?</summary>
 <div class="faq-body">
 <p>Yes — with a caveat.</p>
 <p>Routine messages (order status inquiries, return policy questions, sizing information, tracking updates) are highly automatable. We typically build a routing system that:</p>
@@ -260,10 +259,10 @@
 </details>
 
 <details id="q12">
-<summary>What if e-commerce platforms change their API?</summary>
+<summary>What if my platforms change their APIs?</summary>
 <div class="faq-body">
-<p>This happens. Amazon updates their SP-API periodically. Bol.com changes their seller portal occasionally.</p>
-<p>For clients on the <strong>Transform retainer</strong>, this is explicitly covered — we monitor for changes and update workflows proactively. When Amazon changed their order reporting API format in 2024, several sellers' existing automations broke silently for weeks before they noticed. Our clients didn't have an issue — we caught it and fixed it before it affected their operations.</p>
+<p>This happens. Platforms update their APIs periodically — it's normal.</p>
+<p>For clients on the <strong>Transform retainer</strong>, this is explicitly covered — we monitor for changes and update workflows proactively. Our clients didn't have an issue when platform APIs changed — we caught it and fixed it before it affected their operations.</p>
 <p>For clients on a one-time build (<strong>Automate Package</strong>), we provide 30 days of post-launch support. After that, API changes are covered under a maintenance agreement or you'd need to be on the Transform retainer.</p>
 </div>
 </details>
@@ -284,7 +283,7 @@
 <p>Yes — but there's an important distinction between repricing alerts and full repricing automation.</p>
 <p><strong>Repricing alerts:</strong> We build a system that monitors competitor prices and notifies you when someone undercuts you by more than X%. You decide whether to act. This is lower risk, lower cost, and usually what we recommend starting with.</p>
 <p><strong>Full repricing automation:</strong> The system adjusts your prices automatically based on rules you set. This works — and we can build it — but it's higher risk if the rules aren't carefully designed. We've seen repricing bots make negative-margin decisions in competitive situations. The guardrails matter enormously.</p>
-<p>Our recommendation for most sellers: start with repricing alerts. Get comfortable with the monitoring. Then decide whether you want full automation based on what you learn.</p>
+<p>Our recommendation for most businesses: start with repricing alerts. Get comfortable with the monitoring. Then decide whether you want full automation based on what you learn.</p>
 </div>
 </details>
 
