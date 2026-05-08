@@ -19,7 +19,6 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.75; font-size: 17px; }
     h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
     .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
     nav { background: var(--cream); border-bottom: 1px solid var(--stone); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
     nav .container { display: flex; align-items: center; height: 68px; }
@@ -44,20 +43,21 @@
     .toc a { font-size: 14px; color: var(--sage); text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
 
-    .faq-section { padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--stone); }
-    .faq-section:last-of-type { border-bottom: none; }
-    .faq-q { font-size: 18px; font-weight: 600; color: var(--slate); margin-bottom: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-    .faq-q::after { content: '+'; color: var(--sage); font-size: 22px; font-weight: 400; flex-shrink: 0; margin-top: -2px; transition: transform 0.2s; }
-    .faq-q.open::after { transform: rotate(45deg); }
-    .faq-a { font-size: 15px; color: var(--text); line-height: 1.8; display: none; padding-top: 4px; }
-    .faq-a.visible { display: block; }
-    .faq-a p { margin-bottom: 14px; }
-    .faq-a p:last-child { margin-bottom: 0; }
-    .faq-a ul { margin: 0 0 14px 20px; }
-    .faq-a li { margin-bottom: 6px; }
-    .faq-a strong { color: var(--slate); }
+    details { border-bottom: 1px solid var(--stone); }
+    summary { font-size: 18px; font-weight: 600; color: var(--slate); padding: 24px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; color: var(--sage); font-size: 22px; font-weight: 400; flex-shrink: 0; margin-top: -2px; }
+    details[open] summary::after { content: '×'; }
+    .faq-body { font-size: 15px; color: var(--text); line-height: 1.8; padding: 4px 0 28px; }
+    .faq-body p { margin-bottom: 14px; }
+    .faq-body p:last-child { margin-bottom: 0; }
+    .faq-body ul { margin: 0 0 14px 20px; }
+    .faq-body li { margin-bottom: 6px; }
+    .faq-body strong { color: var(--slate); }
+    .faq-body ol { margin: 0 0 14px 24px; }
+    .faq-body ol li { margin-bottom: 6px; list-style: decimal; }
 
-    .cta-strip { background: var(--slate); padding: 64px 0; text-align: center; }
+    .cta-strip { background: var(--slate); padding: 64px 0; text-align: center; margin-top: 56px; }
     .cta-strip h2 { font-size: clamp(24px, 4vw, 36px); color: var(--pearl); margin-bottom: 14px; }
     .cta-strip p { font-size: 17px; color: rgba(254,252,250,0.7); margin-bottom: 28px; max-width: 460px; margin-left: auto; margin-right: auto; }
     .btn-primary { display: inline-block; background: var(--sage); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
@@ -97,7 +97,6 @@
   </section>
 
   <div class="container" style="padding-bottom: 80px;">
-    <!-- TABLE OF CONTENTS -->
     <div class="toc">
       <h2>Jump to a question</h2>
       <div class="toc-grid">
@@ -124,266 +123,245 @@
       </div>
     </div>
 
-    <!-- Q1 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q1" onclick="toggle(this)">What is e-commerce automation?</h3>
-      <div class="faq-a">
-        <p>E-commerce automation is using software to handle repetitive tasks that would otherwise require manual work — like processing orders, updating inventory, or sending tracking confirmations.</p>
-        <p>The goal isn't to replace you or your team. It's to handle the tasks that eat your time without requiring your attention. When done right, automation handles the volume so you can handle the decisions.</p>
-        <p>For small and medium businesses, automation typically covers: order processing, inventory sync, customer notifications, repricing, review requests, and customer message routing.</p>
-        <p>The most common question we get is "do I need technical skills?" The answer: you need to understand your business. We handle the technical build. You stay focused on growing.</p>
-      </div>
-    </div>
+<details id="q1">
+<summary>What is e-commerce automation?</summary>
+<div class="faq-body">
+<p>E-commerce automation is using software to handle repetitive tasks that would otherwise require manual work — like processing orders, updating inventory, or sending tracking confirmations.</p>
+<p>The goal isn't to replace you or your team. It's to handle the tasks that eat your time without requiring your attention. When done right, automation handles the volume so you can handle the decisions.</p>
+<p>For small and medium businesses, automation typically covers: order processing, inventory sync, customer notifications, repricing, review requests, and customer message routing.</p>
+<p>The most common question we get is "do I need technical skills?" The answer: you need to understand your business. We handle the technical build. You stay focused on growing.</p>
+</div>
+</details>
 
-    <!-- Q2 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q2" onclick="toggle(this)">How long does automation implementation take?</h3>
-      <div class="faq-a">
-        <p>Most of our clients are live with their first automation within 2–4 weeks.</p>
-        <p>The <strong>Discover Sprint</strong> — our 2-week initial engagement — is designed to get you from "interested" to "seeing your first automated workflow in production" in 14 days. That includes the discovery session, the build, and the handoff.</p>
-        <p>For a full multi-workflow automation system (the <strong>Automate Package</strong>), the typical timeline is 4–6 weeks from signed agreement to full live operation.</p>
-        <p>The <strong>Transform retainer</strong> is ongoing — we add 2 new workflows per quarter and maintain everything we've built.</p>
-        <p>The main variable is complexity. A simple order-to-email workflow might be live in 3 days. A cross-channel inventory sync across Amazon, Bol.com, and a 3PL takes longer.</p>
-      </div>
-    </div>
+<details id="q2">
+<summary>How long does automation implementation take?</summary>
+<div class="faq-body">
+<p>Most of our clients are live with their first automation within 2–4 weeks.</p>
+<p>The <strong>Discover Sprint</strong> — our 2-week initial engagement — is designed to get you from "interested" to "seeing your first automated workflow in production" in 14 days. That includes the discovery session, the build, and the handoff.</p>
+<p>For a full multi-workflow automation system (the <strong>Automate Package</strong>), the typical timeline is 4–6 weeks from signed agreement to full live operation.</p>
+<p>The <strong>Transform retainer</strong> is ongoing — we add 2 new workflows per quarter and maintain everything we've built.</p>
+<p>The main variable is complexity. A simple order-to-email workflow might be live in 3 days. A cross-channel inventory sync across Amazon, Bol.com, and a 3PL takes longer.</p>
+</div>
+</details>
 
-    <!-- Q3 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q3" onclick="toggle(this)">Do I need technical skills or coding knowledge?</h3>
-      <div class="faq-a">
-        <p>No. That's explicitly not a requirement for working with us.</p>
-        <p>We ask that you understand your business — which processes you follow, where the pain points are, what you need the system to do. You don't need to know how to build it.</p>
-        <p>We handle the n8n workflows, API connections, integrations, and technical architecture. We test everything in a sandbox before it touches your live store. We document everything we build.</p>
-        <p>What we do need from you: access to the platforms involved (Amazon Seller Central, Bol.com, your inventory system), a clear description of what you're currently doing manually, and someone on your team who can be the day-to-day contact for testing and feedback.</p>
-      </div>
-    </div>
+<details id="q3">
+<summary>Do I need technical skills or coding knowledge?</summary>
+<div class="faq-body">
+<p>No. That's explicitly not a requirement for working with us.</p>
+<p>We ask that you understand your business — which processes you follow, where the pain points are, what you need the system to do. You don't need to know how to build it.</p>
+<p>We handle the n8n workflows, API connections, integrations, and technical architecture. We test everything in a sandbox before it touches your live store. We document everything we build.</p>
+<p>What we do need from you: access to the platforms involved (Amazon Seller Central, Bol.com, your inventory system), a clear description of what you're currently doing manually, and someone on your team who can be the day-to-day contact for testing and feedback.</p>
+</div>
+</details>
 
-    <!-- Q4 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q4" onclick="toggle(this)">How much does automation cost?</h3>
-      <div class="faq-a">
-        <p>Our pricing is structured in three packages:</p>
-        <ul>
-          <li><strong>Discover Sprint:</strong> €1,750 — Two-week audit, roadmap, and 2 demo workflows.</li>
-          <li><strong>Automate Package:</strong> €6,950 — Full build of your core automation system, typically 3–5 workflows.</li>
-          <li><strong>Transform Retainer:</strong> €2,500/month — Ongoing partnership with 2 new workflows per quarter.</li>
-        </ul>
-        <p>We don't do hourly billing. Flat rates mean no surprises — for you or for us.</p>
-        <p>Most clients see payback within 3–6 months based on time recovered.</p>
-      </div>
-    </div>
+<details id="q4">
+<summary>How much does automation cost?</summary>
+<div class="faq-body">
+<p>Our pricing is structured in three packages:</p>
+<ul>
+<li><strong>Discover Sprint:</strong> €1,750 — Two-week audit, roadmap, and 2 demo workflows.</li>
+<li><strong>Automate Package:</strong> €6,950 — Full build of your core automation system, typically 3–5 workflows.</li>
+<li><strong>Transform Retainer:</strong> €2,500/month — Ongoing partnership with 2 new workflows per quarter.</li>
+</ul>
+<p>We don't do hourly billing. Flat rates mean no surprises — for you or for us.</p>
+<p>Most clients see payback within 3–6 months based on time recovered.</p>
+</div>
+</details>
 
-    <!-- Q5 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q5" onclick="toggle(this)">Will automation work for my business size?</h3>
-      <div class="faq-a">
-        <p>We work with small and medium businesses doing €50K–€5M+ in annual revenue. Below €50K, the time savings often don't justify the investment. Above €5M, you typically have dedicated ops teams who benefit from more sophisticated systems.</p>
-        <p>The sweet spot is €200K–€3M — where there's enough volume for automation to make a meaningful difference, but not so much that you have internal resources already building these systems.</p>
-        <p>That said, every situation is different. If you're spending 10+ hours a week on manual tasks at any revenue level, automation probably makes sense. If you're spending 3 hours a week, it probably doesn't yet.</p>
-      </div>
-    </div>
+<details id="q5">
+<summary>Will automation work for my business size?</summary>
+<div class="faq-body">
+<p>We work with small and medium businesses doing €50K–€5M+ in annual revenue. Below €50K, the time savings often don't justify the investment. Above €5M, you typically have dedicated ops teams who benefit from more sophisticated systems.</p>
+<p>The sweet spot is €200K–€3M — where there's enough volume for automation to make a meaningful difference, but not so much that you have internal resources already building these systems.</p>
+<p>That said, every situation is different. If you're spending 10+ hours a week on manual tasks at any revenue level, automation probably makes sense. If you're spending 3 hours a week, it probably doesn't yet.</p>
+</div>
+</details>
 
-    <!-- Q6 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q6" onclick="toggle(this)">Is my data secure? How do you handle GDPR?</h3>
-      <div class="faq-a">
-        <p>Data security matters, especially for e-commerce businesses who are working with customer data.</p>
-        <ul>
-          <li>We never store Amazon login credentials. We use official e-commerce APIs with OAuth, which gives limited scoped access — not full account access.</li>
-          <li>Client data is processed only for the specific purpose of building and maintaining the automation. We don't use client data for any other purpose.</li>
-          <li>For any workflow involving EU customer data, we ensure the automation is designed to be GDPR-compliant — data minimization, no unnecessary retention, clear purpose limitation.</li>
-          <li>We can provide a Data Processing Agreement (DPA) for clients who require one for their own compliance.</li>
-        </ul>
-        <p>If GDPR compliance is a concern for your business, raise it in the discovery call. We'll walk you through exactly how each specific workflow handles data.</p>
-      </div>
-    </div>
+<details id="q6">
+<summary>Is my data secure? How do you handle GDPR?</summary>
+<div class="faq-body">
+<p>Data security matters, especially for e-commerce businesses who are working with customer data.</p>
+<ul>
+<li>We never store Amazon login credentials. We use official e-commerce APIs with OAuth, which gives limited scoped access — not full account access.</li>
+<li>Client data is processed only for the specific purpose of building and maintaining the automation. We don't use client data for any other purpose.</li>
+<li>For any workflow involving EU customer data, we ensure the automation is designed to be GDPR-compliant — data minimization, no unnecessary retention, clear purpose limitation.</li>
+<li>We can provide a Data Processing Agreement (DPA) for clients who require one for their own compliance.</li>
+</ul>
+<p>If GDPR compliance is a concern for your business, raise it in the discovery call. We'll walk you through exactly how each specific workflow handles data.</p>
+</div>
+</details>
 
-    <!-- Q7 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q7" onclick="toggle(this)">What platforms do you work with?</h3>
-      <div class="faq-a">
-        <p>We specialize in across e-commerce and beyond — the two dominant European marketplaces. Specific integrations we've built:</p>
-        <ul>
-          <li><strong>Amazon Seller Central (SP-API):</strong> orders, inventory, pricing, reviews</li>
-          <li><strong>Bol.com Seller Portal:</strong> product feed, orders, inventory, returns</li>
-          <li><strong>Shopify:</strong> orders, inventory, customer data</li>
-          <li><strong>WooCommerce:</strong> orders, product data</li>
-          <li><strong>Inventory management systems:</strong> Cin7, TradeGecko, custom 3PL APIs</li>
-          <li><strong>Communication tools:</strong> Gmail, WhatsApp Business, Intercom</li>
-          <li><strong>Spreadsheets:</strong> Google Sheets, Excel (for reporting)</li>
-        </ul>
-        <p>If your platform isn't listed, ask. We assess new integrations on a case-by-case basis.</p>
-      </div>
-    </div>
+<details id="q7">
+<summary>What platforms do you work with?</summary>
+<div class="faq-body">
+<p>We specialize in e-commerce platforms — Amazon and Bol.com in particular. Specific integrations we've built:</p>
+<ul>
+<li><strong>Amazon Seller Central (SP-API):</strong> orders, inventory, pricing, reviews</li>
+<li><strong>Bol.com Seller Portal:</strong> product feed, orders, inventory, returns</li>
+<li><strong>Shopify:</strong> orders, inventory, customer data</li>
+<li><strong>WooCommerce:</strong> orders, product data</li>
+<li><strong>Inventory management systems:</strong> Cin7, TradeGecko, custom 3PL APIs</li>
+<li><strong>Communication tools:</strong> Gmail, WhatsApp Business, Intercom</li>
+<li><strong>Spreadsheets:</strong> Google Sheets, Excel (for reporting)</li>
+</ul>
+<p>If your platform isn't listed, ask. We assess new integrations on a case-by-case basis.</p>
+</div>
+</details>
 
-    <!-- Q8 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q8" onclick="toggle(this)">What happens if something breaks?</h3>
-      <div class="faq-a">
-        <p>Every automation we build includes three layers of protection:</p>
-        <ul>
-          <li><strong>Error alerts:</strong> If something fails — an API call returns an error, a data format changes, a connection drops — we receive an alert immediately. Usually before you know anything happened.</li>
-          <li><strong>Fallback actions:</strong> For critical workflows (like order processing), we design fallback actions so the system degrades gracefully. If the automated path fails, a human gets notified with everything they need to handle it manually.</li>
-          <li><strong>Kill switches:</strong> Every workflow can be stopped immediately. If something is causing unexpected behavior, we can halt it in under 5 minutes.</li>
-        </ul>
-        <p>On the Transform retainer, we monitor everything remotely as part of the service. If something breaks, we fix it — and we tell you what happened and what we did about it.</p>
-      </div>
-    </div>
+<details id="q8">
+<summary>What happens if something breaks?</summary>
+<div class="faq-body">
+<p>Every automation we build includes three layers of protection:</p>
+<ul>
+<li><strong>Error alerts:</strong> If something fails — an API call returns an error, a data format changes, a connection drops — we receive an alert immediately. Usually before you know anything happened.</li>
+<li><strong>Fallback actions:</strong> For critical workflows (like order processing), we design fallback actions so the system degrades gracefully. If the automated path fails, a human gets notified with everything they need to handle it manually.</li>
+<li><strong>Kill switches:</strong> Every workflow can be stopped immediately. If something is causing unexpected behavior, we can halt it in under 5 minutes.</li>
+</ul>
+<p>On the Transform retainer, we monitor everything remotely as part of the service. If something breaks, we fix it — and we tell you what happened and what we did about it.</p>
+</div>
+</details>
 
-    <!-- Q9 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q9" onclick="toggle(this)">How do I know which tasks to automate first?</h3>
-      <div class="faq-a">
-        <p>The rule we use: automate the task that is most repetitive, most frequent, and most interruptive to your day.</p>
-        <ul>
-          <li><strong>Most repetitive:</strong> Same steps, different data. Not "build a new strategy" — "process this order." The more consistent the pattern, the easier and more reliable the automation.</li>
-          <li><strong>Most frequent:</strong> Daily or multiple times per week. A task you do once a month isn't worth automating now.</li>
-          <li><strong>Most interruptive:</strong> The task that stops you from doing real work. If checking Amazon messages interrupts your morning every 20 minutes, that's your priority.</li>
-        </ul>
-        <p>The discovery call is specifically designed to help you identify and prioritize your highest-ROI automation opportunities.</p>
-      </div>
-    </div>
+<details id="q9">
+<summary>How do I know which tasks to automate first?</summary>
+<div class="faq-body">
+<p>The rule we use: automate the task that is most repetitive, most frequent, and most interruptive to your day.</p>
+<ul>
+<li><strong>Most repetitive:</strong> Same steps, different data. Not "build a new strategy" — "process this order." The more consistent the pattern, the easier and more reliable the automation.</li>
+<li><strong>Most frequent:</strong> Daily or multiple times per week. A task you do once a month isn't worth automating now.</li>
+<li><strong>Most interruptive:</strong> The task that stops you from doing real work. If checking Amazon messages interrupts your morning every 20 minutes, that's your priority.</li>
+</ul>
+<p>The discovery call is specifically designed to help you identify and prioritize your highest-ROI automation opportunities.</p>
+</div>
+</details>
 
-    <!-- Q10 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q10" onclick="toggle(this)">Can you automate my Amazon customer messages?</h3>
-      <div class="faq-a">
-        <p>Yes — with a caveat.</p>
-        <p>Routine messages (order status inquiries, return policy questions, sizing information, tracking updates) are highly automatable. We typically build a routing system that:</p>
-        <ul>
-          <li>Auto-responds to common FAQs with accurate, personalized answers</li>
-          <li>Escalates complaints, damaged items, and complex cases to a human with full context</li>
-          <li>Logs everything so nothing falls through the cracks</li>
-        </ul>
-        <p>What you should know: Amazon's automated response tools have their own capabilities. The advantage of a custom build is that your responses can be genuinely personalized — pulling real order data, in your brand voice, not Amazon's generic templates.</p>
-        <p>Messages that require judgment, empathy, or negotiation should still go to a human. We'll tell you honestly in the discovery call which of your message types are automatable and which aren't.</p>
-      </div>
-    </div>
+<details id="q10">
+<summary>Can you automate my Amazon customer messages?</summary>
+<div class="faq-body">
+<p>Yes — with a caveat.</p>
+<p>Routine messages (order status inquiries, return policy questions, sizing information, tracking updates) are highly automatable. We typically build a routing system that:</p>
+<ul>
+<li>Auto-responds to common FAQs with accurate, personalized answers</li>
+<li>Escalates complaints, damaged items, and complex cases to a human with full context</li>
+<li>Logs everything so nothing falls through the cracks</li>
+</ul>
+<p>What you should know: Amazon's automated response tools have their own capabilities. The advantage of a custom build is that your responses can be genuinely personalized — pulling real order data, in your brand voice, not Amazon's generic templates.</p>
+<p>Messages that require judgment, empathy, or negotiation should still go to a human. We'll tell you honestly in the discovery call which of your message types are automatable and which aren't.</p>
+</div>
+</details>
 
-    <!-- Q11 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q11" onclick="toggle(this)">How does automation affect my team?</h3>
-      <div class="faq-a">
-        <p>Honestly: it changes their role.</p>
-        <p>In almost every case, when we automate manual processes, the people doing those tasks end up doing more valuable work. The order processing person becomes the exception handler. The person doing inventory updates becomes the person analyzing why stockouts happen.</p>
-        <p>What we watch for: people who feel threatened by automation, or who feel they weren't consulted. We involve the people doing the work in the discovery process — not just the owner — so everyone understands what's changing and why.</p>
-        <p>The goal is never to make anyone redundant. It's to free up your team's time for the work that actually needs their judgment and creativity.</p>
-      </div>
-    </div>
+<details id="q11">
+<summary>How does automation affect my team?</summary>
+<div class="faq-body">
+<p>Honestly: it changes their role.</p>
+<p>In almost every case, when we automate manual processes, the people doing those tasks end up doing more valuable work. The order processing person becomes the exception handler. The person doing inventory updates becomes the person analyzing why stockouts happen.</p>
+<p>What we watch for: people who feel threatened by automation, or who feel they weren't consulted. We involve the people doing the work in the discovery process — not just the owner — so everyone understands what's changing and why.</p>
+<p>The goal is never to make anyone redundant. It's to free up your team's time for the work that actually needs their judgment and creativity.</p>
+</div>
+</details>
 
-    <!-- Q12 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q12" onclick="toggle(this)">What if e-commerce and other platforms changes their API?</h3>
-      <div class="faq-a">
-        <p>This happens. Amazon updates their SP-API periodically. Bol.com changes their seller portal occasionally.</p>
-        <p>For clients on the <strong>Transform retainer</strong>, this is explicitly covered — we monitor for changes and update workflows proactively. When Amazon changed their order reporting API format in 2024, several sellers' existing automations broke silently for weeks before they noticed. Our clients didn't have an issue — we caught it and fixed it before it affected their operations.</p>
-        <p>For clients on a one-time build (<strong>Automate Package</strong>), we provide 30 days of post-launch support. After that, API changes are covered under a maintenance agreement or you'd need to be on the Transform retainer.</p>
-      </div>
-    </div>
+<details id="q12">
+<summary>What if e-commerce platforms change their API?</summary>
+<div class="faq-body">
+<p>This happens. Amazon updates their SP-API periodically. Bol.com changes their seller portal occasionally.</p>
+<p>For clients on the <strong>Transform retainer</strong>, this is explicitly covered — we monitor for changes and update workflows proactively. When Amazon changed their order reporting API format in 2024, several sellers' existing automations broke silently for weeks before they noticed. Our clients didn't have an issue — we caught it and fixed it before it affected their operations.</p>
+<p>For clients on a one-time build (<strong>Automate Package</strong>), we provide 30 days of post-launch support. After that, API changes are covered under a maintenance agreement or you'd need to be on the Transform retainer.</p>
+</div>
+</details>
 
-    <!-- Q13 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q13" onclick="toggle(this)">What's the difference between Zapier, Make, and n8n?</h3>
-      <div class="faq-a">
-        <p><strong>Zapier:</strong> Easiest to use, most limited. Best for simple workflows between mainstream tools. Has an Amazon integration, but it's basic. Good for: non-technical teams, simple automations, low volume.</p>
-        <p><strong>Make (formerly Integromat):</strong> More powerful than Zapier, visual builder, stronger e-commerce integrations. Better for multi-step workflows. Our current tool of choice for most builds. More flexible than Zapier, still accessible to non-developers.</p>
-        <p><strong>n8n:</strong> Most powerful, open-source, requires more technical knowledge to self-manage but we handle the technical side. Best for complex workflows, custom API connections, and enterprise-grade reliability. This is what we use for most of our production builds.</p>
-        <p>We don't recommend you self-manage n8n unless you have a developer on staff. We handle the hosting, maintenance, and monitoring.</p>
-      </div>
-    </div>
+<details id="q13">
+<summary>What's the difference between Zapier, Make, and n8n?</summary>
+<div class="faq-body">
+<p><strong>Zapier:</strong> Easiest to use, most limited. Best for simple workflows between mainstream tools. Has an Amazon integration, but it's basic. Good for: non-technical teams, simple automations, low volume.</p>
+<p><strong>Make (formerly Integromat):</strong> More powerful than Zapier, visual builder, stronger e-commerce integrations. Better for multi-step workflows. Our current tool of choice for most builds. More flexible than Zapier, still accessible to non-developers.</p>
+<p><strong>n8n:</strong> Most powerful, open-source, requires more technical knowledge to self-manage but we handle the technical side. Best for complex workflows, custom API connections, and enterprise-grade reliability. This is what we use for most of our production builds.</p>
+<p>We don't recommend you self-manage n8n unless you have a developer on staff. We handle the hosting, maintenance, and monitoring.</p>
+</div>
+</details>
 
-    <!-- Q14 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q14" onclick="toggle(this)">Can I automate my repricing?</h3>
-      <div class="faq-a">
-        <p>Yes — but there's an important distinction between repricing alerts and full repricing automation.</p>
-        <p><strong>Repricing alerts:</strong> We build a system that monitors competitor prices and notifies you when someone undercuts you by more than X%. You decide whether to act. This is lower risk, lower cost, and usually what we recommend starting with.</p>
-        <p><strong>Full repricing automation:</strong> The system adjusts your prices automatically based on rules you set. This works — and we can build it — but it's higher risk if the rules aren't carefully designed. We've seen repricing bots make negative-margin decisions in competitive situations. The guardrails matter enormously.</p>
-        <p>Our recommendation for most sellers: start with repricing alerts. Get comfortable with the monitoring. Then decide whether you want full automation based on what you learn.</p>
-      </div>
-    </div>
+<details id="q14">
+<summary>Can I automate my repricing?</summary>
+<div class="faq-body">
+<p>Yes — but there's an important distinction between repricing alerts and full repricing automation.</p>
+<p><strong>Repricing alerts:</strong> We build a system that monitors competitor prices and notifies you when someone undercuts you by more than X%. You decide whether to act. This is lower risk, lower cost, and usually what we recommend starting with.</p>
+<p><strong>Full repricing automation:</strong> The system adjusts your prices automatically based on rules you set. This works — and we can build it — but it's higher risk if the rules aren't carefully designed. We've seen repricing bots make negative-margin decisions in competitive situations. The guardrails matter enormously.</p>
+<p>Our recommendation for most sellers: start with repricing alerts. Get comfortable with the monitoring. Then decide whether you want full automation based on what you learn.</p>
+</div>
+</details>
 
-    <!-- Q15 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q15" onclick="toggle(this)">How do I track whether automation is actually working?</h3>
-      <div class="faq-a">
-        <p>We measure automation success in three ways:</p>
-        <ul>
-          <li><strong>Time recovered:</strong> We help you track time spent on manual tasks before and after automation. This is the most tangible metric — "I used to spend 4 hours on this every morning. Now I spend 12 minutes."</li>
-          <li><strong>Error rate:</strong> Automated systems don't get tired and make typos. We track error rates (wrong tracking numbers sent, inventory mismatches, missed messages) before and after. Typically: 90%+ reduction in processing errors.</li>
-          <li><strong>Pipeline metrics:</strong> For sales-focused automations, we track conversion rates, response times, and lead progression through the funnel.</li>
-        </ul>
-        <p>We provide a monthly report for Transform retainer clients showing exactly what the automations saved, what ran, and what was flagged.</p>
-      </div>
-    </div>
+<details id="q15">
+<summary>How do I track whether automation is actually working?</summary>
+<div class="faq-body">
+<p>We measure automation success in three ways:</p>
+<ul>
+<li><strong>Time recovered:</strong> We help you track time spent on manual tasks before and after automation. This is the most tangible metric — "I used to spend 4 hours on this every morning. Now I spend 12 minutes."</li>
+<li><strong>Error rate:</strong> Automated systems don't get tired and make typos. We track error rates (wrong tracking numbers sent, inventory mismatches, missed messages) before and after. Typically: 90%+ reduction in processing errors.</li>
+<li><strong>Pipeline metrics:</strong> For sales-focused automations, we track conversion rates, response times, and lead progression through the funnel.</li>
+</ul>
+<p>We provide a monthly report for Transform retainer clients showing exactly what the automations saved, what ran, and what was flagged.</p>
+</div>
+</details>
 
-    <!-- Q16 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q16" onclick="toggle(this)">Do I have to use all of Agentle's services?</h3>
-      <div class="faq-a">
-        <p>No. Our packages are modular.</p>
-        <p>You can start with a <strong>Discover Sprint</strong> — spend €1,750, get your roadmap, see your first 2 workflows running, and then decide whether to continue. You don't have to commit to the Automate Package or the Transform retainer.</p>
-        <p>Many clients start with Discover, decide they want the full build, and move to Automate. Some clients do Discover and then implement the workflows themselves using the roadmap — we don't mind, and we're honest about whether that's realistic given their technical capacity.</p>
-        <p>The Transform retainer is for clients who want ongoing partnership — maintenance, new workflows, strategy. It's not required to work with us.</p>
-      </div>
-    </div>
+<details id="q16">
+<summary>Do I have to use all of Agentle's services?</summary>
+<div class="faq-body">
+<p>No. Our packages are modular.</p>
+<p>You can start with a <strong>Discover Sprint</strong> — spend €1,750, get your roadmap, see your first 2 workflows running, and then decide whether to continue. You don't have to commit to the Automate Package or the Transform retainer.</p>
+<p>Many clients start with Discover, decide they want the full build, and move to Automate. Some clients do Discover and then implement the workflows themselves using the roadmap — we don't mind, and we're honest about whether that's realistic given their technical capacity.</p>
+<p>The Transform retainer is for clients who want ongoing partnership — maintenance, new workflows, strategy. It's not required to work with us.</p>
+</div>
+</details>
 
-    <!-- Q17 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q17" onclick="toggle(this)">Can you help with EU AI Act compliance?</h3>
-      <div class="faq-a">
-        <p>Yes — specifically for the automation systems we've built for you.</p>
-        <p>The EU AI Act (fully enforceable August 2, 2026) affects businesses who use AI tools in specific ways. Most of the automations we build fall into the "minimal risk" category — no specific obligations. The main area where compliance is relevant is AI-powered customer-facing chatbots and automated decision-making tools.</p>
-        <p>For <strong>Transform retainer clients</strong>, we include an annual AI Act compliance review of your automation stack. For one-time clients, we can provide documentation of what each automation does and how it handles data — which is the core of what an audit would ask for.</p>
-        <p>If you need a formal compliance assessment for a regulator or legal requirement, we'd refer you to a lawyer who specializes in this — that's outside our scope.</p>
-      </div>
-    </div>
+<details id="q17">
+<summary>Can you help with EU AI Act compliance?</summary>
+<div class="faq-body">
+<p>Yes — specifically for the automation systems we've built for you.</p>
+<p>The EU AI Act (fully enforceable August 2, 2026) affects businesses who use AI tools in specific ways. Most of the automations we build fall into the "minimal risk" category — no specific obligations. The main area where compliance is relevant is AI-powered customer-facing chatbots and automated decision-making tools.</p>
+<p>For <strong>Transform retainer clients</strong>, we include an annual AI Act compliance review of your automation stack. For one-time clients, we can provide documentation of what each automation does and how it handles data — which is the core of what an audit would ask for.</p>
+<p>If you need a formal compliance assessment for a regulator or legal requirement, we'd refer you to a lawyer who specializes in this — that's outside our scope.</p>
+</div>
+</details>
 
-    <!-- Q18 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q18" onclick="toggle(this)">What does the discovery call actually involve?</h3>
-      <div class="faq-a">
-        <p>30 minutes. No sales pitch. No obligation.</p>
-        <ul>
-          <li><strong>Tell us about your business</strong> (5 min): Platform(s), revenue range, team size, current automation status.</li>
-          <li><strong>We ask about your pain points</strong> (10 min): Where does your time go? What tasks do you dread? What breaks?</li>
-          <li><strong>We map your top 3 opportunities</strong> (10 min): Based on what you've told us, we identify the 3 workflows that would save you the most time with the clearest build path.</li>
-          <li><strong>We tell you honestly whether we can help</strong> (5 min): If what you need isn't a fit for us, we'll tell you. If it's a fit, we'll outline the next step.</li>
-        </ul>
-        <p>The goal is for you to leave the call with useful things to think about — regardless of whether we work together.</p>
-      </div>
-    </div>
+<details id="q18">
+<summary>What does the discovery call actually involve?</summary>
+<div class="faq-body">
+<p>30 minutes. No sales pitch. No obligation.</p>
+<ol>
+<li><strong>Tell us about your business</strong> (5 min): Platform(s), revenue range, team size, current automation status.</li>
+<li><strong>We ask about your pain points</strong> (10 min): Where does your time go? What tasks do you dread? What breaks?</li>
+<li><strong>We map your top 3 opportunities</strong> (10 min): Based on what you've told us, we identify the 3 workflows that would save you the most time with the clearest build path.</li>
+<li><strong>We tell you honestly whether we can help</strong> (5 min): If what you need isn't a fit for us, we'll tell you. If it's a fit, we'll outline the next step.</li>
+</ol>
+<p>The goal is for you to leave the call with useful things to think about — regardless of whether we work together.</p>
+</div>
+</details>
 
-    <!-- Q19 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q19" onclick="toggle(this)">What's the difference between automation and AI agents?</h3>
-      <div class="faq-a">
-        <p>This is a distinction worth understanding.</p>
-        <p><strong>Automation</strong> follows explicit rules: "When X happens, do Y." It's deterministic. It does exactly what you tell it, every time, without judgment. Most e-commerce automation — order processing, inventory sync, email triggers — is this type. Powerful, reliable, but limited to what you anticipated.</p>
-        <p><strong>AI agents</strong> can pursue a goal autonomously, making decisions along the way. They can handle exceptions, use multiple tools, and adapt when situations change. "Handle customer inquiries and make sure every customer who has a problem gets a resolution within 2 hours" — the agent figures out how to make that happen.</p>
-        <p>The practical difference: automation handles the routine. AI agents handle the ambiguous.</p>
-        <p>For most small and medium businesses today, starting with solid automation foundations (order processing, inventory sync) and then layering in AI agents for customer service and decision support is the right sequence.</p>
-      </div>
-    </div>
+<details id="q19">
+<summary>What's the difference between automation and AI agents?</summary>
+<div class="faq-body">
+<p>This is a distinction worth understanding.</p>
+<p><strong>Automation</strong> follows explicit rules: "When X happens, do Y." It's deterministic. It does exactly what you tell it, every time, without judgment. Most e-commerce automation — order processing, inventory sync, email triggers — is this type. Powerful, reliable, but limited to what you anticipated.</p>
+<p><strong>AI agents</strong> can pursue a goal autonomously, making decisions along the way. They can handle exceptions, use multiple tools, and adapt when situations change. "Handle customer inquiries and make sure every customer who has a problem gets a resolution within 2 hours" — the agent figures out how to make that happen.</p>
+<p>The practical difference: automation handles the routine. AI agents handle the ambiguous.</p>
+<p>For most small and medium businesses today, starting with solid automation foundations (order processing, inventory sync) and then layering in AI agents for customer service and decision support is the right sequence.</p>
+</div>
+</details>
 
-    <!-- Q20 -->
-    <div class="faq-section">
-      <h3 class="faq-q" id="q20" onclick="toggle(this)">How do I get started?</h3>
-      <div class="faq-a">
-        <p>The simplest path:</p>
-        <ol style="margin: 0 0 20px 24px;">
-          <li style="margin-bottom: 10px;"><strong>Book a discovery call</strong> — 30 minutes, no obligation.</li>
-          <li style="margin-bottom: 10px;"><strong>We map your top 3 opportunities</strong> in that call.</li>
-          <li><strong>You decide</strong> whether you want to move forward. If yes: we start with the Discover Sprint (2 weeks, €1,750). If no: you leave with a useful framework for thinking about automation on your own.</li>
-        </ol>
-        <p>Most clients who book a call move forward. But there's no pressure — the call is genuinely useful regardless.</p>
-        <a href="../book.html" class="btn-primary" style="display:inline-block; margin-top: 8px;">Book Your Free Discovery Call →</a>
-      </div>
-    </div>
+<details id="q20">
+<summary>How do I get started?</summary>
+<div class="faq-body">
+<p>The simplest path:</p>
+<ol>
+<li><strong>Book a discovery call</strong> — 30 minutes, no obligation.</li>
+<li><strong>We map your top 3 opportunities</strong> in that call.</li>
+<li><strong>You decide</strong> whether you want to move forward. If yes: we start with the Discover Sprint (2 weeks, €1,750). If no: you leave with a useful framework for thinking about automation on your own.</li>
+</ol>
+<p>Most clients who book a call move forward. But there's no pressure — the call is genuinely useful regardless.</p>
+<a href="../book.html" class="btn-primary" style="display:inline-block; margin-top: 8px;">Book Your Free Discovery Call →</a>
+</div>
+</details>
 
   </div>
 
-  <!-- CTA -->
   <section class="cta-strip">
     <div class="container">
       <h2>Still have questions?</h2>
@@ -402,20 +380,5 @@
       <p class="footer-tagline">Automation with a Human Hand</p>
     </div>
   </footer>
-
-  <script>
-    function toggle(el) {
-      const ans = el.nextElementSibling;
-      const isOpen = el.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
-      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('visible'));
-      // Open clicked if was closed
-      if (!isOpen) {
-        el.classList.add('open');
-        ans.classList.add('visible');
-      }
-    }
-  </script>
 </body>
 </html>
