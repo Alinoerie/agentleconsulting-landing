@@ -8,108 +8,153 @@
   <link rel="canonical" href="https://agentleconsulting.vercel.app/about/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap"></noscript>
   <meta property="og:title" content="About — AgentleConsulting">
   <meta property="og:description" content="We help small and medium businesses automate their operations — without the enterprise price tag. Built by operators, for business owners.">
   <meta property="og:type" content="website">
   <style>
     :root {
-      --sage: #6B9E78;
-      --slate: #2D3A45;
-      --amber: #D4956A;
-      --cream: #F8F5F0;
-      --stone: #EDE9E2;
-      --pearl: #FEFCFA;
-      --text: #4a5a66;
+      --cream:      #FAF8F5;
+      --pearl:      #FEFCFA;
+      --stone:      #EDE9E2;
+      --gold:       #C49A3C;
+      --gold-dark:  #A07C2A;
+      --amber:      #D4956A;
+      --sage:       #7BA888;
+      --sage-dark:  #6B9E78;
+      --slate:      #1C1917;
+      --slate-mid:  #2D3A45;
+      --text:       #44403C;
+      --muted:      #78716C;
+      --border:     rgba(28,25,23,0.1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.75; font-size: 17px; }
-    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .container--narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.75; font-size: 16px; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.15; color: var(--slate); }
+    a { color: inherit; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+    .container--narrow { max-width: 720px; margin: 0 auto; padding: 0 28px; }
 
-    /* NAV */
-    nav { background: var(--cream); border-bottom: 1px solid var(--stone); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
-    nav .container { display: flex; align-items: center; height: 68px; }
+    /* SCROLL ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* NAV: frosted glass */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 28px;
+      background: rgba(250,248,245,0.82);
+      backdrop-filter: blur(18px) saturate(1.6);
+      -webkit-backdrop-filter: blur(18px) saturate(1.6);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 24px rgba(28,25,23,0.06);
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-icon { width: 36px; height: 36px; position: relative; }
-    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--gold); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
     .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
-    .logo-text { font-weight: 600; font-size: 16px; color: var(--slate); }
-    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; margin-left: auto; }
-    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; }
-    .nav-links a:hover, .nav-links a.active { color: var(--sage); }
-    .nav-cta { background: var(--sage); color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none; }
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    .logo-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; color: var(--slate); letter-spacing: 0.3px; }
+    .nav-links { display: flex; gap: 36px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 14px; font-weight: 500; transition: color 0.2s; position: relative; }
+    .nav-links a:not(.nav-cta)::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.25s ease; }
+    .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+    .nav-links a:not(.nav-cta):hover { color: var(--gold); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; text-decoration: none; transition: background 0.2s, transform 0.15s !important; }
+    .nav-cta:hover { background: var(--gold-dark) !important; transform: translateY(-1px); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--slate); margin: 5px 0; transition: 0.25s; border-radius: 2px; }
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: rgba(250,248,245,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 24px 28px 32px; gap: 20px; box-shadow: 0 8px 32px rgba(28,25,23,0.12); border-bottom: 1px solid var(--border); }
+      .nav-links.open { display: flex; }
+      .nav-links li { text-align: center; }
+      .nav-links a:not(.nav-cta)::after { display: none; }
+    }
 
     /* PAGE HERO */
-    .page-hero { padding: 80px 0 72px; }
-    .page-hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; }
+    .page-hero { padding: 130px 0 72px; }
+    .page-hero .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
     .page-hero h1 { font-size: clamp(34px, 5vw, 56px); color: var(--slate); margin-bottom: 20px; max-width: 700px; }
-    .page-hero .lead { font-size: 20px; color: var(--text); max-width: 600px; line-height: 1.65; }
+    .page-hero .lead { font-size: 18px; color: var(--muted); max-width: 600px; line-height: 1.7; }
 
     /* STORY */
-    .story { padding: 72px 0; background: var(--pearl); }
+    .story { padding: 80px 0; background: var(--pearl); }
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 32px; } }
-    .story-text p { color: var(--text); margin-bottom: 18px; font-size: 16px; line-height: 1.75; }
+    .story-text p { color: var(--muted); margin-bottom: 18px; font-size: 16px; line-height: 1.75; }
     .story-text p:last-child { margin-bottom: 0; }
     .story-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .stat-card { background: var(--cream); border-radius: 12px; padding: 24px 20px; text-align: center; }
-    .stat-number { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 800; color: var(--slate); line-height: 1; }
-    .stat-label { font-size: 13px; color: var(--text); margin-top: 6px; }
+    .stat-card { background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; text-align: center; transition: box-shadow 0.25s, transform 0.25s; }
+    .stat-card:hover { box-shadow: 0 6px 24px rgba(28,25,23,0.07); transform: translateY(-2px); }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; color: var(--gold); line-height: 1; }
+    .stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
 
     /* VALUES */
-    .values { padding: 72px 0; }
+    .values { padding: 80px 0; background: var(--stone); }
     .values h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 12px; text-align: center; }
-    .values-sub { text-align: center; color: var(--text); font-size: 17px; margin-bottom: 48px; }
+    .values-sub { text-align: center; color: var(--muted); font-size: 17px; margin-bottom: 48px; }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } }
-    .value-card { background: var(--pearl); border: 1px solid var(--stone); border-radius: 14px; padding: 28px 24px; }
+    .value-card { background: var(--pearl); border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px; transition: box-shadow 0.3s, transform 0.3s; }
+    .value-card:hover { box-shadow: 0 12px 36px rgba(28,25,23,0.08); transform: translateY(-3px); }
     .value-icon { font-size: 32px; margin-bottom: 14px; }
     .value-card h3 { font-size: 19px; color: var(--slate); margin-bottom: 8px; }
-    .value-card p { font-size: 15px; color: var(--text); }
+    .value-card p { font-size: 15px; color: var(--muted); }
 
     /* WHO WE SERVE */
-    .who { padding: 72px 0; background: var(--stone); }
+    .who { padding: 80px 0; background: var(--cream); }
     .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
     @media (max-width: 768px) { .who-grid { grid-template-columns: 1fr; } }
     .who h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 20px; }
-    .who p { color: var(--text); margin-bottom: 16px; font-size: 16px; }
+    .who p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
     .who-list { list-style: none; margin-top: 20px; }
-    .who-list li { padding: 9px 0; border-bottom: 1px solid rgba(45,58,69,0.1); font-size: 15px; color: var(--text); display: flex; align-items: center; gap: 10px; }
-    .who-list li::before { content: '✓'; color: var(--sage); font-weight: 700; }
+    .who-list li { padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--muted); display: flex; align-items: center; gap: 10px; transition: color 0.2s; }
+    .who-list li:hover { color: var(--text); }
+    .who-list li::before { content: '→'; color: var(--gold); font-weight: 700; }
     .who-platforms { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .platform-card { background: var(--pearl); border-radius: 12px; padding: 24px 20px; text-align: center; }
-    .platform-name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 700; color: var(--slate); margin-bottom: 6px; }
-    .platform-note { font-size: 13px; color: var(--text); }
+    .platform-card { background: var(--pearl); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; text-align: center; transition: box-shadow 0.25s, transform 0.25s; }
+    .platform-card:hover { box-shadow: 0 6px 24px rgba(28,25,23,0.07); transform: translateY(-2px); }
+    .platform-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--slate); margin-bottom: 6px; }
+    .platform-note { font-size: 13px; color: var(--muted); }
 
     /* PRINCIPLES */
-    .principles { padding: 72px 0; }
+    .principles { padding: 80px 0; background: var(--pearl); }
     .principles h2 { font-size: clamp(26px, 4vw, 38px); color: var(--slate); margin-bottom: 40px; text-align: center; }
     .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     @media (max-width: 600px) { .principles-grid { grid-template-columns: 1fr; } }
-    .principle { background: var(--pearl); border: 1px solid var(--stone); border-radius: 12px; padding: 28px 26px; }
+    .principle { background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 28px 26px; transition: box-shadow 0.25s, transform 0.25s; }
+    .principle:hover { box-shadow: 0 8px 28px rgba(28,25,23,0.07); transform: translateY(-2px); }
     .principle h4 { font-size: 17px; font-weight: 700; color: var(--slate); margin-bottom: 8px; }
-    .principle p { font-size: 15px; color: var(--text); }
+    .principle p { font-size: 15px; color: var(--muted); }
 
     /* FOUNDER */
-    .founder { padding: 72px 0; background: var(--slate); }
+    .founder { padding: 80px 0; background: var(--slate); }
     .founder-card { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
     @media (max-width: 700px) { .founder-card { grid-template-columns: 1fr; } }
-    .founder-avatar { width: 160px; height: 160px; background: var(--stone); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 56px; font-weight: 800; color: var(--sage); flex-shrink: 0; }
+    .founder-avatar { width: 160px; height: 160px; background: rgba(196,154,60,0.1); border: 2px solid rgba(196,154,60,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 800; color: var(--gold); flex-shrink: 0; }
     .founder-info h2 { font-size: clamp(24px, 4vw, 36px); color: var(--pearl); margin-bottom: 6px; }
-    .founder-title { font-size: 14px; font-weight: 600; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-    .founder-info p { color: rgba(254,252,250,0.7); font-size: 16px; margin-bottom: 12px; line-height: 1.7; }
+    .founder-title { font-size: 14px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .founder-info p { color: rgba(254,252,250,0.65); font-size: 16px; margin-bottom: 12px; line-height: 1.7; }
     .founder-info p:last-child { margin-bottom: 0; }
 
     /* CTA */
-    .cta-strip { background: var(--cream); padding: 72px 0; text-align: center; border-top: 1px solid var(--stone); }
+    .cta-strip { background: var(--stone); padding: 80px 0; text-align: center; }
     .cta-strip h2 { font-size: clamp(26px, 4vw, 40px); color: var(--slate); margin-bottom: 14px; }
-    .cta-strip p { font-size: 17px; color: var(--text); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .btn-primary { display: inline-block; background: var(--sage); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
-    .btn-primary:hover { background: #4d7a5c; }
+    .cta-strip p { font-size: 17px; color: var(--muted); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-primary { display: inline-block; background: var(--gold); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; }
+    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,154,60,0.3); }
 
     /* FOOTER */
     footer { background: var(--stone); padding: 40px 0 32px; border-top: 1px solid rgba(45,58,69,0.1); }
@@ -128,7 +173,10 @@
         <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
         <span class="logo-text">AgentleConsulting</span>
       </a>
-      <ul class="nav-links">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../services/index.html">Services</a></li>
         <li><a href="index.html" class="active">About</a></li>
@@ -141,9 +189,9 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <p class="eyebrow">Our Story</p>
-      <h1>Automation with a human hand on the wheel.</h1>
-      <p class="lead">We started AgentleConsulting because we were tired of watching talented business owners drown in work that software should handle.</p>
+      <p class="eyebrow reveal">Our Story</p>
+      <h1 class="reveal reveal-delay-1">Automation with a human hand on the wheel.</h1>
+      <p class="lead reveal reveal-delay-2">We started AgentleConsulting because we were tired of watching talented business owners drown in work that software should handle.</p>
     </div>
   </section>
 
@@ -151,13 +199,13 @@
   <section class="story">
     <div class="container">
       <div class="story-grid">
-        <div class="story-text">
+        <div class="story-text reveal">
           <p>We started AgentleConsulting because we were tired of watching talented business owners drown in work that software should handle. If you're running any kind of operations-heavy SMB, you didn't build your business to spend your evenings copy-pasting inventory numbers into spreadsheets.</p>
           <p>We build the automation systems that make a growing business owner's life manageable again — not with generic tools, but with systems built for your specific workflow. We implement, we test, we hand over something that works.</p>
           <p>We believe automation should serve people, not replace them. The goal isn't to make humans irrelevant — it's to give them their time back.</p>
           <p>Everything we build is transparent: you know what's running, why it's running, and how to take over if you ever want to. No black-box retainers. No vendor lock-in.</p>
         </div>
-        <div class="story-stats">
+        <div class="story-stats reveal">
           <div class="stat-card">
             <div class="stat-number">40+</div>
             <div class="stat-label">Businesses helped</div>
@@ -167,7 +215,7 @@
             <div class="stat-label">Recovered per week</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">&lt;3mo</div>
+            <div class="stat-number">1.1mo</div>
             <div class="stat-label">Avg. ROI payback</div>
           </div>
           <div class="stat-card">
@@ -185,17 +233,17 @@
       <h2>How we work</h2>
       <p class="values-sub">Three principles that guide every engagement.</p>
       <div class="values-grid">
-        <div class="value-card">
+        <div class="value-card reveal">
           <div class="value-icon">🎯</div>
           <h3>Built for your workflow</h3>
           <p>We don't copy-paste templates. Every workflow is designed around how your specific business runs — your tools, your processes, your edge cases.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card reveal reveal-delay-1">
           <div class="value-icon">🔍</div>
           <h3>No black boxes</h3>
           <p>You get full documentation and training. When we're done, you can see exactly what every workflow does — and modify it yourself if you want to.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card reveal reveal-delay-2">
           <div class="value-icon">📈</div>
           <h3>Measured by time saved</h3>
           <p>We don't measure success by workflows deployed. We measure it by hours reclaimed — and we report that monthly so you know what you're paying for.</p>
@@ -208,7 +256,7 @@
   <section class="who">
     <div class="container">
       <div class="who-grid">
-        <div>
+        <div class="reveal">
           <h2>Who we work with.</h2>
           <p>We work with growing SMBs across Europe — from e-commerce operators to professional services firms to product businesses — who are past the survival stage and ready to scale without scaling their workload.</p>
           <p>You're doing six to seven figures and handling operations manually. You've already optimised what you can with off-the-shelf tools. But there's a layer of messy, business-specific work that no SaaS tool handles — and it's eating your evenings.</p>
@@ -221,7 +269,7 @@
             <li>Feeling the ceiling — can't grow without growing the workload</li>
           </ul>
         </div>
-        <div>
+        <div class="reveal reveal-delay-2">
           <div class="who-platforms">
             <div class="platform-card">
               <div class="platform-name">Marketplaces</div>
@@ -248,21 +296,21 @@
   <!-- PRINCIPLES -->
   <section class="principles">
     <div class="container--narrow">
-      <h2>What we believe about automation</h2>
+      <h2 class="reveal">What we believe about automation</h2>
       <div class="principles-grid">
-        <div class="principle">
+        <div class="principle reveal">
           <h4>Automation should be invisible when it's working.</h4>
           <p>The best workflows are the ones your team stops noticing — because the thing they used to do manually just... doesn't need doing anymore.</p>
         </div>
-        <div class="principle">
+        <div class="principle reveal reveal-delay-1">
           <h4>Every business is a custom case.</h4>
           <p>Template automations break. A workflow built for your specific catalogue structure, supplier cadence, and customer behavior actually holds.</p>
         </div>
-        <div class="principle">
+        <div class="principle reveal">
           <h4>The goal is a business you can step back from.</h4>
           <p>Not to build a fully autonomous operation — but to have a business that runs without requiring you to be the bottleneck on every decision.</p>
         </div>
-        <div class="principle">
+        <div class="principle reveal reveal-delay-1">
           <h4>You should never be locked in.</h4>
           <p>Every workflow we build is documented. If you want to move it, modify it, or take it over completely — you can. We don't use proprietary platforms to trap clients.</p>
         </div>
@@ -273,7 +321,7 @@
   <!-- FOUNDER -->
   <section class="founder">
     <div class="container">
-      <div class="founder-card">
+      <div class="founder-card reveal">
         <div class="founder-avatar">A</div>
         <div class="founder-info">
           <h2>Ali</h2>
@@ -288,7 +336,7 @@
   <!-- CTA -->
   <section class="cta-strip">
     <div class="container">
-      <h2>Ready to automate your business?</h2>
+      <h2 class="reveal">Ready to automate your business?</h2>
       <p>Book a free 30-minute discovery call. We'll figure out where you are and which package fits.</p>
       <a href="../book.html" class="btn-primary">Book a Free Call →</a>
     </div>
@@ -304,5 +352,34 @@
       <p class="footer-tagline">Automation with a Human Hand</p>
     </div>
   </footer>
+
+  <script>
+    /* ── Mobile hamburger ── */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ── Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>

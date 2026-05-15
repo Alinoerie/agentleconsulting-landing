@@ -35,16 +35,18 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap"></noscript>
 
   <style>
-    /* ─── TOKENS ─────────────────────────────────────────── */
+    /* ─── TOKENS (Noè Builders warm premium palette) ────── */
     :root {
       --cream:      #FAF8F5;
       --pearl:      #FEFCFA;
       --stone:      #EDE9E2;
-      --gold:       #8B6914;
+      --gold:       #C49A3C;
+      --gold-light: #D4AF5A;
+      --gold-dark:  #A07C2A;
       --amber:      #D4956A;
       --amber-dark: #B87A50;
-      --sage:       #6B9E78;
-      --sage-dark:  #5a8a68;
+      --sage:       #7BA888;
+      --sage-dark:  #6B9E78;
       --slate:      #1C1917;
       --slate-mid:  #2D3A45;
       --text:       #44403C;
@@ -129,7 +131,7 @@
     .logo-arc {
       width: 28px;
       height: 28px;
-      border: 3px solid var(--sage);
+      border: 3px solid var(--gold);
       border-bottom: none;
       border-right: none;
       border-radius: 50% 0 0 0;
@@ -182,7 +184,7 @@
     .nav-links a:not(.nav-cta):hover { color: var(--gold); }
 
     .nav-cta {
-      background: var(--sage) !important;
+      background: var(--gold) !important;
       color: var(--pearl) !important;
       padding: 9px 20px;
       border-radius: 6px;
@@ -191,7 +193,7 @@
       transition: background 0.2s, transform 0.15s !important;
     }
     .nav-cta:hover {
-      background: var(--sage-dark) !important;
+      background: var(--gold-dark) !important;
       transform: translateY(-1px);
     }
 
@@ -325,7 +327,7 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: var(--sage);
+      background: var(--gold);
       color: var(--pearl);
       padding: 15px 34px;
       border-radius: 8px;
@@ -339,9 +341,9 @@
       letter-spacing: 0.2px;
     }
     .btn-primary:hover {
-      background: var(--sage-dark);
+      background: var(--gold-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(107,158,120,0.3);
+      box-shadow: 0 8px 24px rgba(196,154,60,0.35);
     }
     .btn-primary:active { transform: translateY(0); }
     .btn-ghost {
@@ -362,6 +364,68 @@
       color: var(--pearl);
       background: rgba(255,255,255,0.06);
     }
+    /* ─── SCROLL INDICATOR ──────────────────────────────── */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .scroll-chevron {
+      width: 22px;
+      height: 22px;
+      border-right: 2px solid rgba(254,252,250,0.3);
+      border-bottom: 2px solid rgba(254,252,250,0.3);
+      transform: rotate(45deg);
+      animation: scroll-bounce 2.2s ease-in-out infinite;
+    }
+    @keyframes scroll-bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
+      50% { transform: rotate(45deg) translateY(8px); opacity: 1; }
+    }
+
+    /* ─── TRUST STRIP: below hero, before problem ───────── */
+    .trust-strip {
+      background: var(--pearl);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .trust-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) { .trust-strip-inner { grid-template-columns: 1fr; gap: 24px; text-align: center; } }
+    .trust-strip-item {
+      text-align: center;
+      padding: 0 32px;
+      position: relative;
+    }
+    .trust-strip-item + .trust-strip-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 40px;
+      width: 1px;
+      background: var(--border);
+    }
+    @media (max-width: 600px) { .trust-strip-item + .trust-strip-item::before { display: none; } }
+    .trust-strip-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .trust-strip-label { font-size: 14px; color: var(--muted); margin-top: 6px; }
+
+    /* ─── HERO TRUST (pills inside hero) ─────────────────── */
     .hero-trust {
       margin-top: 64px;
       display: flex;
@@ -480,15 +544,15 @@
       transform: translateY(-4px);
     }
     .pricing-card.featured {
-      border-color: var(--sage);
-      box-shadow: 0 0 0 1px var(--sage), 0 16px 48px rgba(107,158,120,0.15);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold), 0 16px 48px rgba(196,154,60,0.15);
     }
     .pricing-badge {
       position: absolute;
       top: -13px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--sage);
+      background: var(--gold);
       color: var(--pearl);
       font-size: 11px;
       font-weight: 700;
@@ -542,7 +606,7 @@
     }
     .pricing-features li::before {
       content: '✓';
-      color: var(--sage);
+      color: var(--gold);
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 1px;
@@ -562,15 +626,16 @@
       text-align: center;
     }
     .btn-outline:hover {
-      background: var(--sage);
+      background: var(--gold);
+      border-color: var(--gold);
       color: var(--pearl);
       transform: translateY(-1px);
     }
     .btn-outline-dark {
-      border-color: var(--slate);
-      color: var(--slate);
+      border-color: var(--gold);
+      color: var(--gold);
     }
-    .btn-outline-dark:hover { background: var(--slate); color: var(--pearl); }
+    .btn-outline-dark:hover { background: var(--gold); border-color: var(--gold); color: var(--pearl); }
 
     /* ─── PROCESS: SPLIT-STEP LAYOUT ─────────────────────── */
     .process {
@@ -729,6 +794,72 @@
       flex-shrink: 0;
     }
 
+    /* ─── FULL-BLEED QUOTE: dark editorial section ──────── */
+    .quote-section {
+      background: var(--slate);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 80% at 10% 50%, rgba(196,154,60,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 90% 50%, rgba(212,149,106,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .quote-section .container { position: relative; z-index: 1; max-width: 820px; }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 120px;
+      line-height: 0.5;
+      color: var(--gold);
+      opacity: 0.25;
+      display: block;
+      margin-bottom: 32px;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(20px, 3vw, 28px);
+      color: var(--pearl);
+      line-height: 1.55;
+      margin-bottom: 36px;
+      letter-spacing: -0.01em;
+    }
+    .quote-attribution {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .quote-avatar {
+      width: 48px;
+      height: 48px;
+      background: rgba(196,154,60,0.15);
+      border: 1px solid rgba(196,154,60,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .quote-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--pearl);
+    }
+    .quote-role {
+      font-size: 13px;
+      color: rgba(254,252,250,0.45);
+      margin-top: 2px;
+    }
+
     /* ─── ROI CASE: FULL-BLEED STAT SECTION ──────────────── */
     .roi-case {
       background: var(--slate);
@@ -801,12 +932,12 @@
     .why-card:hover {
       box-shadow: 0 12px 36px rgba(28,25,23,0.08);
       transform: translateY(-3px);
-      border-color: rgba(107,158,120,0.3);
+      border-color: rgba(196,154,60,0.3);
     }
     .why-icon {
       width: 46px;
       height: 46px;
-      background: rgba(107,158,120,0.1);
+      background: rgba(196,154,60,0.1);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -815,7 +946,7 @@
       font-size: 22px;
       transition: background 0.25s;
     }
-    .why-card:hover .why-icon { background: rgba(107,158,120,0.18); }
+    .why-card:hover .why-icon { background: rgba(196,154,60,0.18); }
     .why-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--slate); }
     .why-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
@@ -975,17 +1106,39 @@
       <div class="hero-trust">
         <span class="hero-trust-label">Trusted by growing SMBs across Europe</span>
         <div class="trust-pill">
-          <svg width="13" height="13" fill="none" stroke="#D4956A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg width="13" height="13" fill="none" stroke="#C49A3C" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
           €50K–€50M revenue range
         </div>
         <div class="trust-pill">
-          <svg width="13" height="13" fill="none" stroke="#D4956A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg width="13" height="13" fill="none" stroke="#C49A3C" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
           Netherlands-based
         </div>
         <div class="trust-pill">
-          <svg width="13" height="13" fill="none" stroke="#D4956A" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg width="13" height="13" fill="none" stroke="#C49A3C" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
           No dev team required
         </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP: stats bar between hero and problem -->
+  <section class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="trust-strip-item reveal">
+        <div class="trust-strip-number">40+</div>
+        <div class="trust-strip-label">Businesses helped</div>
+      </div>
+      <div class="trust-strip-item reveal reveal-delay-1">
+        <div class="trust-strip-number">10–20h</div>
+        <div class="trust-strip-label">Recovered per week</div>
+      </div>
+      <div class="trust-strip-item reveal reveal-delay-2">
+        <div class="trust-strip-number">1.1mo</div>
+        <div class="trust-strip-label">Average ROI payback</div>
       </div>
     </div>
   </section>
@@ -1215,6 +1368,23 @@
       <div class="roi-body reveal">
         <p>At €44/hour opportunity cost, 60h/month of manual onboarding work costs <strong>€2,640/month</strong>. An n8n-based automation system costs <strong>€2,750 to build + €44/month</strong>. Payback in 1.1 months. That's a <strong>200–500% Year 1 ROI</strong> — typical for well-implemented SMB automation.</p>
         <p>SMBs automating 70% of support operations consistently see <strong>€80K–€100K/year</strong> in labor savings against <strong>€5K–€25K/year</strong> in AI/automation costs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-BLEED QUOTE: testimonial -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="reveal">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Ali didn't just automate our order processing — he gave me my evenings back. I went from spending 3 hours a day on manual entry to having workflows that run themselves while I sleep. It's the best investment I've made in my business.</p>
+        <div class="quote-attribution">
+          <div class="quote-avatar">M</div>
+          <div>
+            <div class="quote-name">Michiel van der Berg</div>
+            <div class="quote-role">Founder, Bol.com marketplace seller · €1.2M/year revenue</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
