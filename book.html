@@ -8,130 +8,122 @@
   <link rel="canonical" href="https://agentleconsulting.vercel.app/book.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap"></noscript>
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://agentleconsulting.vercel.app/book.html">
   <meta property="og:title" content="Book a Discovery Call — AgentleConsulting">
   <meta property="og:description" content="Free 30-minute discovery call. No commitment. Find out if automation could save your business 10–20 hours a week.">
-  <meta property="og:image" content="https://agentleconsulting.vercel.app/og-image.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Book a Discovery Call — AgentleConsulting">
-  <meta name="twitter:description" content="Free 30-minute discovery call. No commitment. Find out if automation could save your business 10–20 hours a week.">
-
-  <!-- Structured Data: ProfessionalService -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "AgentleConsulting",
-    "description": "Custom automation systems for small and medium businesses in Europe. We build, we test, we hand over — and we stay to maintain it.",
-    "url": "https://agentleconsulting.vercel.app",
-    "telephone": "+31-6-12345678",
-    "email": "hello@agentleconsulting.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Amsterdam",
-      "addressCountry": "NL"
-    },
-    "priceRange": "€1,750 – €2,500/month",
-    "areaServed": ["Netherlands", "Belgium", "Germany"],
-    "serviceType": ["Workflow Automation", "Business Process Automation", "n8n Workflows", "AI Agent Integration"],
-    "sameAs": [
-      "https://www.linkedin.com/company/agentleconsulting"
-    ]
-  }
-  </script>
 
   <style>
     :root {
-      --sage: #6B9E78;
-      --slate: #2D3A45;
-      --amber: #D4956A;
-      --cream: #F8F5F0;
-      --stone: #EDE9E2;
-      --pearl: #FEFCFA;
+      --cream:   #FAF8F5;
+      --pearl:   #FEFCFA;
+      --stone:   #EDE9E2;
+      --gold:    #C49A3C;
+      --gold-dk: #A07C2A;
+      --slate:   #1C1917;
+      --text:    #44403C;
+      --muted:   #78716C;
+      --border:  #E7E5E4;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--cream);
-      color: var(--slate);
+      color: var(--text);
       line-height: 1.7;
-      font-size: 17px;
+      font-size: 16px;
     }
-    h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
-    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.15; color: var(--slate); }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
 
     /* NAV */
-    nav { background: var(--cream); border-bottom: 1px solid var(--stone); padding: 0 24px; }
-    nav .container { display: flex; align-items: center; height: 68px; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-icon { width: 36px; height: 36px; position: relative; }
-    .logo-arc { width: 28px; height: 28px; border: 3px solid var(--sage); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
-    .logo-dot { width: 9px; height: 9px; background: var(--amber); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
-    .logo-text { font-weight: 600; font-size: 16px; color: var(--slate); }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,248,245,0.9);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 34px; height: 34px; position: relative; }
+    .logo-arc { width: 26px; height: 26px; border: 2.5px solid var(--gold); border-bottom: none; border-right: none; border-radius: 50% 0 0 0; transform: rotate(-45deg); position: absolute; top: 4px; left: 0; }
+    .logo-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; position: absolute; top: 2px; right: 2px; }
+    .logo-text { font-weight: 600; font-size: 15px; color: var(--slate); }
     .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; margin-left: auto; }
-    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--sage); }
-    .nav-cta { background: var(--sage); color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none; }
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--slate); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-dk); }
+    @media (max-width: 768px) { .nav-links { display: none; } nav { padding: 0 24px; } }
 
     /* PAGE HERO */
     .page-hero { text-align: center; padding: 80px 0 60px; }
-    .page-hero h1 { font-size: clamp(32px, 5vw, 52px); color: var(--slate); margin-bottom: 16px; }
-    .page-hero p { font-size: 18px; color: #5a6b77; max-width: 520px; margin: 0 auto; }
+    .page-hero h1 { font-size: clamp(30px, 4.5vw, 48px); color: var(--slate); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .page-hero p { font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
 
-    /* MAIN CONTENT */
-    .book-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 80px; }
+    /* MAIN LAYOUT */
+    .book-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 80px; }
     @media (max-width: 768px) { .book-layout { grid-template-columns: 1fr; } }
 
-    .calendly-section { background: var(--pearl); border: 1px solid var(--stone); border-radius: 16px; padding: 36px; }
+    .calendly-section { background: var(--pearl); border: 1px solid var(--border); padding: 36px; }
     .calendly-section h2 { font-size: 22px; margin-bottom: 8px; color: var(--slate); }
-    .calendly-section p { font-size: 15px; color: #5a6b77; margin-bottom: 24px; }
-    .calendly-placeholder { background: var(--stone); border-radius: 12px; padding: 60px 24px; text-align: center; border: 2px dashed #c5bfb6; }
-    .calendly-placeholder p { font-size: 15px; color: #8899a6; }
-    .calendly-placeholder .pending-tag { display: inline-block; background: rgba(107,158,120,0.15); color: var(--sage); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 12px; }
+    .calendly-section p { font-size: 15px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+    .calendly-pending { display: flex; align-items: center; gap: 8px; background: rgba(196,154,60,0.1); border: 1px solid rgba(196,154,60,0.2); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; padding: 6px 14px; margin-bottom: 20px; }
+    .calendly-placeholder { background: var(--stone); border-radius: 12px; padding: 56px 24px; text-align: center; border: 1px dashed var(--border); }
+    .calendly-placeholder p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .calendly-placeholder p strong { display: block; color: var(--slate); font-size: 15px; margin-bottom: 8px; }
 
+    /* FORM */
     .contact-section h2 { font-size: 22px; margin-bottom: 8px; color: var(--slate); }
-    .contact-section > p { font-size: 15px; color: #5a6b77; margin-bottom: 28px; }
+    .contact-section > p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
     .form-group { margin-bottom: 18px; }
     .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--slate); margin-bottom: 6px; }
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 11px 14px; border: 1px solid var(--stone); border-radius: 8px;
-      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; background: var(--pearl);
+      width: 100%; padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif; font-size: 15px;
+      background: var(--pearl);
       color: var(--slate); transition: border-color 0.2s; outline: none;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232D3A45' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
-    .btn-primary { background: var(--sage); color: var(--pearl); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: background 0.2s; border: none; cursor: pointer; display: inline-block; width: 100%; text-align: center; }
-    .btn-primary:hover { background: #5a8a68; }
-    .form-note { font-size: 12px; color: #8899a6; margin-top: 12px; text-align: center; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 96px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2378716C' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    .btn-primary { background: var(--gold); color: var(--pearl); padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; display: inline-block; width: 100%; text-align: center; }
+    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .form-note { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
 
-    /* WHAT TO EXPECT */
-    .what-next { background: var(--stone); padding: 60px 0; }
-    .what-next h2 { font-size: 28px; text-align: center; margin-bottom: 40px; color: var(--slate); }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+    /* WHAT NEXT */
+    .what-next { background: var(--pearl); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 0; }
+    .what-next h2 { font-size: clamp(24px, 3.5vw, 36px); text-align: center; margin-bottom: 40px; color: var(--slate); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    @media (max-width: 700px) { .steps { grid-template-columns: repeat(2, 1fr); } }
     .step { text-align: center; }
-    .step-num { width: 40px; height: 40px; background: var(--sage); color: var(--pearl); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; margin: 0 auto 12px; }
-    .step h3 { font-size: 16px; margin-bottom: 6px; color: var(--slate); }
-    .step p { font-size: 14px; color: #5a6b77; }
+    .step-num { width: 44px; height: 44px; border: 1.5px solid var(--gold); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin: 0 auto 14px; }
+    .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--slate); }
+    .step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
     /* CTA */
     .cta-section { background: var(--slate); padding: 80px 0; text-align: center; }
-    .cta-section h2 { font-size: clamp(26px, 4vw, 40px); color: var(--pearl); margin-bottom: 16px; }
-    .cta-section p { font-size: 17px; color: rgba(254,252,250,0.65); max-width: 480px; margin: 0 auto 32px; }
-    .cta-section .btn-primary { width: auto; display: inline-block; padding: 16px 36px; }
+    .cta-section h2 { font-size: clamp(26px, 4vw, 42px); color: var(--pearl); margin-bottom: 14px; }
+    .cta-section p { font-size: 17px; color: rgba(254,252,250,0.5); max-width: 460px; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-section .btn-primary { width: auto; display: inline-block; padding: 15px 36px; }
 
     /* FOOTER */
-    footer { background: var(--stone); padding: 40px 0 32px; border-top: 1px solid rgba(45,58,69,0.1); }
+    footer { background: var(--pearl); border-top: 1px solid var(--border); padding: 40px 0 32px; }
     footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    footer p { font-size: 13px; color: #8899a6; }
-    .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); font-size: 14px; }
+    footer p { font-size: 13px; color: var(--muted); }
+    .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-size: 14px; }
   </style>
 </head>
 <body>
@@ -144,9 +136,9 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Book a Call</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="about/index.html">About</a></li>
+        <li><a href="book.html" class="nav-cta">Book a Call</a></li>
       </ul>
     </div>
   </nav>
@@ -160,15 +152,18 @@
 
   <div class="container">
     <div class="book-layout">
+
       <!-- Calendly Side -->
       <div class="calendly-section">
-        <div class="pending-tag">Calendly — Awaiting Ali to Create Account</div>
+        <div class="calendly-pending">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Calendly — Awaiting Setup
+        </div>
         <h2>Pick a time that works.</h2>
         <p>Select a 30-minute slot below. You'll get an instant confirmation with a Zoom link.</p>
         <div class="calendly-placeholder">
-          <!-- Replace with: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-CALENDLY-LINK" style="min-width:320px;height:700px;"></div> -->
-          <p>📅 Calendly widget will be embedded here once Ali sets up the account.</p>
-          <p style="margin-top:8px; font-size:13px; color:#aaa;">Action: Create Calendly account → share link → Dev embeds it.</p>
+          <p><strong>Calendly widget will be embedded here once Ali sets up the account.</strong></p>
+          <p>Action: Create Calendly account — share link — Dev embeds it.</p>
         </div>
       </div>
 
@@ -210,10 +205,11 @@
             <label for="pain">Biggest Pain Point</label>
             <textarea id="pain" name="pain" placeholder="e.g. Invoice processing takes 3 hours every Monday morning…"></textarea>
           </div>
-          <button type="submit" class="btn-primary" id="submit-btn">Send Message →</button>
-          <p class="form-note">🔒 No spam. No third-party sharing. Just a reply from a real human.</p>
+          <button type="submit" class="btn-primary" id="submit-btn">Send Message</button>
+          <p class="form-note">No spam. No third-party sharing. Just a reply from a real human.</p>
         </form>
       </div>
+
     </div>
   </div>
 
@@ -250,7 +246,7 @@
     <div class="container">
       <h2>Not ready to book?</h2>
       <p>Email us directly at hello@agentleconsulting.com or browse the site to learn more about how we work.</p>
-      <a href="index.html" class="btn-primary">Back to Homepage →</a>
+      <a href="index.html" class="btn-primary">Back to Homepage</a>
     </div>
   </section>
 
@@ -266,12 +262,10 @@
       e.preventDefault();
       var btn = document.getElementById('submit-btn');
       var form = document.getElementById('contact-form');
-      var data = new FormData(form);
 
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      // Log GA4 event
       if (typeof gtag !== 'undefined') {
         gtag('event', 'generate_lead', {
           event_category: 'engagement',
@@ -279,61 +273,18 @@
         });
       }
 
-      // Simulate send (replace with actual endpoint)
       setTimeout(function() {
-        btn.textContent = '✓ Message Sent!';
-        btn.style.background = '#5a8a68';
+        btn.textContent = 'Message sent — we\'ll be in touch soon.';
+        btn.style.background = '#6B9E78';
         form.reset();
         setTimeout(function() {
-          btn.textContent = 'Send Message →';
+          btn.textContent = 'Send Message';
           btn.style.background = '';
           btn.disabled = false;
-        }, 3000);
+        }, 4000);
       }, 800);
     }
   </script>
-
-  <!-- GA4 placeholder — replace G-XXXXXXXXXX with actual ID -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
-
-  <!-- Microsoft Clarity — replace YOUR_CLARITY_PROJECT_ID with actual ID -->
-  <!--
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
-  </script>
-  -->
-
-  <!-- LinkedIn Insight Tag — replace LP_ID with actual Partner ID -->
-  <!--
-  <script type="text/javascript">
-    _linkedin_partner_id = "LP_ID";
-    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    (function(l) {
-      if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-      window.lintrk.q=[]}
-      var s = document.getElementsByTagName("script")[0];
-      var b = document.createElement("script");
-      b.type = "text/javascript";b.async = true;
-      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-      s.parentNode.insertBefore(b, s);})(window.lintrk);
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=LP_ID&fmt=gif" />
-  </noscript>
-  -->
 
 </body>
 </html>
