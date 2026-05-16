@@ -12,11 +12,6 @@
       "source": "/about",
       "destination": "/about/",
       "permanent": true
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/",
-      "permanent": true
     }
   ]
 }
