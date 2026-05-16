@@ -190,7 +190,7 @@
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
     /* ─── RESPONSIVE ───────────────────────────────────────── */
      @media (max-width: 768px) {
-       .diff-grid { grid-template-columns: 1fr !important; }
+       .diff-grid { grid-template-columns: repeat(2, 1fr) !important; }
        .nav-links {
          display: none;
          flex-direction: column;
@@ -206,7 +206,7 @@
        .nav-links.open { display: flex; }
      }
      @media (max-width: 480px) {
-       .diff-grid { grid-template-columns: 1fr !important; }
+       .diff-grid { grid-template-columns: repeat(2, 1fr) !important; }
      }
      @media (max-width: 768px) {
       .hamburger { display: block; }
@@ -317,7 +317,7 @@
     .trust-strip-inner {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+      gap: 1px;
     }
     @media (max-width: 640px) {
       .trust-strip-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -361,7 +361,7 @@
     }
     /* ─── RESPONSIVE ───────────────────────────────────────── */
      @media (max-width: 768px) {
-       .diff-grid { grid-template-columns: 1fr !important; }
+       .diff-grid { grid-template-columns: repeat(2, 1fr) !important; }
        .nav-links {
          display: none;
          flex-direction: column;
@@ -377,7 +377,7 @@
        .nav-links.open { display: flex; }
      }
      @media (max-width: 480px) {
-       .diff-grid { grid-template-columns: 1fr !important; }
+       .diff-grid { grid-template-columns: repeat(2, 1fr) !important; }
      }
      @media (max-width: 768px) {
       .who-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -455,7 +455,7 @@
     }
     .problem-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
     @media (max-width: 600px) { .problem-grid { grid-template-columns: 1fr; } }
@@ -464,7 +464,7 @@
       border: 1px solid rgba(255,255,255,0.07);
     }
     .problem-card h3 {
-      font-size: 18px; color: var(--pearl);
+      font-size: 15px; color: var(--pearl);
       margin-bottom: 10px;
     }
     .problem-card p {
@@ -488,8 +488,8 @@
     }
     .diff-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
       margin-top: 56px;
       border-top: 1px solid rgba(250,248,245,0.12);
       border-left: 1px solid rgba(250,248,245,0.12);
@@ -497,7 +497,7 @@
     .diff-item {
       display: flex;
       gap: 20px;
-      padding: 32px;
+      padding: 20px;
       border-right: 1px solid rgba(250,248,245,0.12);
       border-bottom: 1px solid rgba(250,248,245,0.12);
       align-items: flex-start;
@@ -511,7 +511,7 @@
     }
     .diff-item h3 {
       font-family: 'Fraunces', serif;
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--pearl);
       margin-bottom: 6px;
@@ -630,7 +630,7 @@
     .process-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0;
+      gap: 1px;
       margin-top: 56px;
       position: relative;
     }
@@ -661,7 +661,7 @@
     }
     .step-name {
       font-family: 'Playfair Display', serif;
-      font-size: 18px; font-weight: 700;
+      font-size: 15px; font-weight: 700;
       color: var(--slate); margin-bottom: 6px;
     }
     .step-cost {
