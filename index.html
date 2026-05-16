@@ -157,6 +157,8 @@
     }
     .nav-links a:not(.nav-cta):hover::after { width: 100%; }
     .nav-links a:not(.nav-cta):hover { color: var(--gold); }
+    .nav-links a[aria-current="page"] { color: var(--gold); }
+    .nav-links a[aria-current="page"]::after { width: 100%; }
     .nav-cta {
       background: var(--gold) !important;
       color: var(--pearl) !important;
@@ -812,7 +814,7 @@
   <!-- NAV -->
   <nav id="mainNav">
     <div class="container">
-      <a href="#" class="logo">
+      <a href="/" class="logo">
         <div class="logo-icon">
           <div class="logo-arc"></div>
           <div class="logo-dot"></div>
@@ -823,6 +825,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
+        <li><a href="/" aria-current="page">Home</a></li>
         <li><a href="services/index.html">Services</a></li>
         <li><a href="#process">How It Works</a></li>
         <li><a href="about/index.html">About</a></li>
@@ -1367,7 +1370,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="#" class="logo">
+          <a href="/" class="logo">
             <div class="logo-icon">
               <div class="logo-arc"></div>
               <div class="logo-dot"></div>
@@ -1380,7 +1383,8 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="services/index.html">Services</a></li>
+            <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="services/index.html">Services</a></li>
             <li><a href="#contact">Free Discovery Call</a></li>
           </ul>
         </div>
