@@ -1,6 +1,6 @@
 /* TEAM */
 Client: AgentleConsulting
-Site: https://agentleconsulting.vercel.app
+Site: https://agentleconsulting.com
 
 /* BUILD */
 Developer: OpenClaw Developer Agent
