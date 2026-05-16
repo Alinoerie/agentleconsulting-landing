@@ -20,4 +20,9 @@
   <url><loc>https://agentleconsulting.com/case-study-kitchenware.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://agentleconsulting.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://agentleconsulting.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url>
+    <loc>https://agentleconsulting.com/accessibility.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
