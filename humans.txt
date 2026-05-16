@@ -1,0 +1,15 @@
+/* TEAM */
+Client: AgentleConsulting
+Site: https://agentleconsulting.vercel.app
+
+/* BUILD */
+Developer: OpenClaw Developer Agent
+Design: AgentleConsulting brand guidelines
+Stack: Plain HTML, CSS, JavaScript (no framework)
+
+/* STANDARDS */
+Accessibility: WCAG 2.1 AA
+SEO: schema.org, Open Graph, Twitter Card
+
+/* FEEDBACK */
+hello@agentleconsulting.com

@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Three automation packages for small and medium businesses — from a 2-week discovery sprint to a full-time automation partner. Find the right fit for where you are.">
   <title>Services & Packages — AgentleConsulting</title>
-  <link rel="canonical" href="https://agentleconsulting.vercel.app/services/">
+  <link rel="canonical" href="https://agentleconsulting.com/services/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap"></noscript>
   <meta property="og:title" content="Services & Packages — AgentleConsulting">
+  <meta property="og:url" content="https://agentleconsulting.com/services/">
+  <meta property="og:image" content="https://agentleconsulting.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AgentleConsulting — Automation with a Human Hand">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services & Packages — AgentleConsulting">
+  <meta name="twitter:image" content="https://agentleconsulting.com/og-image.png">
   <meta property="og:description" content="Three automation packages for small and medium businesses. From a 2-week discovery sprint to a full-time automation partner.">
   <meta property="og:type" content="website">
 
@@ -174,8 +182,37 @@
     .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
   </style>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #C49A3C;
+      color: #1C1917;
+      padding: 8px 16px;
+      border-radius: 0 0 6px 6px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 10000;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
 
   <nav>
     <div class="container">
@@ -664,5 +701,38 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1C1917; color:#FEFCFA; padding:20px 24px; font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+    <div style="max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <p style="margin:0; flex:1; min-width:280px;">We use cookies to keep our site running. No tracking scripts run before you consent.</p>
+      <div style="display:flex; gap:10px; flex-shrink:0;">
+        <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
+        <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function cookieConsent(action) {
+      var banner = document.getElementById('cookie-banner');
+      if (action === 'accept') {
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+        // Load analytics here if accepted
+      } else if (action === 'reject') {
+        document.cookie = 'cookies=reject; max-age=31536000; path=/';
+      } else {
+        // Customize — for now treat as accept
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+      }
+      banner.style.display = 'none';
+    }
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      if (!document.cookie.includes('cookies=')) {
+        banner.style.display = 'block';
+      }
+    })();
+  </script>
+
 </body>
 </html>

@@ -57,8 +57,37 @@
     footer p { font-size: 13px; color: #8899a6; }
     .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); font-size: 14px; }
   </style>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #C49A3C;
+      color: #1C1917;
+      padding: 8px 16px;
+      border-radius: 0 0 6px 6px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 10000;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <nav>
     <div class="container">
       <a href="../index.html" class="logo">
@@ -141,6 +170,33 @@
     footer a { color: var(--sage); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
   </style>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #C49A3C;
+      color: #1C1917;
+      padding: 8px 16px;
+      border-radius: 0 0 6px 6px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 10000;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+
 </head>
 <body>
 
@@ -297,6 +353,39 @@
   </div>
 </footer>
 
+
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1C1917; color:#FEFCFA; padding:20px 24px; font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+    <div style="max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <p style="margin:0; flex:1; min-width:280px;">We use cookies to keep our site running. No tracking scripts run before you consent.</p>
+      <div style="display:flex; gap:10px; flex-shrink:0;">
+        <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
+        <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function cookieConsent(action) {
+      var banner = document.getElementById('cookie-banner');
+      if (action === 'accept') {
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+        // Load analytics here if accepted
+      } else if (action === 'reject') {
+        document.cookie = 'cookies=reject; max-age=31536000; path=/';
+      } else {
+        // Customize — for now treat as accept
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+      }
+      banner.style.display = 'none';
+    }
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      if (!document.cookie.includes('cookies=')) {
+        banner.style.display = 'block';
+      }
+    })();
+  </script>
+
 </body>
 </html></div>
       <div class="article-cta">
@@ -312,5 +401,38 @@
       <p class="footer-tagline">Automation with a Human Hand</p>
     </div>
   </footer>
+
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1C1917; color:#FEFCFA; padding:20px 24px; font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+    <div style="max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <p style="margin:0; flex:1; min-width:280px;">We use cookies to keep our site running. No tracking scripts run before you consent.</p>
+      <div style="display:flex; gap:10px; flex-shrink:0;">
+        <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
+        <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function cookieConsent(action) {
+      var banner = document.getElementById('cookie-banner');
+      if (action === 'accept') {
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+        // Load analytics here if accepted
+      } else if (action === 'reject') {
+        document.cookie = 'cookies=reject; max-age=31536000; path=/';
+      } else {
+        // Customize — for now treat as accept
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+      }
+      banner.style.display = 'none';
+    }
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      if (!document.cookie.includes('cookies=')) {
+        banner.style.display = 'block';
+      }
+    })();
+  </script>
+
 </body>
 </html>

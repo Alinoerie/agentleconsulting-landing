@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Book a free 30-minute discovery call with AgentleConsulting. No commitment, no sales pitch — just 30 minutes mapping your highest-ROI automation opportunities.">
   <title>Book a Discovery Call — AgentleConsulting</title>
-  <link rel="canonical" href="https://agentleconsulting.com/book.html">
+  <link rel="canonical" href="https://agentleconsulting.vercel.app/book.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://agentleconsulting.com/book.html">
+  <meta property="og:url" content="https://agentleconsulting.vercel.app/book.html">
   <meta property="og:title" content="Book a Discovery Call — AgentleConsulting">
   <meta property="og:description" content="Free 30-minute discovery call. No commitment. Find out if automation could save your business 10–20 hours a week.">
+  <meta property="og:image" content="https://agentleconsulting.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
 
   <style>
     :root {
@@ -28,6 +30,9 @@
       --text:    #44403C;
       --muted:   #78716C;
       --border:  #E7E5E4;
+      --sage:    #6B9E78;
+      --sage-dk: #4d7a5c;
+      --error:   #dc2626;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -61,6 +66,7 @@
     .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; margin-left: auto; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--slate); transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
+    .nav-links a[aria-current="page"] { color: var(--gold); }
     .nav-cta { background: var(--gold); color: var(--pearl) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background 0.2s; }
     .nav-cta:hover { background: var(--gold-dk); }
     @media (max-width: 768px) { .nav-links { display: none; } nav { padding: 0 24px; } }
@@ -74,13 +80,25 @@
     .book-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 80px; }
     @media (max-width: 768px) { .book-layout { grid-template-columns: 1fr; } }
 
+    /* Calendly section */
     .calendly-section { background: var(--pearl); border: 1px solid var(--border); padding: 36px; }
     .calendly-section h2 { font-size: 22px; margin-bottom: 8px; color: var(--slate); }
     .calendly-section p { font-size: 15px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
-    .calendly-pending { display: flex; align-items: center; gap: 8px; background: rgba(196,154,60,0.1); border: 1px solid rgba(196,154,60,0.2); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; padding: 6px 14px; margin-bottom: 20px; }
-    .calendly-placeholder { background: var(--stone); border-radius: 12px; padding: 56px 24px; text-align: center; border: 1px dashed var(--border); }
-    .calendly-placeholder p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .calendly-placeholder p strong { display: block; color: var(--slate); font-size: 15px; margin-bottom: 8px; }
+
+    <!--
+    CALENDLY EMBED PLACEHOLDER
+    Ali: create a Calendly account at calendly.com, then:
+    1. Go to your event type → Share → Add to Website → Embed Type: "Inline"
+    2. Copy the embed code
+    3. Replace everything between the calendly-placeholder div below with your embed code
+    -->
+    <div class="calendly-placeholder" style="background: var(--stone); border-radius: 12px; padding: 56px 24px; text-align: center; border: 1px dashed var(--border);">
+      <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+        <strong style="display: block; color: var(--slate); font-size: 15px; margin-bottom: 8px;">Calendly widget — pending Ali setup</strong>
+        Create a Calendly account → share inline embed code → paste below this comment.
+      </p>
+    </div>
+    <!-- END CALENDLY PLACEHOLDER -->
 
     /* FORM */
     .contact-section h2 { font-size: 22px; margin-bottom: 8px; color: var(--slate); }
@@ -98,10 +116,20 @@
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
     .form-group textarea { resize: vertical; min-height: 96px; }
     .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2378716C' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    .form-error { font-size: 12px; color: var(--error); margin-top: 4px; display: none; }
+    .form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea { border-color: var(--error); }
     .btn-primary { background: var(--gold); color: var(--pearl); padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; display: inline-block; width: 100%; text-align: center; }
     .btn-primary:hover { background: var(--gold-dk); transform: translateY(-1px); }
     .btn-primary:active { transform: translateY(0); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-note { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
+
+    /* Success state */
+    .form-success { display: none; text-align: center; padding: 32px 24px; background: var(--pearl); border: 1px solid var(--border); border-radius: 12px; }
+    .form-success.show { display: block; }
+    .form-success-icon { width: 48px; height: 48px; background: var(--sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .form-success h3 { font-size: 20px; color: var(--slate); margin-bottom: 8px; }
+    .form-success p { font-size: 15px; color: var(--muted); }
 
     /* WHAT NEXT */
     .what-next { background: var(--pearl); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 0; }
@@ -124,9 +152,42 @@
     footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     footer p { font-size: 13px; color: var(--muted); }
     .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-size: 14px; }
+    .footer-links { display: flex; gap: 20px; list-style: none; }
+    .footer-links a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-meta { font-size: 12px; color: var(--muted); }
   </style>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #C49A3C;
+      color: #1C1917;
+      padding: 8px 16px;
+      border-radius: 0 0 6px 6px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 10000;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
 
   <nav>
     <div class="container">
@@ -138,7 +199,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="services/index.html">Services</a></li>
         <li><a href="about/index.html">About</a></li>
-        <li><a href="book.html" class="nav-cta">Book a Call</a></li>
+        <li><a href="book.html" class="nav-cta" aria-current="page">Book a Call</a></li>
       </ul>
     </div>
   </nav>
@@ -155,32 +216,54 @@
 
       <!-- Calendly Side -->
       <div class="calendly-section">
-        <div class="calendly-pending">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Calendly — Awaiting Setup
-        </div>
         <h2>Pick a time that works.</h2>
         <p>Select a 30-minute slot below. You'll get an instant confirmation with a Zoom link.</p>
-        <div class="calendly-placeholder">
-          <p><strong>Calendly widget will be embedded here once Ali sets up the account.</strong></p>
-          <p>Action: Create Calendly account — share link — Dev embeds it.</p>
+        <!--
+        =========================================================
+        CALENDLY EMBED — Ali: replace this placeholder with your
+        Calendly inline embed code from your event settings.
+        Share → Add to Website → Inline Embed
+        =========================================================
+        -->
+        <div class="calendly-placeholder" style="background: var(--stone); border-radius: 12px; padding: 56px 24px; text-align: center; border: 1px dashed var(--border);">
+          <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">
+            <strong style="display: block; color: var(--slate); font-size: 15px; margin-bottom: 8px;">Calendly widget — pending Ali setup</strong>
+            calendly.com → create account → inline embed code → paste here
+          </p>
         </div>
+        <!-- END CALENDLY EMBED -->
       </div>
 
       <!-- Contact Form Side -->
       <div class="contact-section">
         <h2>Or send us a message.</h2>
         <p>We reply within 24 hours, usually much faster.</p>
-        <form id="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
+
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Message received.</h3>
+          <p>We'll be in touch within 24 hours. If it's urgent, email hello@agentleconsulting.com.</p>
+        </div>
+
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Web3Forms access key — replace YOUR_ACCESS_KEY with your key from web3forms.com -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New enquiry from agentleconsulting.com">
+          <input type="hidden" name="from_name" value="AgentleConsulting Website">
+
+          <div class="form-group" id="name-group">
             <label for="name">Your Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Jan de Vries">
+            <input type="text" id="name" name="name" required placeholder="Jan de Vries" autocomplete="name">
+            <p class="form-error" id="name-error">Please enter your name.</p>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="email-group">
             <label for="email">Business Email *</label>
-            <input type="email" id="email" name="email" required placeholder="jan@yourbusiness.nl">
+            <input type="email" id="email" name="email" required placeholder="jan@yourbusiness.nl" autocomplete="email">
+            <p class="form-error" id="email-error">Please enter a valid email address.</p>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="platform-group">
             <label for="platform">Main Platform *</label>
             <select id="platform" name="platform" required>
               <option value="">Select…</option>
@@ -190,6 +273,7 @@
               <option>Product business (B2B or wholesale)</option>
               <option>Other</option>
             </select>
+            <p class="form-error" id="platform-error">Please select your main platform.</p>
           </div>
           <div class="form-group">
             <label for="orders">Monthly Orders (approx.)</label>
@@ -252,38 +336,124 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 AgentleConsulting. Amsterdam, Netherlands.</p>
+      <div>
+        <p>© 2026 AgentleConsulting. Amsterdam, Netherlands.</p>
+        <p class="footer-meta" style="margin-top: 4px;">
+          <!-- Ali: replace these with real numbers when available -->
+          KvK: [KvK_NUMBER] &nbsp;·&nbsp; BTW: [BTW_NUMBER]
+        </p>
+      </div>
+      <ul class="footer-links">
+        <!-- Ali: add LinkedIn URL when available -->
+        <li><a href="#" id="linkedin-link" rel="noopener">LinkedIn</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
       <p class="footer-tagline">Automation with a Human Hand</p>
     </div>
   </footer>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      var btn = document.getElementById('submit-btn');
+    (function() {
       var form = document.getElementById('contact-form');
+      var successDiv = document.getElementById('form-success');
+      var submitBtn = document.getElementById('submit-btn');
 
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'generate_lead', {
-          event_category: 'engagement',
-          event_label: 'contact_form'
-        });
+      function validateField(field) {
+        var group = field.closest('.form-group');
+        if (!group) return true;
+        var errorEl = group.querySelector('.form-error');
+        var valid = field.checkValidity();
+        if (!valid && field.value !== '') {
+          group.classList.add('has-error');
+          if (errorEl) errorEl.style.display = 'block';
+        } else {
+          group.classList.remove('has-error');
+          if (errorEl) errorEl.style.display = 'none';
+        }
+        return valid;
       }
 
-      setTimeout(function() {
-        btn.textContent = 'Message sent — we\'ll be in touch soon.';
-        btn.style.background = '#6B9E78';
-        form.reset();
-        setTimeout(function() {
-          btn.textContent = 'Send Message';
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 4000);
-      }, 800);
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Client-side validation
+        var required = form.querySelectorAll('[required]');
+        var allValid = true;
+        required.forEach(function(field) {
+          if (!field.checkValidity()) {
+            validateField(field);
+            allValid = false;
+          }
+        });
+        if (!allValid) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        var data = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        })
+        .then(function(res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            successDiv.classList.add('show');
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'generate_lead', { event_category: 'engagement', event_label: 'contact_form' });
+            }
+          } else {
+            throw new Error('Submission failed');
+          }
+        })
+        .catch(function() {
+          // On failure: show inline error with email fallback
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          alert('Something went wrong. Please try again or email us directly at hello@agentleconsulting.com');
+        });
+      });
+
+      // Real-time validation on blur
+      form.querySelectorAll('input, select, textarea').forEach(function(field) {
+        field.addEventListener('blur', function() { validateField(field); });
+      });
+    })();
+  </script>
+
+
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1C1917; color:#FEFCFA; padding:20px 24px; font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+    <div style="max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <p style="margin:0; flex:1; min-width:280px;">We use cookies to keep our site running. No tracking scripts run before you consent.</p>
+      <div style="display:flex; gap:10px; flex-shrink:0;">
+        <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
+        <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function cookieConsent(action) {
+      var banner = document.getElementById('cookie-banner');
+      if (action === 'accept') {
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+        // Load analytics here if accepted
+      } else if (action === 'reject') {
+        document.cookie = 'cookies=reject; max-age=31536000; path=/';
+      } else {
+        // Customize — for now treat as accept
+        document.cookie = 'cookies=accept; max-age=31536000; path=/';
+      }
+      banner.style.display = 'none';
     }
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      if (!document.cookie.includes('cookies=')) {
+        banner.style.display = 'block';
+      }
+    })();
   </script>
 
 </body>
