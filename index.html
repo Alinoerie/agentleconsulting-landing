@@ -188,7 +188,27 @@
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-    @media (max-width: 768px) {
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+     @media (max-width: 768px) {
+       .diff-grid { grid-template-columns: 1fr !important; }
+       .nav-links {
+         display: none;
+         flex-direction: column;
+         position: fixed;
+         top: 72px; left: 0; right: 0;
+         background: rgba(250, 248, 245, 0.96);
+         backdrop-filter: blur(20px);
+         -webkit-backdrop-filter: blur(20px);
+         border-bottom: 1px solid var(--border);
+         padding: 24px;
+         gap: 16px;
+       }
+       .nav-links.open { display: flex; }
+     }
+     @media (max-width: 480px) {
+       .diff-grid { grid-template-columns: 1fr !important; }
+     }
+     @media (max-width: 768px) {
       .hamburger { display: block; }
       .nav-links {
         display: none; flex-direction: column;
@@ -339,7 +359,27 @@
       gap: 80px;
       align-items: center;
     }
-    @media (max-width: 768px) {
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+     @media (max-width: 768px) {
+       .diff-grid { grid-template-columns: 1fr !important; }
+       .nav-links {
+         display: none;
+         flex-direction: column;
+         position: fixed;
+         top: 72px; left: 0; right: 0;
+         background: rgba(250, 248, 245, 0.96);
+         backdrop-filter: blur(20px);
+         -webkit-backdrop-filter: blur(20px);
+         border-bottom: 1px solid var(--border);
+         padding: 24px;
+         gap: 16px;
+       }
+       .nav-links.open { display: flex; }
+     }
+     @media (max-width: 480px) {
+       .diff-grid { grid-template-columns: 1fr !important; }
+     }
+     @media (max-width: 768px) {
       .who-grid { grid-template-columns: 1fr; gap: 48px; }
     }
     .who-eyebrow {
@@ -1023,7 +1063,7 @@
         <h2 class="section-title">Why we're different.</h2>
         <p class="section-sub">Six things most automation firms don't tell you until the invoice arrives.</p>
       </div>
-      <div class="diff-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="diff-grid" style="grid-template-columns: repeat(2, 1fr);">
         <div class="diff-item reveal">
           <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <div>
