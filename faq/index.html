@@ -60,7 +60,7 @@
     .cta-strip { background: var(--slate); padding: 64px 0; text-align: center; margin-top: 56px; }
     .cta-strip h2 { font-size: clamp(24px, 4vw, 36px); color: var(--pearl); margin-bottom: 14px; }
     .cta-strip p { font-size: 17px; color: rgba(254,252,250,0.7); margin-bottom: 28px; max-width: 460px; margin-left: auto; margin-right: auto; }
-    .btn-primary { display: inline-block; background: var(--sage); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+    .btn-primary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; display: inline-block; background: var(--sage); color: var(--pearl); padding: 15px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
     .btn-primary:hover { background: #4d7a5c; }
 
     footer { background: var(--stone); padding: 40px 0 32px; border-top: 1px solid rgba(45,58,69,0.1); }
@@ -98,6 +98,9 @@
     .skip-link:focus { top: 0; }
   </style>
 
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="favicon_256.png">
+  <link rel="apple-touch-icon" href="favicon_256.png">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -444,6 +447,39 @@
       if (!document.cookie.includes('cookies=')) {
         banner.style.display = 'block';
       }
+    })();
+  </script>
+
+
+  <div id="exit-intent-overlay" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(28,25,23,0.88); backdrop-filter:blur(6px); align-items:center; justify-content:center; font-family:'Inter',sans-serif;">
+    <div style="background:var(--pearl,#FEFCFA); border-radius:16px; padding:48px 44px; max-width:480px; width:90%; text-align:center; position:relative;">
+      <button onclick="document.getElementById('exit-intent-overlay').style.display=\'none\'" aria-label="Close" style="position:absolute; top:16px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--muted,#78716C);">×</button>
+      <p style="font-size:11px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold,#C49A3C); margin-bottom:12px;">Before you go</p>
+      <h2 style="font-family:\'Playfair Display\',serif; font-size:28px; color:var(--slate,#1C1917); margin-bottom:14px; line-height:1.2;">Book a free 30-minute discovery call.</h2>
+      <p style="font-size:15px; color:var(--muted,#78716C); line-height:1.7; margin-bottom:28px;">No obligation. No sales pitch. Just 30 minutes mapping your highest-ROI automation opportunities.</p>
+      <a href="book.html" style="display:inline-block; background:var(--gold,#C49A3C); color:#FEFCFA; padding:14px 32px; border-radius:6px; font-weight:600; font-size:15px; text-decoration:none; margin-bottom:12px;">Book Your Free Call</a>
+      <p style="font-size:12px; color:var(--muted,#78716C);">Or continue browsing — no pressure.</p>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var shown = false;
+      function showExitIntent() {
+        if (shown || document.cookie.includes('exit_shown=')) return;
+        shown = true;
+        document.cookie = 'exit_shown=1; max-age=86400; path=/';
+        var overlay = document.getElementById('exit-intent-overlay');
+        if (overlay) overlay.style.display = 'flex';
+      }
+      document.addEventListener('mouseout', function(e) {
+        if (e.clientY < 8 && !e.relatedTarget) showExitIntent();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          var overlay = document.getElementById('exit-intent-overlay');
+          if (overlay) overlay.style.display = 'none';
+        }
+      });
     })();
   </script>
 

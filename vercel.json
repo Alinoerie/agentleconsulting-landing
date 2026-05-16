@@ -1,5 +1,22 @@
 {
   "framework": null,
   "buildCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/services",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/",
+      "permanent": true
+    }
+  ]
 }

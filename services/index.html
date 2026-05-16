@@ -170,7 +170,7 @@
     .cta-strip { background: var(--slate); padding: 80px 0; text-align: center; }
     .cta-strip h2 { font-size: clamp(26px, 4vw, 42px); color: var(--pearl); margin-bottom: 14px; }
     .cta-strip p { font-size: 17px; color: rgba(254,252,250,0.55); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-    .btn-primary { display: inline-block; background: var(--gold); color: var(--pearl); padding: 15px 36px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s, transform 0.15s; }
+    .btn-primary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; display: inline-block; background: var(--gold); color: var(--pearl); padding: 15px 36px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s, transform 0.15s; }
     .btn-primary:hover { background: var(--gold-dk); transform: translateY(-1px); }
 
     /* FOOTER */
@@ -211,8 +211,11 @@
 
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to commit to Automate if I do Discover first?","acceptedAnswer":{"@type":"Answer","text":"No. Discover is standalone. You get the roadmap and 2 demo workflows. We offer a €500 discount if you book Automate within 60 days, but there's no obligation."}},{"@type":"Question","name":"What if my workflows need changes after the 30-day support window?","acceptedAnswer":{"@type":"Answer","text":"Transform clients get ongoing maintenance included. One-off changes for Automate clients are quoted separately."}},{"@type":"Question","name":"Can I switch from Automate to Transform mid-build?","acceptedAnswer":{"@type":"Answer","text":"Yes. We credit the Automate fee against the Transform minimum. Just ask."}},{"@type":"Question","name":"What tools do you build workflows in?","acceptedAnswer":{"@type":"Answer","text":"n8n (open-source, self-hosted or cloud) and Make.com. We recommend based on your stack and budget."}},{"@type":"Question","name":"What if an automation breaks my existing process?","acceptedAnswer":{"@type":"Answer","text":"We test every workflow in staging before going live, and we build rollback procedures. During the 30-day post-launch support window, we fix anything that breaks fast."}},{"@type":"Question","name":"What's the minimum commitment for Transform?","acceptedAnswer":{"@type":"Answer","text":"6 months minimum. After that, month-to-month with 30 days notice."}},{"@type":"Question","name":"Do you work with businesses outside the Netherlands?","acceptedAnswer":{"@type":"Answer","text":"Yes. We've worked with businesses across Europe, the UK, and the US. Everything is remote-first."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to commit to Automate if I do Discover first?","acceptedAnswer":{"@type":"Answer","text":"No. Discover is standalone. You get the roadmap and 2 demo workflows. We offer a €500 discount if you book Automate within 60 days, but there's no obligation."}},{"@type":"Question","name":"What if my workflows need changes after the 30-day support window?","acceptedAnswer":{"@type":"Answer","text":"Transform clients get ongoing maintenance included. One-off changes for Automate clients are quoted separately."}},{"@type":"Question","name":"Can I switch from Automate to Transform mid-build?","acceptedAnswer":{"@type":"Answer","text":"Yes. We credit the Automate fee against the Transform minimum. Just ask."}},{"@type":"Question","name":"What tools do you build workflows in?","acceptedAnswer":{"@type":"Answer","text":"n8n (open-source, self-hosted or cloud) and Make.com. We recommend based on your stack and budget."}},{"@type":"Question","name":"What if an automation breaks my existing process?","acceptedAnswer":{"@type":"Answer","text":"We test every workflow in staging before going live, and we build rollback procedures. During the 30-day post-launch support window, we fix anything that breaks fast."}},{"@type":"Question","name":"What's the minimum commitment for Transform?","acceptedAnswer":{"@type":"Answer","text":"6 months minimum. After that, month-to-month with 30 days notice."}},{"@type":"Question","name":"Do you work with businesses outside the Netherlands?","acceptedAnswer":{"@type":"Answer","text":"Yes. We've worked with businesses across Europe, the UK, and the US. Everything is remote-first."}},{"@type":"Question","name":"What's the EU AI Act got to do with my business?","acceptedAnswer":{"@type":"Answer","text":"If you use AI to make decisions about customers, you may fall under EU AI Act disclosure requirements. We build all automations with documentation so you can demonstrate compliance."}},{"@type":"Question","name":"How long does a typical automation take to build?","acceptedAnswer":{"@type":"Answer","text":"Simple automations: 3-7 days. Mid-complexity: 2-4 weeks. Complex multi-agent: 4-8 weeks. We give you a timeline upfront."}},{"@type":"Question","name":"Can you work with our existing tools?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work with Bol.com, Amazon, Shopify, WooCommerce, TradeTracker, Mautic, HubSpot, Slack, WhatsApp Business, Gmail, Outlook, and more."}}]}
   </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="favicon_256.png">
+  <link rel="apple-touch-icon" href="favicon_256.png">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -674,6 +677,18 @@
           <h4>Do you work with businesses outside the Netherlands?</h4>
           <p>Yes. We've worked with businesses across Europe, the UK, and the US. Everything is remote-first. Language: English or Dutch.</p>
         </div>
+        <div class="faq-item reveal">
+          <h4>What's the EU AI Act got to do with my business?</h4>
+          <p>If you use AI to make decisions about customers — routing support tickets, scoring leads, automating communications — you may fall under EU AI Act disclosure requirements. We build all automations with documentation so you can demonstrate compliance if asked.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>How long does a typical automation take to build?</h4>
+          <p>Simple rule-based automations (email routing, data sync): 3–7 days. Mid-complexity workflows (order processing, CRM integration): 2–4 weeks. Complex multi-agent systems: 4–8 weeks. We always give you a timeline upfront — no surprises.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>Can you work with our existing tools?</h4>
+          <p>Almost certainly. We work with Bol.com, Amazon Seller Central, Shopify, WooCommerce, TradeTracker, Mautic, HubSpot, Slack, WhatsApp Business, Gmail, Outlook, and dozens more. If you have a specific tool, ask — if we haven't touched it, we'll tell you honestly.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -742,6 +757,39 @@
       if (!document.cookie.includes('cookies=')) {
         banner.style.display = 'block';
       }
+    })();
+  </script>
+
+
+  <div id="exit-intent-overlay" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(28,25,23,0.88); backdrop-filter:blur(6px); align-items:center; justify-content:center; font-family:'Inter',sans-serif;">
+    <div style="background:var(--pearl,#FEFCFA); border-radius:16px; padding:48px 44px; max-width:480px; width:90%; text-align:center; position:relative;">
+      <button onclick="document.getElementById('exit-intent-overlay').style.display=\'none\'" aria-label="Close" style="position:absolute; top:16px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--muted,#78716C);">×</button>
+      <p style="font-size:11px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold,#C49A3C); margin-bottom:12px;">Before you go</p>
+      <h2 style="font-family:\'Playfair Display\',serif; font-size:28px; color:var(--slate,#1C1917); margin-bottom:14px; line-height:1.2;">Book a free 30-minute discovery call.</h2>
+      <p style="font-size:15px; color:var(--muted,#78716C); line-height:1.7; margin-bottom:28px;">No obligation. No sales pitch. Just 30 minutes mapping your highest-ROI automation opportunities.</p>
+      <a href="book.html" style="display:inline-block; background:var(--gold,#C49A3C); color:#FEFCFA; padding:14px 32px; border-radius:6px; font-weight:600; font-size:15px; text-decoration:none; margin-bottom:12px;">Book Your Free Call</a>
+      <p style="font-size:12px; color:var(--muted,#78716C);">Or continue browsing — no pressure.</p>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var shown = false;
+      function showExitIntent() {
+        if (shown || document.cookie.includes('exit_shown=')) return;
+        shown = true;
+        document.cookie = 'exit_shown=1; max-age=86400; path=/';
+        var overlay = document.getElementById('exit-intent-overlay');
+        if (overlay) overlay.style.display = 'flex';
+      }
+      document.addEventListener('mouseout', function(e) {
+        if (e.clientY < 8 && !e.relatedTarget) showExitIntent();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          var overlay = document.getElementById('exit-intent-overlay');
+          if (overlay) overlay.style.display = 'none';
+        }
+      });
     })();
   </script>
 
