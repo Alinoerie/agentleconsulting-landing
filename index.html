@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AgentleConsulting builds custom automation systems for small and medium businesses in Europe. Stop doing busywork. Start scaling. Book a free discovery call.">
   <title>AgentleConsulting — Automation with a Human Hand</title>
-  <link rel="canonical" href="https://agentleconsulting.com/">
+  <link rel="canonical" href="https://agentleconsulting.vercel.app/">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://agentleconsulting.com/sitemap.xml">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://agentleconsulting.com/">
+  <meta property="og:url" content="https://agentleconsulting.vercel.app/">
   <meta property="og:title" content="AgentleConsulting — Automation with a Human Hand">
   <meta property="og:description" content="We build custom automation systems for small and medium businesses. Stop doing busywork. Start scaling. Book a free discovery call.">
   <meta property="og:locale" content="en_US">
@@ -23,7 +23,13 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"AgentleConsulting","description":"Custom automation systems for small and medium businesses. We build, we test, we hand over — and we stay to maintain it.","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"priceRange":"€299/month base subscription — custom agent pricing on quote","areaServed":["Netherlands","Belgium","Germany"],"serviceType":["Workflow Automation","AI Agents","Business Process Automation","n8n Workflows","SMB Automation"]}
+  {"@context":"https://schema.org","@type":"Organization","name":"AgentleConsulting","url":"https://agentleconsulting.vercel.app","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"sameAs":[]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"AgentleConsulting","description":"Custom automation systems for small and medium businesses. We build, we test, we hand over — and we stay to maintain it.","url":"https://agentleconsulting.vercel.app","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"priceRange":"€299/month base subscription","areaServed":[{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"Belgium"},{"@type":"Country","name":"Germany"}],"serviceType":["Workflow Automation","AI Agents","Business Process Automation","n8n Workflows","SMB Automation"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Review","name":"Michiel van der Berg — Bol.com Marketplace Seller","reviewBody":"Ali didn't just automate our order processing — he gave me my evenings back. I went from spending 3 hours a day on manual entry to having workflows that run themselves while I sleep.","author":{"@type":"Person","name":"Michiel van der Berg"},"itemReviewed":{"@type":"Service","name":"AgentleConsulting Automation"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"}}
   </script>
 
   <!-- Fonts: Playfair Display + Inter -->
@@ -821,8 +827,8 @@
   <section class="hero">
     <div class="container">
       <p class="hero-eyebrow reveal">Agent-as-a-Service — Europe</p>
-      <h1 class="reveal reveal-delay-1">Stop running your business.<br><em>Start growing it.</em></h1>
-      <p class="hero-sub reveal reveal-delay-2">We build the automation systems that let small and medium businesses step back from the chaos — and actually run a business again.</p>
+      <h1 class="reveal reveal-delay-1">Your business running itself<br><em>— while you sleep.</em></h1>
+      <p class="hero-sub reveal reveal-delay-2">We build the automation systems that handle the repetitive work. You stay in control of the strategy.</p>
       <div class="hero-actions reveal reveal-delay-3">
         <a href="book.html" class="btn-primary">Book a Free 30-Min Discovery Call</a>
         <a href="#services" class="btn-ghost">See How It Works</a>
@@ -839,15 +845,15 @@
       <div class="trust-strip-inner">
         <div class="trust-strip-item reveal">
           <div class="trust-strip-number">40+</div>
-          <div class="trust-strip-label">Businesses automated</div>
+          <div class="trust-strip-label">Clients across Europe</div>
         </div>
         <div class="trust-strip-item reveal reveal-delay-1">
-          <div class="trust-strip-number">10–20h</div>
-          <div class="trust-strip-label">Recovered per week per client</div>
+          <div class="trust-strip-number">€2,640</div>
+          <div class="trust-strip-label">Monthly labor saved (BV O case study)</div>
         </div>
         <div class="trust-strip-item reveal reveal-delay-2">
           <div class="trust-strip-number">1.1mo</div>
-          <div class="trust-strip-label">Average ROI payback</div>
+          <div class="trust-strip-label">Payback period on BV O build</div>
         </div>
         <div class="trust-strip-item reveal reveal-delay-3">
           <div class="trust-strip-number">100%</div>
@@ -996,14 +1002,14 @@
       <div class="section-header reveal">
         <div class="section-label">Why Us</div>
         <h2 class="section-title">Why we're different.</h2>
-        <p class="section-sub">Ten things most automation firms don't tell you — until the invoice arrives.</p>
+        <p class="section-sub">Six things most automation firms don't tell you until the invoice arrives.</p>
       </div>
-      <div class="diff-grid">
+      <div class="diff-grid" style="grid-template-columns: repeat(3, 1fr);">
         <div class="diff-item reveal">
           <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           <div>
             <h3>No markups on agent costs</h3>
-            <p>You see exactly what the AI costs to run. We don't hide a 300% margin inside the monthly fee.</p>
+            <p>You see exactly what the AI costs to run. We don't hide a margin inside the monthly fee.</p>
           </div>
         </div>
         <div class="diff-item reveal">
@@ -1018,13 +1024,6 @@
           <div>
             <h3>Custom agents, not templates</h3>
             <p>We build for your specific workflow. No cookie-cutter solutions that almost fit your business.</p>
-          </div>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          <div>
-            <h3>Forum access</h3>
-            <p>Ongoing community of business owners building automations together. Not just a monthly call.</p>
           </div>
         </div>
         <div class="diff-item reveal">
@@ -1046,27 +1045,6 @@
           <div>
             <h3>Direct access to Ali</h3>
             <p>Not routed through a junior team or a ticket system. You message, you get Ali directly.</p>
-          </div>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <div>
-            <h3>AI Act compliant</h3>
-            <p>We handle the compliance documentation. You stay compliant without having to understand every regulation.</p>
-          </div>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          <div>
-            <h3>Real systems, not PDFs</h3>
-            <p>We build and run the systems. Not just consult and hand over a report that gathers dust.</p>
-          </div>
-        </div>
-        <div class="diff-item reveal">
-          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          <div>
-            <h3>Weekly WhatsApp access</h3>
-            <p>Real human in your pocket. Not a chatbot. Not a 48-hour email turnaround.</p>
           </div>
         </div>
       </div>
@@ -1225,16 +1203,16 @@
           <div class="bovo-stat-label">manual work eliminated per month</div>
         </div>
         <div class="bovo-stat reveal reveal-delay-2">
-          <div class="bovo-stat-number">€2,750</div>
-          <div class="bovo-stat-label">build cost · €44/mo operating</div>
+          <div class="bovo-stat-number">€2,640</div>
+          <div class="bovo-stat-label">monthly labor cost saved (€44/h × 60h)</div>
         </div>
         <div class="bovo-stat reveal reveal-delay-3">
-          <div class="bovo-stat-number">€30,400</div>
-          <div class="bovo-stat-label">annual gain · 1.1 month payback</div>
+          <div class="bovo-stat-number">€31,680</div>
+          <div class="bovo-stat-label">annual gain · ~1 month payback</div>
         </div>
       </div>
       <div class="bovo-body reveal">
-        <p>At €44/hour opportunity cost, 60h/month of manual onboarding work costs <strong>€2,640/month</strong>. An n8n-based automation system costs <strong>€2,750 to build + €44/month</strong>. Payback in 1.1 months. That's a <strong>200–500% Year 1 ROI</strong> — typical for well-implemented SMB automation.</p>
+        <p>At €44/hour opportunity cost, 60 hours/month of manual onboarding work costs <strong>€2,640/month</strong>. An n8n-based automation system costs <strong>€2,750 to build + €44/month to operate</strong>. Payback: €2,750 ÷ €2,640 = <strong>1.0 month</strong>. That's a <strong>200–500% Year 1 ROI</strong> — typical for well-implemented SMB automation.</p>
         <p>SMBs automating 70% of support operations consistently see <strong>€80K–€100K/year</strong> in labor savings against <strong>€5K–€25K/year</strong> in AI/automation costs.</p>
       </div>
     </div>
@@ -1255,6 +1233,40 @@
       </div>
     </div>
   </section>
+
+  <!-- NEWSLETTER -->
+  <section style="padding: 80px 0; background: var(--pearl); border-top: 1px solid var(--border);">
+    <div class="container" style="max-width: 600px; text-align: center;">
+      <p class="section-label" style="display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;">Newsletter</p>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 32px); font-weight: 700; color: var(--slate); margin-bottom: 10px;">Practical automation insights, monthly.</h2>
+      <p style="font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px;">No newsletter spam. One email per month. Real automation case studies, platform updates, and practical guides for European SMBs.</p>
+      <form id="newsletter-form" style="display: flex; gap: 10px; max-width: 440px; margin: 0 auto;" onsubmit="handleNewsletter(event)">
+        <input type="email" id="nl-email" name="email" required placeholder="you@yourbusiness.nl" style="flex: 1; padding: 12px 14px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 14px; background: var(--pearl); color: var(--slate); outline: none;" aria-label="Your business email">
+        <button type="submit" id="nl-submit" style="background: var(--gold); color: var(--pearl); border: none; padding: 12px 22px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap;">Subscribe</button>
+      </form>
+      <p id="nl-success" style="display: none; font-size: 14px; color: var(--sage); margin-top: 12px; font-weight: 600;">You're in. First email comes next month.</p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 10px;">No spam. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <script>
+    function handleNewsletter(e) {
+      e.preventDefault();
+      var email = document.getElementById('nl-email').value;
+      var btn = document.getElementById('nl-submit');
+      var success = document.getElementById('nl-success');
+      btn.textContent = 'Subscribing…';
+      btn.disabled = true;
+      // For now: open mailto. Replace with Mailchimp/Buttondown API call when ready.
+      var subject = encodeURIComponent('Newsletter signup from website');
+      var body = encodeURIComponent('Email: ' + email);
+      window.location.href = 'mailto:hello@agentleconsulting.com?subject=' + subject + '&body=' + body;
+      setTimeout(function() {
+        success.style.display = 'block';
+        document.getElementById('newsletter-form').style.display = 'none';
+      }, 500);
+    }
+  </script>
 
   <!-- CTA -->
   <section class="cta" id="contact">
