@@ -9,6 +9,16 @@
     { "source": "/book", "destination": "/book.html", "permanent": false },
     { "source": "/faq", "destination": "/faq.html", "permanent": false },
     { "source": "/blog", "destination": "/blog/", "permanent": true },
-    { "source": "/blog/:slug", "destination": "/blog/:slug.html", "permanent": false }
+    { "source": "/blog/20-hour-work-week-ai-agents-amazon-sellers", "destination": "/blog/20-hour-work-week-ai-agents-amazon-sellers.html", "permanent": false },
+    { "source": "/blog/ai-agents-vs-workflow-automation", "destination": "/blog/ai-agents-vs-workflow-automation.html", "permanent": false },
+    { "source": "/blog/amazon-automation-tasks-ranked-by-roi", "destination": "/blog/amazon-automation-tasks-ranked-by-roi.html", "permanent": false },
+    { "source": "/blog/automate-amazon-business-2025", "destination": "/blog/automate-amazon-business-2025.html", "permanent": false },
+    { "source": "/blog/automation-jargon-explained", "destination": "/blog/automation-jargon-explained.html", "permanent": false },
+    { "source": "/blog/automation-readiness-checklist", "destination": "/blog/automation-readiness-checklist.html", "permanent": false },
+    { "source": "/blog/bolcom-automation-untapped-opportunity", "destination": "/blog/bolcom-automation-untapped-opportunity.html", "permanent": false },
+    { "source": "/blog/eu-ai-act-amazon-sellers-quiz", "destination": "/blog/eu-ai-act-amazon-sellers-quiz.html", "permanent": false },
+    { "source": "/blog/eu-ai-act-explained-ecommerce-sellers", "destination": "/blog/eu-ai-act-explained-ecommerce-sellers.html", "permanent": false },
+    { "source": "/blog/what-is-agentic-ai-smb-guide", "destination": "/blog/what-is-agentic-ai-smb-guide.html", "permanent": false },
+    { "source": "/blog/what-is-ecommerce-automation", "destination": "/blog/what-is-ecommerce-automation.html", "permanent": false }
   ]
 }
