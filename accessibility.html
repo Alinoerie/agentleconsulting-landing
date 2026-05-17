@@ -3,29 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accessibility Statement — AgentleConsulting</title>
-  <meta name="description" content="AgentleConsulting is committed to ensuring digital accessibility for people with disabilities. Learn about our accessibility practices and how to contact us.">
+  <title>Accessibility — AgentleConsulting</title>
+  <meta name="description" content="AgentleConsulting is committed to WCAG 2.1 AA accessibility standards.">
   <link rel="canonical" href="https://agentleconsulting.com/accessibility.html">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="favicon_256.png">
-  <link rel="apple-touch-icon" href="favicon_256.png">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://agentleconsulting.com/accessibility.html">
-  <meta property="og:title" content="Accessibility Statement — AgentleConsulting">
-  <meta property="og:description" content="AgentleConsulting is committed to digital accessibility for people with disabilities.">
-  <meta property="og:image" content="https://agentleconsulting.com/og-image.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --color-primary: #3730A3;
-      --color-primary-light: #4F46E5;
       --color-accent: #F59E0B;
-      --color-accent-hover: #D97706;
       --color-bg: #FAFAF9;
       --color-bg-dark: #0F172A;
       --color-surface: #FFFFFF;
@@ -33,200 +20,95 @@
       --color-text-muted: #64748B;
       --color-border: #E2E8F0;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.75;
-    }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.15; color: var(--color-text); }
-    a { color: var(--color-primary); text-decoration: none; }
-    a:hover { color: var(--color-primary-light); }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--color-bg); color: var(--color-text); line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
+    a { color: var(--color-primary); }
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(15,23,42,0.96);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    nav .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15,23,42,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 24px; }
     .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #F8FAFC; text-decoration: none; }
     .nav-logo span { color: var(--color-accent); }
-    .nav-links { display: flex; gap: 32px; list-style: none; margin-left: auto; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: rgba(248,250,252,0.75); transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a[aria-current="page"] { color: #F8FAFC; }
-    .nav-cta { background: var(--color-accent); color: #0F172A !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; }
-    .nav-cta:hover { background: var(--color-accent-hover); }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
-    .hamburger span { width: 22px; height: 2px; background: #F8FAFC; border-radius: 2px; }
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .nav-links { display: none; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98); padding: 24px; gap: 16px; }
-      .nav-links.open { display: flex; }
-      .nav-links li { text-align: center; }
-      .nav-links a { font-size: 16px; }
-    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(248,250,252,0.75); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: #F8FAFC; }
 
-    /* PAGE HERO */
-    .page-hero { padding: 120px 0 60px; background: var(--color-bg-dark); text-align: center; }
-    .page-hero h1 { font-size: clamp(28px, 4vw, 46px); color: #F8FAFC; margin-bottom: 14px; }
-    .page-hero p { font-size: 17px; color: rgba(254,252,250,0.55); max-width: 540px; margin: 0 auto; }
+    main { padding-top: 72px; }
 
-    /* CONTENT */
-    .content { padding: 72px 0 80px; }
-    .content h2 { font-size: 22px; color: var(--color-text); margin: 48px 0 16px; padding-top: 32px; border-top: 1px solid var(--color-border); }
-    .content h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
-    .content h3 { font-size: 17px; font-weight: 600; color: var(--color-text); margin: 24px 0 8px; }
-    .content p { font-size: 15px; color: var(--color-text-muted); margin-bottom: 14px; }
-    .content ul, .content ol { font-size: 15px; color: var(--color-text-muted); padding-left: 24px; margin: 0 0 14px; }
-    .content li { margin-bottom: 8px; }
-    .content strong { font-weight: 600; color: var(--color-text); }
-    .content code { font-size: 14px; background: var(--color-surface); border: 1px solid var(--color-border); padding: 2px 6px; border-radius: 4px; }
+    .page-hero { padding: 80px 0 60px; background: var(--color-bg-dark); }
+    .page-hero h1 { font-size: clamp(28px, 4vw, 44px); color: #F8FAFC; margin-bottom: 12px; }
+    .page-hero p { font-size: 16px; color: rgba(254,252,250,0.55); }
 
-    .commitment-list { list-style: none; padding: 0; }
-    .commitment-list li {
-      display: flex; gap: 12px; margin-bottom: 14px; font-size: 15px;
-      color: var(--color-text-muted);
-    }
-    .commitment-list li::before {
-      content: '✓'; color: var(--color-accent); font-weight: 700; flex-shrink: 0;
-    }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .content { padding: 60px 0 80px; }
+    .content h2 { font-size: 22px; color: var(--color-text); margin: 40px 0 12px; }
+    .content h2:first-child { margin-top: 0; }
+    .content p { font-size: 15px; color: var(--color-text); margin-bottom: 16px; line-height: 1.75; }
+    .content ul { margin: 0 0 16px 20px; }
+    .content li { font-size: 15px; color: var(--color-text); margin-bottom: 8px; line-height: 1.6; }
 
-    .contact-box {
-      background: var(--color-surface); border: 1px solid var(--color-border);
-      border-left: 3px solid var(--color-accent);
-      border-radius: 8px; padding: 28px 32px; margin-top: 32px;
-    }
-    .contact-box h3 { margin-top: 0; }
-
-    /* FOOTER */
-    footer { background: var(--color-bg-dark); padding: 48px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+    footer { background: var(--color-bg-dark); padding: 48px 24px; text-align: center; }
     footer p { color: rgba(248,250,252,0.4); font-size: 14px; line-height: 1.8; }
     footer a { color: rgba(248,250,252,0.4); }
     footer a:hover { color: var(--color-accent); }
 
-    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999; }
-    .skip-link:focus { position: static; width: auto; height: auto; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <nav>
-    <div class="container">
-      <a href="index.html" class="nav-logo">Agentle<span>.</span></a>
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services/index.html">Services</a></li>
-        <li><a href="about/index.html">About</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta">Book My Call</a></li>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Agentle<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/book.html">Book My Call</a></li>
       </ul>
     </div>
   </nav>
-
-  <main id="main-content">
+  <main>
     <section class="page-hero">
       <div class="container">
-        <h1>Accessibility Statement</h1>
-        <p>AgentleConsulting is committed to ensuring digital accessibility for people with disabilities.</p>
+        <h1>Accessibility</h1>
+        <p>Our commitment to making AgentleConsulting.com usable for everyone.</p>
       </div>
     </section>
-
-    <div class="content">
+    <section class="content">
       <div class="container">
-
         <h2>Our Commitment</h2>
-        <p>We believe that accessibility is not a feature — it is a civil right. We are committed to providing a website that is accessible to the widest possible audience, regardless of ability.</p>
-        <p>This statement was last reviewed on <strong>17 May 2026</strong>.</p>
+        <p>AgentleConsulting is committed to ensuring that our website is accessible to all users, including people with disabilities. We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at the AA level.</p>
 
-        <h2>Accessibility Standards We Follow</h2>
-        <p>Our website aims to conform to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>. These guidelines explain how to make web content more accessible for people with disabilities and more user-friendly for everyone.</p>
-        <p>We also take the <strong>European Accessibility Act (EAA)</strong> into account, which requires digital products and services to be accessible to people with disabilities.</p>
-
-        <h2>Measures We Have Taken</h2>
-        <ul class="commitment-list">
-          <li>All pages include a <strong>skip-to-content link</strong> for keyboard users</li>
-          <li>All images include descriptive <strong>alt text</strong></li>
-          <li>All form inputs have associated <strong>visible or programmatic labels</strong></li>
-          <li>Color contrast ratios meet <strong>WCAG AA standards</strong> (minimum 4.5:1 for normal text)</li>
-          <li>All interactive elements are <strong>keyboard navigable</strong></li>
-          <li><strong>Focus indicators</strong> are visible on all interactive elements</li>
-          <li>Text resizes correctly up to <strong>200% without loss of content</strong></li>
-          <li>Page layouts use <strong>semantic HTML</strong> (headings, landmarks, lists)</li>
-          <li>Motion and animations respect <strong>prefers-reduced-motion</strong></li>
-          <li>Our forms include <strong>error identification</strong> and suggested corrections</li>
+        <h2>What We're Doing</h2>
+        <ul>
+          <li>All images include descriptive alt text</li>
+          <li>Color contrast meets WCAG AA minimum ratios</li>
+          <li>The site is navigable by keyboard alone</li>
+          <li>Font sizes are resizable up to 200% without loss of content</li>
+          <li>Forms have associated labels and error messaging</li>
+          <li>Page language is set and consistent</li>
         </ul>
 
         <h2>Known Limitations</h2>
-        <p>While we strive for full accessibility, you may encounter some limitations:</p>
-        <ul>
-          <li>Some older third-party integrations (e.g., Calendly embeds) may not be fully controllable by our accessibility standards — these are provided by external services</li>
-          <li>Client logos on the homepage are currently placeholder images — these will be updated with proper alt text when final logos are provided</li>
-        </ul>
+        <p>Some older third-party integrations (e.g., Calendly for booking) may not fully inherit our accessibility standards. We are working with our vendors to improve this. If you experience difficulty using any part of our site, please contact us.</p>
 
-        <h2>Feedback and Contact</h2>
-        <p>We welcome your feedback on the accessibility of AgentleConsulting's website. If you experience barriers not addressed here, please contact us:</p>
-
-        <div class="contact-box" id="contact">
-          <h3>Get in Touch</h3>
-          <p><strong>Email:</strong> <a href="mailto:hello@agentleconsulting.com">hello@agentleconsulting.com</a></p>
-          <p><strong>Phone:</strong> Available on request via email</p>
-          <p>We aim to respond to accessibility-related enquiries within <strong>3 business days</strong>.</p>
-        </div>
-
-        <h2>Technical Information</h2>
-        <p>This website is built using semantic <strong>HTML5</strong>, <strong>CSS3</strong>, and vanilla <strong>JavaScript</strong>. It is hosted on <strong>Vercel</strong> and built with static files for maximum performance and reliability.</p>
-        <p>Accessibility-related features implemented:</p>
-        <ul>
-          <li><code>role</code> and <code>aria-*</code> attributes on dynamic components</li>
-          <li><code>prefers-reduced-motion</code> media query to disable animations</li>
-          <li><code>prefers-color-scheme</code> support for light/dark preferences (future enhancement)</li>
-          <li>Explicit <code>width</code> and <code>height</code> attributes on images to reduce layout shift</li>
-          <li><code>loading="lazy"</code> on below-fold images</li>
-        </ul>
+        <h2>Feedback</h2>
+        <p>If you encounter any accessibility barrier on our site, contact us at <a href="mailto:hello@agentleconsulting.com">hello@agentleconsulting.com</a>. We take accessibility feedback seriously and aim to respond within 3 business days.</p>
 
         <h2>Assessment Approach</h2>
-        <p>We conduct regular accessibility audits using a combination of:</p>
-        <ul>
-          <li>Automated testing tools (axe DevTools, WAVE)</li>
-          <li>Manual keyboard navigation testing</li>
-          <li>Screen reader testing (NVDA, VoiceOver)</li>
-          <li>Color contrast analysis</li>
-        </ul>
-
+        <p>We last reviewed our site's accessibility in May 2026. Reviews are conducted on an ongoing basis as changes are made to the site. Where第三方 tools are updated, we re-assess impact before deploying.</p>
       </div>
-    </div>
+    </section>
   </main>
-
   <footer>
     <p>
       Based in Amsterdam, serving businesses across Europe ·
       <a href="https://www.linkedin.com/in/aliyasarnoerie" target="_blank">LinkedIn</a> ·
-      <a href="privacy.html">Privacy</a> ·
-      <a href="terms.html">Terms</a> ·
-      <a href="accessibility.html">Accessibility</a>
+      <a href="/privacy.html">Privacy</a> ·
+      <a href="/terms.html">Terms</a>
     </p>
     <p style="margin-top:8px;">© 2026 AgentleConsulting. All rights reserved.</p>
   </footer>
-
-  <script>
-    const h = document.getElementById('hamburger');
-    const n = document.getElementById('navLinks');
-    if (h && n) { h.addEventListener('click', () => { n.classList.toggle('open'); h.classList.toggle('open'); h.setAttribute('aria-expanded', n.classList.contains('open')); }); }
-    document.querySelectorAll('.nav-links a').forEach(l => { l.addEventListener('click', () => { n?.classList.remove('open'); h?.classList.remove('open'); }); });
-  </script>
-
 </body>
 </html>
