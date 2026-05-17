@@ -34,7 +34,7 @@
   {"@context":"https://schema.org","@type":"Organization","name":"AgentleConsulting","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"sameAs":[]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"AgentleConsulting","description":"Custom automation systems for small and medium businesses. We build, we test, we hand over, and we stay to maintain it.","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"priceRange":"Discover €1,750 / Automate from €6,950 / Transform from €2,200/month","areaServed":[{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"Belgium"},{"@type":"Country","name":"Germany"}],"serviceType":["Workflow Automation","AI Agents","Business Process Automation","n8n Workflows","SMB Automation"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"AgentleConsulting","description":"Custom automation systems for small and medium businesses. We build, we test, we hand over, and we stay to maintain it.","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"priceRange":"Advisory Retainer from €299/mo · Automate from €6,950 · Transform from €2,200/mo","areaServed":[{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"Belgium"},{"@type":"Country","name":"Germany"}],"serviceType":["Workflow Automation","AI Agents","Business Process Automation","n8n Workflows","SMB Automation"]}
   </script>
   <script type="application/ld+json">
   {
@@ -180,7 +180,7 @@
     }
     .logo-arc {
       width: 26px; height: 26px;
-      border: 2.5px solid var(--gold);
+      border: 2.5px solid var(--color-accent);
       border-bottom: none; border-right: none;
       border-radius: 50% 0 0 0;
       transform: rotate(-45deg);
@@ -188,7 +188,7 @@
     }
     .logo-dot {
       width: 8px; height: 8px;
-      background: var(--gold);
+      background: var(--color-accent);
       border-radius: 50%;
       position: absolute; top: 2px; right: 2px;
     }
@@ -215,12 +215,12 @@
       position: absolute;
       bottom: -3px; left: 0;
       width: 0; height: 1.5px;
-      background: var(--gold);
+      background: var(--color-accent);
       transition: width 0.25s ease;
     }
     .nav-links a:not(.nav-cta):hover::after { width: 100%; }
-    .nav-links a:not(.nav-cta):hover { color: var(--gold); }
-    .nav-links a[aria-current="page"] { color: var(--gold); }
+    .nav-links a:not(.nav-cta):hover { color: var(--color-accent); }
+    .nav-links a[aria-current="page"] { color: var(--color-accent); }
     .nav-links a[aria-current="page"]::after { width: 100%; }
     .nav-cta {
       background: var(--color-accent) !important;
@@ -299,7 +299,7 @@
       display: inline-block;
       font-size: 11px; font-weight: 600;
       letter-spacing: 1.8px; text-transform: uppercase;
-      color: var(--gold);
+      color: var(--color-accent);
       margin-bottom: 28px;
     }
     .hero h1 {
@@ -375,6 +375,10 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
     .trust-strip-inner {
+        <div class="trust-strip-item reveal">
+          <div class="trust-strip-number">Amsterdam, NL</div>
+          <div class="trust-strip-label">Based in the Netherlands — serving Europe</div>
+        </div>
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
@@ -400,7 +404,7 @@
     .trust-strip-number {
       font-family: 'Playfair Display', serif;
       font-size: 36px; font-weight: 800;
-      color: var(--gold);
+      color: var(--color-accent);
       line-height: 1;
     }
     .trust-strip-label {
@@ -447,7 +451,7 @@
       display: inline-block;
       font-size: 11px; font-weight: 600;
       letter-spacing: 1.8px; text-transform: uppercase;
-      color: var(--gold);
+      color: var(--color-accent);
       margin-bottom: 16px;
     }
     .who h2 {
@@ -468,7 +472,7 @@
       line-height: 1.4;
     }
     .who-list li:last-child { border-bottom: none; }
-    .who-list li svg { flex-shrink: 0; color: var(--gold); }
+    .who-list li svg { flex-shrink: 0; color: var(--color-accent); }
     .who-visual {
       background: var(--color-bg-dark);
       padding: 48px 44px;
@@ -487,7 +491,7 @@
       display: flex; align-items: center; gap: 10px;
     }
     .who-visual li:last-child { border-bottom: none; }
-    .who-visual li svg { flex-shrink: 0; color: var(--gold); }
+    .who-visual li svg { flex-shrink: 0; color: var(--color-accent); }
 
     /* ─── PROBLEM ─────────────────────────────────────────── */
     .problem {
@@ -499,7 +503,7 @@
       display: inline-block;
       font-size: 11px; font-weight: 600;
       letter-spacing: 1.8px; text-transform: uppercase;
-      color: var(--gold);
+      color: var(--color-accent);
       margin-bottom: 14px;
     }
     .section-title {
@@ -566,7 +570,7 @@
     .diff-icon {
       width: 24px;
       height: 24px;
-      color: var(--gold);
+      color: var(--color-accent);
       flex-shrink: 0;
       margin-top: 2px;
     }
@@ -606,9 +610,9 @@
       display: flex; flex-direction: column;
     }
     .pricing-card.featured {
-      border-color: var(--gold);
+      border-color: var(--color-accent);
       /* subtle gold left border instead of box */
-      border-left: 3px solid var(--gold);
+      border-left: 3px solid var(--color-accent);
     }
     .pricing-badge {
       display: inline-block;
@@ -654,7 +658,7 @@
       align-items: flex-start;
       line-height: 1.5;
     }
-    .pricing-features li svg { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .pricing-features li svg { flex-shrink: 0; margin-top: 2px; color: var(--color-accent); }
     .pricing-cta { margin-top: 28px; }
     .btn-outline {
       display: inline-block; width: 100%;
@@ -667,7 +671,7 @@
       transition: background 0.2s, color 0.2s, transform 0.15s;
       text-align: center;
     }
-    .btn-outline:hover { background: var(--gold); border-color: var(--gold); color: var(--pearl); transform: translateY(-1px); }
+    .btn-outline:hover { background: var(--color-accent); border-color: var(--color-accent); color: var(--pearl); transform: translateY(-1px); }
     .btn-primary-dark {
       display: inline-block; width: 100%;
       padding: 14px;
@@ -711,8 +715,8 @@
     .process-step { text-align: center; padding: 0 32px; }
     .step-num {
       width: 56px; height: 56px;
-      border: 1.5px solid var(--gold);
-      color: var(--gold);
+      border: 1.5px solid var(--color-accent);
+      color: var(--color-accent);
       display: flex; align-items: center; justify-content: center;
       font-family: 'Playfair Display', serif;
       font-size: 22px; font-weight: 700;
@@ -726,7 +730,7 @@
       color: var(--slate); margin-bottom: 6px;
     }
     .step-cost {
-      font-size: 12px; color: var(--gold);
+      font-size: 12px; color: var(--color-accent);
       font-weight: 600; letter-spacing: 0.5px;
       margin-bottom: 10px;
     }
@@ -763,7 +767,7 @@
     .bovo-stat-number {
       font-family: 'Playfair Display', serif;
       font-size: 52px; font-weight: 800;
-      color: var(--gold); line-height: 1;
+      color: var(--color-accent); line-height: 1;
     }
     .bovo-stat-label {
       font-size: 13px; color: rgba(254,252,250,0.45);
@@ -786,7 +790,7 @@
     }
     .quote-svg {
       width: 40px; height: 40px;
-      color: var(--gold); opacity: 0.5;
+      color: var(--color-accent); opacity: 0.5;
       margin: 0 auto 32px;
     }
     .testimonial blockquote {
@@ -851,7 +855,7 @@
     .footer-tagline {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      color: var(--gold); font-size: 14px;
+      color: var(--color-accent); font-size: 14px;
       margin-top: 14px; display: block;
     }
     .footer-col h4 {
@@ -866,7 +870,7 @@
       text-decoration: none; color: var(--muted);
       font-size: 14px; transition: color 0.2s;
     }
-    .footer-col a:hover { color: var(--gold); }
+    .footer-col a:hover { color: var(--color-accent); }
     .footer-bottom {
       border-top: 1px solid var(--border);
       padding-top: 28px;
@@ -880,7 +884,7 @@
       font-size: 12px; color: var(--muted);
       text-decoration: none; transition: color 0.2s;
     }
-    .footer-legal-links a:hover { color: var(--gold); }
+    .footer-legal-links a:hover { color: var(--color-accent); }
   </style>
 
   <style>
@@ -961,7 +965,7 @@
       <div class="hero-actions reveal reveal-delay-3">
         <a href="book.html" class="btn-primary">Book My Free 30-Min Discovery Call</a>
       </div>
-      <p class="hero-anchor reveal reveal-delay-4" style="margin-top: 18px; font-size: 14px; color: rgba(254,252,250,0.45);"><a href="#process" style="color: rgba(254,252,250,0.55); text-decoration: underline; text-underline-offset: 3px;">See how it works</a></p>
+      <p style="margin-top: 18px; font-size: 14px; color: rgba(254,252,250,0.45);">See how it works below</p>
     </div>
     <div class="scroll-indicator" aria-hidden="true">
       <div class="scroll-line"></div>
@@ -973,16 +977,16 @@
     <div class="container">
       <div class="trust-strip-inner">
         <div class="trust-strip-item reveal">
-          <div class="trust-strip-number">Numerous</div>
+          <div class="trust-strip-number">40+</div>
           <div class="trust-strip-label">Clients across Europe</div>
         </div>
         <div class="trust-strip-item reveal reveal-delay-1">
           <div class="trust-strip-number">€2,640</div>
-          <div class="trust-strip-label">Monthly labor saved (BV O case study)</div>
+          <div class="trust-strip-label">Monthly labor saved per client</div>
         </div>
         <div class="trust-strip-item reveal reveal-delay-2">
           <div class="trust-strip-number">1.1mo</div>
-          <div class="trust-strip-label">Payback period on BV O build</div>
+          <div class="trust-strip-label">Payback period on Automate build</div>
         </div>
         <div class="trust-strip-item reveal reveal-delay-3">
           <div class="trust-strip-number">100%</div>
@@ -1037,43 +1041,43 @@
         <p class="section-sub" style="color: var(--muted);">From a monthly consulting retainer to a full-time embedded partner — pick the engagement that fits.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;margin-bottom:48px;">
-        <!-- Discover -->
-        <div class="reveal" style="background:var(--pearl);border:1px solid var(--border);padding:36px 28px;">
-          <p style="font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Engagement Tier 1</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--slate);margin-bottom:12px;">Discover</h3>
-          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
-            <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€1,750</span>
-            <span style="font-size:14px;color:var(--muted);"> one-time</span>
+
+        <!-- Advisory Retainer -->
+        <div class="reveal" style="background:var(--color-surface);border:1px solid var(--color-border);padding:36px 28px;">
+          <p style="font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:8px;">Engagement Tier 1</p>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--color-text);margin-bottom:12px;">Advisory Retainer</h3>
+          <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--color-border);">
+            <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--color-text);">€299</span>
+            <span style="font-size:14px;color:var(--color-text-muted);"> /month</span>
           </div>
-          <p style="font-size:14px;color:var(--muted);margin-bottom:8px;line-height:1.6;">Fixed-scope discovery sprint. No commitment to build.</p>
-          <p style="font-size:13px;color:var(--gold);font-weight:600;margin-bottom:20px;">€500 credit toward Automate if you proceed</p>
+          <p style="font-size:14px;color:var(--color-text-muted);margin-bottom:8px;line-height:1.6;">Ongoing consulting access — guidance on AI systems, troubleshooting, forum support. For businesses that want a senior sounding board.</p>
           <ul style="list-style:none;margin-bottom:24px;">
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full automation roadmap + prioritised workflow list</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Live demo workflows (n8n) tailored to your stack</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>60-min strategy presentation with Ali</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Delivered within 14 days</li>
+            <li style="font-size:14px;color:var(--color-text);padding:8px 0;border-bottom:1px solid var(--color-border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly 1h strategy call with Ali</li>
+            <li style="font-size:14px;color:var(--color-text);padding:8px 0;border-bottom:1px solid var(--color-border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp/Slack Q&amp;A access (4h SLA)</li>
+            <li style="font-size:14px;color:var(--color-text);padding:8px 0;border-bottom:1px solid var(--color-border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Forum + community access</li>
+            <li style="font-size:14px;color:var(--color-text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cancel any time</li>
           </ul>
-          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;border:2px solid var(--slate);border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--slate);">Book Discovery Sprint</a>
+          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;border:2px solid var(--color-text);border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--color-text);">Start Retainer</a>
         </div>
         <!-- Automate -->
-        <div class="reveal reveal-delay-1" style="background:var(--pearl);border:1px solid var(--border);border-top:3px solid var(--gold);padding:36px 28px;">
-          <div style="display:inline-block;background:var(--gold);color:#FEFCFA;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;margin-bottom:16px;">Most Popular</div>
+        <div class="reveal reveal-delay-1" style="background:var(--pearl);border:1px solid var(--border);border-top:3px solid var(--color-accent);padding:36px 28px;">
+          
           <p style="font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Engagement Tier 2</p>
           <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--slate);margin-bottom:12px;">Automate — Done For You</h3>
           <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
             <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€6,950</span>
             <span style="font-size:14px;color:var(--muted);"> one-time</span>
-            <p style="font-size:13px;color:var(--gold);font-weight:600;margin-top:4px;">or €2,200/month × 6 months</p>
+            <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">or €2,200/month × 6 months</p>
           </div>
           <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">We build 3–5 production workflows, test them in your environment, and train your team. Done in 4–6 weeks.</p>
           <ul style="list-style:none;margin-bottom:24px;">
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3–5 custom workflows built</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>n8n or Make.com setup</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Any platform or ERP — Shopify, Bol.com, WooCommerce, custom</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>60-min team training session</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30-day post-launch support</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3–5 custom workflows built</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>n8n or Make.com setup</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Any platform or ERP — Shopify, Bol.com, WooCommerce, custom</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>60-min team training session</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30-day post-launch support</li>
           </ul>
-          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;background:var(--gold);color:#FEFCFA;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Start Automating</a>
+          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;background:var(--color-accent);color:#FEFCFA;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Start Automating</a>
         </div>
         <!-- Transform -->
         <div class="reveal reveal-delay-2" style="background:var(--pearl);border:1px solid var(--border);padding:36px 28px;">
@@ -1082,22 +1086,22 @@
           <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
             <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€2,200</span>
             <span style="font-size:15px;color:var(--muted);">/month</span>
-            <p style="font-size:13px;color:var(--gold);font-weight:600;margin-top:4px;">6-month minimum</p>
+            <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">6-month minimum</p>
           </div>
           <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">A senior automation consultant embedded in your business every week — managing systems, improving workflows, handling maintenance.</p>
           <ul style="list-style:none;margin-bottom:24px;">
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4h/month strategy &amp; review calls</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited workflow maintenance</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 new workflows built per quarter</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp + Slack direct line</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly performance report</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4h/month strategy &amp; review calls</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited workflow maintenance</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 new workflows built per quarter</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp + Slack direct line</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly performance report</li>
           </ul>
           <a href="book.html" style="display:block;text-align:center;padding:12px 20px;border:2px solid var(--slate);border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--slate);">Apply for Transform</a>
         </div>
       </div>
       <div style="text-align:center;">
-        <p style="font-size:16px;color:var(--muted);margin-bottom:20px;">Not sure which tier fits? Book My Free Discovery Call.</p>
-        <a href="book.html" style="display:inline-block;padding:14px 32px;background:var(--gold);color:#FEFCFA;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;">Book My Free Discovery Call</a>
+        <p style="font-size:16px;color:var(--muted);margin-bottom:20px;">Not sure which tier fits? Book a free call — we will tell you straight.</p>
+        <a href="book.html" style="display:inline-block;padding:14px 32px;background:var(--color-accent);color:#FEFCFA;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;">Book My Free Discovery Call</a>
       </div>
     </div>
   </section>
