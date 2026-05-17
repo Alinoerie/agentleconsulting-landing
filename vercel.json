@@ -3,20 +3,12 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "redirects": [
-    {
-      "source": "/services",
-      "destination": "/services/",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/about/",
-      "permanent": true
-    },
-    {
-      "source": "/pricing",
-      "destination": "/pricing.html",
-      "permanent": false
-    }
+    { "source": "/services", "destination": "/services/", "permanent": true },
+    { "source": "/about", "destination": "/about/", "permanent": true },
+    { "source": "/pricing", "destination": "/pricing.html", "permanent": false },
+    { "source": "/book", "destination": "/book.html", "permanent": false },
+    { "source": "/faq", "destination": "/faq.html", "permanent": false },
+    { "source": "/blog", "destination": "/blog/", "permanent": true },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html", "permanent": false }
   ]
 }
