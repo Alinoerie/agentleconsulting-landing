@@ -34,7 +34,7 @@
   {"@context":"https://schema.org","@type":"Organization","name":"AgentleConsulting","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"sameAs":[]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"AgentleConsulting","description":"Custom automation systems for SMBs in Europe. We build, test, hand over, and stay to maintain.","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"priceRange":"Advisory Retainer from €299/mo · Automate from €6,950 · Transform from €2,200/mo","areaServed":[{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"Belgium"},{"@type":"Country","name":"Germany"}],"serviceType":["Workflow Automation","AI Agents","Business Process Automation","n8n Workflows","SMB Automation"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"AgentleConsulting","description":"Custom automation systems for SMBs in Europe. We build, test, hand over, and stay to maintain.","url":"https://agentleconsulting.com","email":"hello@agentleconsulting.com","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"},"priceRange":"Advisory Retainer from €299/mo · Advisory from €299/mo · Execution from €1,999 · Pay As You Go custom","areaServed":[{"@type":"Country","name":"Netherlands"},{"@type":"Country","name":"Belgium"},{"@type":"Country","name":"Germany"}],"serviceType":["Workflow Automation","AI Agents","Business Process Automation","n8n Workflows","SMB Automation"]}
   </script>
   <script type="application/ld+json">
   {
@@ -154,12 +154,9 @@
       z-index: 200;
       width: 100%;
       box-sizing: border-box;
-      background: rgba(250, 248, 245, 0.88);
-      backdrop-filter: blur(16px) saturate(1.5);
-      -webkit-backdrop-filter: blur(16px) saturate(1.5);
+      background: rgba(250, 248, 245, 1);
       border-bottom: 1px solid var(--border);
     }
-    nav.scrolled { background: rgba(250,250,249,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
     nav.scrolled .logo-text { color: var(--color-text); }
     nav.scrolled .nav-links a { color: var(--color-text); }
     nav.scrolled .hamburger span { background: var(--color-text); }
@@ -256,8 +253,6 @@
          top: 0; left: 0; right: 0; bottom: 0;
          background: rgba(250, 250, 249, 0.97);
          z-index: 99;
-         backdrop-filter: blur(20px);
-         -webkit-backdrop-filter: blur(20px);
          border-bottom: 1px solid var(--border);
          padding: 24px;
          gap: 16px;
@@ -275,8 +270,6 @@
         display: none; flex-direction: column;
         position: fixed; top: 72px; left: 0; right: 0;
         background: rgba(250,248,245,0.96);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
         padding: 24px 28px 32px; gap: 20px;
         box-shadow: 0 8px 32px rgba(28,25,23,0.1);
         border-bottom: 1px solid var(--border);
@@ -437,8 +430,6 @@
          top: 0; left: 0; right: 0; bottom: 0;
          background: rgba(250, 250, 249, 0.97);
          z-index: 99;
-         backdrop-filter: blur(20px);
-         -webkit-backdrop-filter: blur(20px);
          border-bottom: 1px solid var(--border);
          padding: 24px;
          gap: 16px;
@@ -947,7 +938,7 @@
       "name": "How much does automation consulting cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Advisory Retainer from €299/month for ongoing consulting access. Automate engagements start at €6,950 for a 4–6 workflow build. Transform partnerships start at €2,200/month on a 6-month minimum. All pricing is fixed and published. No quotes, no surprises."
+        "text": "Advisory Retainer from €299/month. Execution engagements from €1,999 one-time. Pay As You Go is custom priced. All pricing is fixed and published. No quotes, no surprises."
       }
     },
     {
@@ -955,7 +946,7 @@
       "name": "What does the Automate build process look like?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We start with a Discovery Sprint (€1,750, 14 days) to map your highest-ROI automation opportunities. If you proceed, we build 4–6 core workflows using n8n, deliver within 4–6 weeks, and support you for 30 days post-launch. You own everything we build."
+        "text": "We start with a brief call to understand your workflows. Then we build 3–5 custom automations using n8n or Make.com, test them in your environment, and hand them over. Done in 3–4 weeks. You own everything we build."
       }
     },
     {
@@ -963,7 +954,7 @@
       "name": "Is there a minimum commitment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Advisory Retainer is month-to-month. Cancel any time. Transform partnerships require 6 months because automation ROI compounds over time; most clients see their first major workflow iteration in months 2–3."
+        "text": "The Advisory Retainer is month-to-month. Cancel any time. Execution is a one-time project. Pay As You Go has no minimum commitment."
       }
     },
     {
@@ -1143,44 +1134,44 @@
             <li style="font-size:14px;color:var(--color-text);padding:8px 0;border-bottom:1px solid var(--color-border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Forum + community access</li>
             <li style="font-size:14px;color:var(--color-text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cancel any time</li>
           </ul>
-          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;border:2px solid var(--color-text);border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--color-text);">Start Retainer</a>
+          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;border:2px solid var(--color-text);border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--color-text);">Start Advisory</a>
         </div>
         <!-- Automate -->
         <div class="reveal reveal-delay-1" style="background:var(--pearl);border:1px solid var(--border);border-top:3px solid var(--color-accent);padding:36px 28px;">
           
           <p style="font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Engagement Tier 2</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--slate);margin-bottom:12px;">Automate: Done For You</h3>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--slate);margin-bottom:12px;">Execution</h3>
           <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
-            <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€6,950</span>
+            <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€1,999</span>
             <span style="font-size:14px;color:var(--muted);"> one-time</span>
-            <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">or €2,200/month × 6 months</p>
+            <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">or €350/month × 6 months</p>
           </div>
-          <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">We build 4–6 core workflows, test them in your environment, and train your team. Done in 4–6 weeks.</p>
+          <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">We build your automations, test them in your environment, and hand them over. Done in 3–4 weeks.</p>
           <p style="font-size:12px;color:var(--color-text-muted);margin-bottom:16px;line-height:1.6;font-style:italic;">Examples: Amazon–Bol.com inventory sync · Supplier RFQ auto-response · Order-to-ERP routing · Customer reconciliation</p>
           <ul style="list-style:none;margin-bottom:24px;">
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4–6 core workflows built</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3–5 custom workflows built</li>
             <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>n8n or Make.com setup</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Any platform or ERP: Shopify, Bol.com, WooCommerce, custom</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Any platform or ERP integration</li>
             <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>60-min team training session</li>
             <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30-day post-launch support</li>
           </ul>
-          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;background:var(--color-accent);color:#FEFCFA;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Start Automating</a>
+          <a href="book.html" style="display:block;text-align:center;padding:12px 20px;background:var(--color-accent);color:#FEFCFA;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;">Start Execution</a>
         </div>
         <!-- Transform -->
         <div class="reveal reveal-delay-2" style="background:var(--pearl);border:1px solid var(--border);padding:36px 28px;">
           <p style="font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Engagement Tier 3</p>
-          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--slate);margin-bottom:12px;">Transform: Automation Partner</h3>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--slate);margin-bottom:12px;">Pay As You Go</h3>
           <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);">
-            <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€2,200</span>
-            <span style="font-size:15px;color:var(--muted);">/month</span>
-            <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">6-month minimum. Here's what you get</p>
-            <p style="font-size:13px;color:var(--color-text-muted);margin-top:4px;font-weight:400;font-style:normal;">Currently accepting 1 new client per quarter.</p>
+            <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">Custom</span>
+            <span style="font-size:15px;color:var(--muted);">pricing</span>
+            <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">Book a call to discuss your needs</p>
+            <p style="font-size:13px;color:var(--color-text-muted);margin-top:4px;font-weight:400;font-style:normal;">For ongoing projects, custom builds, or anything that doesn't fit the other tiers.</p>
           </div>
-          <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">A senior automation consultant embedded in your business every week. Managing systems, improving workflows, handling maintenance.</p>
+          <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">Direct access to Ali. Managing systems, improving workflows, handling maintenance.</p>
           <ul style="list-style:none;margin-bottom:24px;">
             <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4h/month strategy &amp; review calls</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited workflow maintenance</li>
-            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 new workflows built per quarter</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>You own all workflows built</li>
+            <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No minimum commitment</li>
             <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp + Slack direct line</li>
             <li style="font-size:14px;color:var(--text);padding:8px 0;display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Monthly written summary: what ran, what changed</li>
           </ul>
