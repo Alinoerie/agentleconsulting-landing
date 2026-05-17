@@ -8,17 +8,218 @@
   <link rel="canonical" href="https://agentleconsulting.com/what-is-ecommerce-automation.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <meta property="og:title" content="What Is E-commerce Automation? A Plain-English Guide for Amazon and Bol.com Sellers">
   <meta property="og:description" content="E-commerce automation means using software to handle repetitive tasks — order processing, inventory updates, customer messages — so you can focus on growing your business.">
   <meta property="og:type" content="article">
   <meta property="article:published_time" content="May 7, 2026">
-  <style>
-    :root { --sage: #6B9E78; --slate: #2D3A45; --amber: #D4956A; --cream: #F8F5F0; --stone: #EDE9E2; --pearl: #FEFCFA; }
+  <style>:root {
+    --color-primary: #3730A3;
+    --color-primary-light: #4F46E5;
+    --color-accent: #F59E0B;
+    --color-accent-hover: #D97706;
+    --color-bg: #FAFAF9;
+    --color-bg-dark: #0F172A;
+    --color-surface: #FFFFFF;
+    --color-text: #1E293B;
+    --color-text-muted: #64748B;
+    --color-border: #E2E8F0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.75;
+    font-size: 17px;
+  }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; color: var(--color-text); }
+  a { color: var(--color-primary); text-decoration: none; }
+  a:hover { color: var(--color-primary-light); }
+  .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15,23,42,0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 24px; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #F8FAFC; text-decoration: none; }
+  .nav-logo span { color: var(--color-accent); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: rgba(248,250,252,0.75); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { color: #F8FAFC; }
+  .nav-cta { background: var(--color-accent) !important; color: #0F172A !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--color-accent-hover) !important; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+  .hamburger span { width: 22px; height: 2px; background: #F8FAFC; border-radius: 2px; transition: all 0.3s; }
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: rgba(15,23,42,0.98); padding: 24px; gap: 16px; }
+    .nav-links.open { display: flex; }
+    .nav-links li { text-align: center; }
+    .nav-links a { font-size: 16px; }
+  }
+
+  article { padding: 96px 0 80px; }
+  .article-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--color-border); }
+  .article-meta { font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+  article h1 { font-size: clamp(28px, 5vw, 46px); color: var(--color-text); margin-bottom: 20px; }
+  article h2 { font-size: 24px; color: var(--color-text); margin: 40px 0 14px; }
+  article h3 { font-size: 20px; color: var(--color-text); margin: 28px 0 10px; }
+  article p { margin-bottom: 20px; color: var(--color-text-muted); }
+  article ul, article ol { margin: 0 0 20px 24px; }
+  article li { margin-bottom: 10px; color: var(--color-text-muted); }
+  article strong { color: var(--color-text); font-weight: 600; }
+  article a { color: var(--color-primary); text-decoration: none; }
+  article a:hover { color: var(--color-primary-light); }
+  article blockquote { border-left: 3px solid var(--color-accent); padding-left: 20px; margin: 28px 0; font-style: italic; color: var(--color-text); }
+  .article-cta { background: var(--color-bg-dark); border-radius: 12px; padding: 28px 32px; margin-top: 48px; }
+  .article-cta h3 { font-size: 20px; margin-bottom: 10px; color: #F8FAFC; }
+  .article-cta p { margin-bottom: 16px; color: rgba(254,252,250,0.6); }
+  .btn-primary {
+    display: inline-block; background: var(--color-accent); color: #0F172A;
+    font-weight: 700; padding: 13px 28px; border-radius: 6px;
+    text-decoration: none; font-size: 15px;
+    box-shadow: 0 4px 14px rgba(245,158,11,0.35);
+  }
+  .btn-primary:hover { background: var(--color-accent-hover); }
+  .key-takeaway { background: var(--color-bg-dark); color: #F8FAFC; border-radius: 12px; padding: 24px 28px; margin: 36px 0; }
+  .key-takeaway h3 { color: #F8FAFC; font-size: 18px; margin-bottom: 10px; }
+  .key-takeaway p { color: rgba(254,252,250,0.8); margin-bottom: 0; }
+
+  /* Article body content (inner pages use .article-body) */
+  .article-body { padding: 0; }
+  .article-body h2 { font-size: 28px; margin-top: 48px; margin-bottom: 18px; }
+  .article-body h3 { font-size: 22px; margin-top: 32px; margin-bottom: 14px; }
+  .article-body p { color: #3a4a55; margin-bottom: 20px; }
+  .article-body ul, .article-body ol { margin-bottom: 20px; padding-left: 24px; }
+  .article-body li { color: #3a4a55; margin-bottom: 10px; }
+  .article-body strong { color: var(--color-text); }
+  .article-body blockquote { border-left: 3px solid var(--color-accent); padding-left: 20px; margin: 28px 0; font-style: italic; color: var(--color-text); }
+
+  /* Common blocks */
+  .callout { background: rgba(55,48,163,0.05); border-left: 4px solid var(--color-primary); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+  .callout p { color: var(--color-text) !important; margin-bottom: 0 !important; }
+  .callout strong { color: var(--color-text) !important; }
+  .cta-block { background: var(--color-bg-dark); color: #F8FAFC; border-radius: 16px; padding: 40px 48px; margin: 56px 0; text-align: center; }
+  .cta-block h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #F8FAFC; margin-bottom: 12px; }
+  .cta-block p { font-size: 16px; color: rgba(254,252,250,0.75); margin-bottom: 24px; }
+  .cta-block .btn-primary { background: var(--color-accent); color: #0F172A; }
+
+  /* Stat/term/task cards */
+  .stat-banner { background: var(--color-bg-dark); color: #F8FAFC; border-radius: 12px; padding: 28px 32px; margin: 28px 0; }
+  .stat-banner p { color: #F8FAFC !important; }
+  .stat-banner strong { color: var(--color-accent) !important; font-size: 22px; }
+  .term-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 28px 32px; margin: 28px 0; }
+  .term-card-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 12px; }
+  .term-name { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500; color: var(--color-primary); }
+  .term-alias { font-size: 13px; color: var(--color-text-muted); }
+  .term-example { background: var(--color-bg); border-radius: 8px; padding: 14px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--color-text); margin-top: 14px; }
+  .term-example strong { font-family: 'Inter', sans-serif; font-weight: 600; }
+  .task-row { border-bottom: 1px solid var(--color-border); padding: 24px 0; display: flex; gap: 20px; align-items: flex-start; }
+  .task-row:last-child { border-bottom: none; }
+  .task-rank { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 800; color: var(--color-primary); min-width: 44px; line-height: 1.2; }
+  .task-content { flex: 1; }
+  .task-content h3 { font-size: 19px; margin-bottom: 8px; margin-top: 0; }
+  .task-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .task-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+  .tag-roi { background: rgba(55,48,163,0.1); color: var(--color-primary); }
+  .tag-time { background: var(--color-bg); color: var(--color-text); }
+  .task-content p { margin-bottom: 0 !important; font-size: 15px !important; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+  .comparison-table th { background: var(--color-bg-dark); color: #F8FAFC; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 16px; text-align: left; }
+  .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .comparison-table tr:nth-child(even) td { background: rgba(55,48,163,0.03); }
+  .comparison-table td:first-child { font-weight: 600; color: var(--color-text); }
+  .pro-tip { background: rgba(55,48,163,0.06); border: 1px solid rgba(55,48,163,0.15); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+  .pro-tip strong { color: var(--color-primary); }
+  .stat-row { display: flex; gap: 24px; margin: 36px 0; flex-wrap: wrap; }
+  .stat-box { flex: 1; min-width: 160px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; text-align: center; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; color: var(--color-primary); }
+  .stat-label { font-size: 13px; color: var(--color-text-muted); margin-top: 6px; }
+  .workflow-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 28px; margin: 28px 0; }
+  .workflow-card-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .workflow-number { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 800; color: var(--color-primary); line-height: 1; }
+  .workflow-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--color-text); }
+  .workflow-meta { display: flex; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .audit-box { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 28px 32px; margin: 32px 0; }
+  .audit-box h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 14px; }
+  .audit-box ol { padding-left: 20px; margin-bottom: 0; }
+  .audit-box li { margin-bottom: 10px; }
+  .mistake-block { border-left: 3px solid var(--color-accent); padding: 4px 0 4px 20px; margin: 24px 0; }
+  .deadline-banner { background: var(--color-accent); color: #0F172A; border-radius: 12px; padding: 24px 32px; margin: 28px 0; }
+  .deadline-banner p { color: #0F172A !important; font-size: 17px; margin-bottom: 0 !important; font-weight: 500; }
+  .deadline-banner strong { color: #0F172A !important; }
+  .risk-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+  .risk-table th { background: var(--color-bg-dark); color: #F8FAFC; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 16px; text-align: left; }
+  .risk-table td { padding: 12px 16px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .risk-table tr:nth-child(even) td { background: rgba(55,48,163,0.03); }
+  .risk-table td:first-child { font-weight: 600; color: var(--color-text); }
+  .risk-low { color: var(--color-primary); font-weight: 600; }
+  .risk-medium { color: var(--color-accent); font-weight: 600; }
+  .risk-high { color: #c0392b; font-weight: 600; }
+  .checklist { margin: 32px 0; }
+  .check-section { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; }
+  .check-section h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 14px; }
+  .check-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+  .check-box { width: 20px; height: 20px; border: 2px solid var(--color-border); border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+  .check-text { font-size: 15px; color: var(--color-text-muted); }
+  .score-block { background: var(--color-bg-dark); color: #F8FAFC; border-radius: 12px; padding: 28px 32px; margin: 36px 0; }
+  .score-block h4 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 16px; color: #F8FAFC; }
+  .score-block p { color: rgba(254,252,250,0.8) !important; margin-bottom: 12px !important; }
+  .score-block strong { color: #F8FAFC !important; }
+  .quiz-intro { background: var(--color-bg-dark); color: #F8FAFC; border-radius: 12px; padding: 28px 32px; margin: 32px 0 0; }
+  .quiz-intro p { color: rgba(254,252,250,0.85) !important; font-size: 16px; margin-bottom: 0 !important; }
+  .quiz-intro strong { color: #F8FAFC !important; }
+  .question-block { border-bottom: 1px solid var(--color-border); padding: 28px 0; }
+  .question-number { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-primary); margin-bottom: 8px; }
+  .question-text { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--color-text); margin-bottom: 16px; }
+  .answer-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+  .answer-radio { width: 18px; height: 18px; border: 2px solid var(--color-border); border-radius: 50%; flex-shrink: 0; }
+  .answer-label { font-size: 15px; color: var(--color-text-muted); }
+  .result-block { border-radius: 16px; padding: 36px; margin: 40px 0; text-align: center; }
+  .result-low { background: rgba(55,48,163,0.06); border: 1px solid rgba(55,48,163,0.15); }
+  .result-medium { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+  .result-high { background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.15); }
+  .result-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .result-low .result-label { color: var(--color-primary); }
+  .result-medium .result-label { color: var(--color-accent); }
+  .result-high .result-label { color: #c0392b; }
+  .result-block h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 12px; }
+  .result-low h3 { color: var(--color-primary); }
+  .result-medium h3 { color: var(--color-accent); }
+  .result-high h3 { color: #c0392b; }
+  .result-block p { font-size: 15px; color: var(--color-text-muted); margin-bottom: 12px; }
+  .result-block ul { text-align: left; padding-left: 20px; margin-bottom: 0; }
+  .result-block li { font-size: 15px; color: var(--color-text-muted); margin-bottom: 8px; }
+  .result-block li strong { color: var(--color-text); }
+  .comparison-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 24px 0; }
+  .comparison-card h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 10px; }
+  .comparison-card p { margin-bottom: 0 !important; font-size: 15px !important; }
+  .workflow-priority { border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+  .workflow-priority-header { background: var(--color-bg-dark); padding: 14px 20px; }
+  .workflow-priority-header h4 { font-family: 'Playfair Display', serif; font-size: 16px; color: #F8FAFC; margin: 0; }
+  .workflow-priority-body { padding: 16px 20px; }
+  .workflow-priority-body p { margin-bottom: 0 !important; font-size: 15px !important; }
+
+  footer { background: var(--color-bg-dark); padding: 48px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  footer p { color: rgba(248,250,252,0.4); font-size: 14px; line-height: 1.8; }
+  footer a { color: rgba(248,250,252,0.4); }
+  footer a:hover { color: var(--color-accent); }
+
+  .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999; }
+  .skip-link:focus { position: static; width: auto; height: auto; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--slate); line-height: 1.75; font-size: 17px; }
-    h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 700; line-height: 1.2; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
     .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
 
     nav { background: var(--cream); border-bottom: 1px solid var(--stone); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
@@ -61,7 +262,7 @@
     footer { background: var(--stone); padding: 40px 0 32px; border-top: 1px solid rgba(45,58,69,0.1); }
     footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     footer p { font-size: 13px; color: #8899a6; }
-    .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); font-size: 14px; }
+    .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--sage); font-size: 14px; }
   </style>
 
   <style>
@@ -73,20 +274,7 @@
         scroll-behavior: auto !important;
       }
     }
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 16px;
-      background: #C49A3C;
-      color: #1C1917;
-      padding: 8px 16px;
-      border-radius: 0 0 6px 6px;
-      font-weight: 600;
-      font-size: 14px;
-      z-index: 10000;
-      text-decoration: none;
-      transition: top 0.2s;
-    }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999; }
     .skip-link:focus { top: 0; }
   </style>
 
@@ -97,17 +285,18 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav>
-    <div class="container">
-      <a href="../index.html" class="logo">
-        <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
-        <span class="logo-text">AgentleConsulting</span>
-      </a>
-      <ul class="nav-links">
+    <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Agentle<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../index.html#services">Services</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#contact" class="nav-cta">Book a Call</a></li>
+        <li><a href="../services/index.html">Services</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta">Book My Call</a></li>
       </ul>
     </div>
   </nav>
@@ -128,7 +317,7 @@
   <meta name="description" content="E-commerce automation means using software to handle repetitive tasks — order processing, inventory updates, customer messages — so you can focus on growing your business. Here's what it actually means in practice.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --sage: #6B9E78;
@@ -148,7 +337,7 @@
       font-size: 17px;
     }
     h1, h2, h3, h4 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
       line-height: 1.2;
       color: var(--slate);
@@ -329,7 +518,7 @@
       text-align: center;
     }
     .cta-block h3 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 26px;
       font-weight: 700;
       color: var(--pearl);
@@ -370,7 +559,7 @@
       text-align: center;
     }
     .metric-number {
-      font-family: 'Fraunces', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 40px;
       font-weight: 800;
       color: var(--sage);
@@ -413,20 +602,7 @@
         scroll-behavior: auto !important;
       }
     }
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 16px;
-      background: #C49A3C;
-      color: #1C1917;
-      padding: 8px 16px;
-      border-radius: 0 0 6px 6px;
-      font-weight: 600;
-      font-size: 14px;
-      z-index: 10000;
-      text-decoration: none;
-      transition: top 0.2s;
-    }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999; }
     .skip-link:focus { top: 0; }
   </style>
 
@@ -604,12 +780,23 @@
 </article>
 
 <!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p>© 2026 AgentleConsulting · <a href="/">agentleconsulting.com</a></p>
-    <p>Automation with a Human Hand</p>
-  </div>
-</footer>
+  <footer>
+    <p>
+      Based in Amsterdam, serving businesses across Europe ·
+      <a href="https://www.linkedin.com/in/aliyasarnoerie" target="_blank">LinkedIn</a> ·
+      <a href="../privacy.html">Privacy</a> ·
+      <a href="../terms.html">Terms</a> ·
+      <a href="../accessibility.html">Accessibility</a>
+    </p>
+    <p style="margin-top:8px;">© 2026 AgentleConsulting. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const h = document.getElementById('hamburger');
+    const n = document.getElementById('navLinks');
+    if (h && n) { h.addEventListener('click', () => { n.classList.toggle('open'); h.classList.toggle('open'); h.setAttribute('aria-expanded', n.classList.contains('open')); }); }
+    document.querySelectorAll('.nav-links a').forEach(l => { l.addEventListener('click', () => { n?.classList.remove('open'); h?.classList.remove('open'); }); });
+  </script>
 
 
   <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1C1917; color:#FEFCFA; padding:20px 24px; font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
@@ -618,7 +805,7 @@
       <div style="display:flex; gap:10px; flex-shrink:0;">
         <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
         <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
-        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:#F59E0B; border:1px solid #F59E0B; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
       </div>
     </div>
   </div>
@@ -659,7 +846,7 @@
     <div class="container">
       <p>© 2026 AgentleConsulting. Amsterdam, Netherlands.</p>
         <p style="font-size:12px; color:var(--muted); margin-top:4px;">KvK: [KvK: YOUR_KVK_NUMBER] &nbsp;·&nbsp; BTW: [BTW: NLxxxxxxxxxB01]</p>
-      <p class="footer-tagline">Automation with a Human Hand</p>
+      
     </div>
   </footer>
 
@@ -669,7 +856,7 @@
       <div style="display:flex; gap:10px; flex-shrink:0;">
         <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
         <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
-        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:#F59E0B; border:1px solid #F59E0B; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
       </div>
     </div>
   </div>
