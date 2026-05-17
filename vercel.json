@@ -8,6 +8,7 @@
     { "source": "/pricing", "destination": "/pricing.html", "permanent": false },
     { "source": "/book", "destination": "/book.html", "permanent": false },
     { "source": "/faq", "destination": "/faq.html", "permanent": false },
+    { "source": "/case-study-kitchenware", "destination": "/case-study-kitchenware.html", "permanent": false },
     { "source": "/blog/20-hour-work-week-ai-agents-amazon-sellers", "destination": "/blog/20-hour-work-week-ai-agents-amazon-sellers.html", "permanent": false },
     { "source": "/blog/ai-agents-vs-workflow-automation", "destination": "/blog/ai-agents-vs-workflow-automation.html", "permanent": false },
     { "source": "/blog/amazon-automation-tasks-ranked-by-roi", "destination": "/blog/amazon-automation-tasks-ranked-by-roi.html", "permanent": false },
