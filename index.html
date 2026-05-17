@@ -106,7 +106,7 @@
       --cream:   var(--color-bg);
       --pearl:   var(--color-surface);
       --stone:   #EDE9E2;
-      --gold:     #C49A3A;
+      --gold:     var(--color-accent);
       --gold-dk: #D97706;
       --slate:   var(--color-text);
       --text:    var(--color-text);
@@ -900,7 +900,7 @@
       position: absolute;
       top: -100%;
       left: 16px;
-      background: #C49A3C;
+      background: var(--color-accent);
       color: #1C1917;
       padding: 8px 16px;
       border-radius: 0 0 6px 6px;
@@ -1256,7 +1256,7 @@
       <div style="display:flex; gap:10px; flex-shrink:0;">
         <button onclick="cookieConsent('accept')" style="background:#6B9E78; color:#FEFCFA; border:none; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Accept All</button>
         <button onclick="cookieConsent('reject')" style="background:transparent; color:#FEFCFA; border:1px solid rgba(254,252,250,0.3); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Reject All</button>
-        <button onclick="cookieConsent('customize')" style="background:transparent; color:#C49A3C; border:1px solid #C49A3C; padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
+        <button onclick="cookieConsent('customize')" style="background:transparent; color:var(--color-accent); border:1px solid var(--color-accent); padding:9px 18px; border-radius:6px; font-weight:600; font-size:13px; cursor:pointer;">Customize</button>
       </div>
     </div>
   </div>
@@ -1286,10 +1286,10 @@
   <div id="exit-intent-overlay" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(28,25,23,0.88); backdrop-filter:blur(6px); align-items:center; justify-content:center; font-family:'Inter',sans-serif;">
     <div style="background:var(--pearl,#FEFCFA); border-radius:16px; padding:48px 44px; max-width:480px; width:90%; text-align:center; position:relative;">
       <button onclick="document.getElementById('exit-intent-overlay').style.display=\'none\'" aria-label="Close" style="position:absolute; top:16px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--muted,#78716C);">×</button>
-      <p style="font-size:11px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--gold,#C49A3C); margin-bottom:12px;">Before you go</p>
+      <p style="font-size:11px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:var(--color-accent,#F59E0B); margin-bottom:12px;">Before you go</p>
       <h2 style="font-family:\'Playfair Display\',serif; font-size:28px; color:var(--slate,#1C1917); margin-bottom:14px; line-height:1.2;">Book My Free Discovery Call</h2>
       <p style="font-size:15px; color:var(--muted,#78716C); line-height:1.7; margin-bottom:28px;">30 minutes mapping your highest-ROI automation opportunities.</p>
-      <a href="book.html" style="display:inline-block; background:var(--gold,#C49A3C); color:#FEFCFA; padding:14px 32px; border-radius:6px; font-weight:600; font-size:15px; text-decoration:none; margin-bottom:12px;">Book My Free Discovery Call</a>
+      <a href="book.html" style="display:inline-block; background:var(--color-accent,#F59E0B); color:#FEFCFA; padding:14px 32px; border-radius:6px; font-weight:600; font-size:15px; text-decoration:none; margin-bottom:12px;">Book My Free Discovery Call</a>
       <p style="font-size:12px; color:var(--muted,#78716C);">Or continue browsing — no pressure.</p>
     </div>
   </div>
