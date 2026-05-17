@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — AgentleConsulting | AI Automation for SMBs in Europe</title>
+  <meta name="description" content="Direct answers to common questions about AI automation projects, GDPR compliance, ownership, timelines, and how we work with SMBs across Europe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --color-primary: #3730A3;
+      --color-primary-light: #4F46E5;
+      --color-accent: #F59E0B;
+      --color-accent-hover: #D97706;
+      --color-bg: #FAFAF9;
+      --color-bg-dark: #0F172A;
+      --color-surface: #FFFFFF;
+      --color-text: #1E293B;
+      --color-text-muted: #64748B;
+      --color-border: #E2E8F0;
+      --color-gold: #C49A3A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; min-height: 100vh; height: 100%; }
+    body { font-family: 'Inter', sans-serif; background: var(--color-bg); color: var(--color-text); min-height: 100vh; }
+    details[open] summary span { transform: rotate(45deg); }
+    details summary span { transition: transform 0.2s; display: inline-block; }
+  </style>
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999;">Skip to main content</a>
+
+  <nav id="mainNav">
+    <div class="container">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <div class="logo-arc"></div>
+          <div class="logo-dot"></div>
+        </div>
+        <span class="logo-text">AgentleConsulting</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="services/index.html">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="about/index.html">About</a></li>
+        <li><a href="about/index.html#who">Who We Serve</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta">Book My Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- FAQ -->
+      <section style="padding: 100px 0; background: var(--color-bg, #FAFAF9);" id="faq">
+        <div style="max-width: 760px; margin: 0 auto; padding: 0 24px;">
+          <div style="text-align: center; margin-bottom: 64px;">
+            <div style="font-size: 11px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--color-accent, #F59E0B); margin-bottom: 12px;">Questions</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 700; color: var(--color-text, #1E293B); margin-bottom: 16px;">Frequently asked questions.</h2>
+            <p style="font-size: 17px; color: var(--color-text-muted, #64748B); max-width: 520px; margin: 0 auto;">Direct answers. No sales spin. If you have a question not covered here, message Ali directly.</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                Which workflows should we automate first?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">Start with whatever costs you the most time and happens repeatedly. Order processing, customer follow-ups, data transfers between platforms — these are the obvious candidates. During our discovery call, we'll map out where you're spending the most hours and identify which automations will pay back fastest. We don't automate for the sake of it. We automate what actually moves the needle.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                How long does a typical automation project take from kickoff to go-live?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">Most projects go live within 2–4 weeks of kickoff, depending on complexity. A straightforward n8n workflow might be live in a week. A multi-system integration with custom logic takes longer. We scope it properly before we start — you'll know the timeline before we write a line of code.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                Who owns the automation once the project is done?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">You do. Full stop. We hand over the systems, the documentation, and (if you want) the source files. You can host them yourself, export them to another platform, or let us manage them ongoing. We're not in the business of locking you in. If you want to walk, you can walk.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                What happens if the automation doesn't deliver the promised savings?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">Then we fix it until it does. We don't consider a project done until the outcomes are actually there. If the automation isn't performing as scoped, we iterate. That's included in the engagement. We don't build something, invoice, and disappear.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                How do you handle data privacy and GDPR compliance?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">Every workflow we build is designed with GDPR in mind from day one. We document what data flows where, ensure proper consent foundations, and build audit trails. For EU-based businesses, this isn't optional — it's the baseline. We won't build something that exposes you to a fine.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                Do you offer a pilot before a full engagement?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">Yes. We can scope a contained pilot on a single workflow — typically 1–2 weeks of build time — so you can see the quality of our work and whether the process feels right before committing to a bigger engagement. If it doesn't work out, you've lost minimal time and money.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                What makes you different from other AI consultants?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">Most consultants sell you a roadmap and hand it off to a developer. We build, we test, we stay. Ali is the person you message — not a project manager, not a junior. You get direct access to the person doing the work. We also hand over ownership, which many consultants avoid because it means they can't charge you forever.</p>
+            </details>
+            <details style="border-bottom: 1px solid var(--color-border, #E2E8F0); padding: 24px 0; cursor: pointer;">
+              <summary style="font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--color-text, #1E293B); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+                How do you get employees to actually use the automation?
+                <span style="color: var(--color-accent, #F59E0B); font-size: 20px; flex-shrink: 0;">+</span>
+              </summary>
+              <p style="font-size: 16px; color: var(--color-text-muted, #64748B); line-height: 1.7; margin-top: 16px; padding-right: 32px;">The automation has to be designed for how people actually work — not the other way around. We involve your team in the build process and keep the interfaces simple. If your staff needs to change their behavior significantly to make it work, we've built it wrong. We measure adoption, not just delivery.</p>
+            </details>
+          </div>
+
+          <!-- Final CTA -->
+          <div style="text-align: center; margin-top: 80px; padding: 48px; background: var(--color-bg-dark, #0F172A); border-radius: 16px;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #F8FAFC; margin-bottom: 12px;">Still have questions?</h3>
+            <p style="font-size: 16px; color: rgba(248,250,252,0.6); margin-bottom: 32px;">Message Ali directly. No sales team, no waiting.</p>
+            <a href="book.html" style="display: inline-block; background: var(--color-accent, #F59E0B); color: #0F172A; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(245,158,11,0.35);">Book My Free Discovery Call</a>
+          </div>
+        </div>
+      </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--color-bg-dark, #0F172A); padding: 48px 24px; text-align: center;">
+    <p style="color: rgba(248,250,252,0.4); font-size: 14px;">
+      Based in Amsterdam, serving businesses across Europe ·
+      <a href="https://www.linkedin.com/in/aliyasarnoerie" style="color: rgba(248,250,252,0.4);">LinkedIn</a> ·
+      <a href="privacy.html" style="color: rgba(248,250,252,0.4);">Privacy</a> ·
+      <a href="accessibility.html" style="color: rgba(248,250,252,0.4);">Accessibility</a>
+    </p>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+      });
+    }
+    // Close nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks?.classList.remove('open');
+        hamburger?.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
