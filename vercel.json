@@ -12,6 +12,11 @@
       "source": "/about",
       "destination": "/about/",
       "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html",
+      "permanent": false
     }
   ]
 }
