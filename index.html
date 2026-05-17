@@ -975,7 +975,30 @@
 </script>
 
 </head>
-<body>
+<body
+
+  <div id="cookie-consent" style="position:fixed;bottom:0;left:0;right:0;background:#1E293B;padding:16px 24px;z-index:9999;display:none;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid rgba(255,255,255,0.1);">
+    <p style="font-size:13px;color:rgba(254,252,250,0.75);margin:0;max-width:680px;line-height:1.5;">We use cookies to measure site traffic and improve your experience. No tracking cookies — just functional ones.</p>
+    <div style="display:flex;gap:12px;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:var(--color-accent);color:#0F172A;border:none;padding:8px 20px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;">Accept</button>
+      <button onclick="manageCookies()" style="background:transparent;color:rgba(254,252,250,0.6);border:1px solid rgba(255,255,255,0.2);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:500;cursor:pointer;">Manage</button>
+    </div>
+  </div>
+  <script>
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-consent').style.display = 'flex';
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', '1');
+      document.getElementById('cookie-consent').style.display = 'none';
+    }
+    function manageCookies() {
+      alert('Cookie preferences would open here. For now, accepting all cookies is the default.');
+      acceptCookies();
+    }
+  </script>
+
+>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
 
@@ -1010,8 +1033,8 @@
   <section class="hero">
     <div class="container">
       <p class="hero-eyebrow reveal">AI Automation for European SMBs</p>
-      <h1 class="reveal reveal-delay-1">Stop paying for hours your automation could reclaim<br><em>— and start investing that time where it actually compounds.</em></h1>
-      <p class="hero-sub reveal reveal-delay-2">We build the automation systems that handle the repetitive work. You stay in control of the strategy. Clients reclaim 60h/month — payback in 1.1 months.</p>
+      <h1 class="reveal reveal-delay-1">Stop spending 10 hours a week on work your automation should handle<br><em>— and start using that time to grow instead.</em></h1>
+      <p class="hero-sub reveal reveal-delay-2">We build the automation systems that handle your repetitive operations — inventory updates, supplier emails, logistics coordination. You stay in control of the strategy.</p>
       <div class="hero-actions reveal reveal-delay-3">
         <a href="book.html" class="btn-primary">Book My Free 30-Min Discovery Call</a>
       </div>
@@ -1119,7 +1142,8 @@
             <span style="font-size:14px;color:var(--muted);"> one-time</span>
             <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">or €2,200/month × 6 months</p>
           </div>
-          <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">We build 3–5 production workflows, test them in your environment, and train your team. Done in 4–6 weeks.</p>
+          <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">We build 4–6 core workflows, test them in your environment, and train your team. Done in 4–6 weeks.</p>
+          <p style="font-size:12px;color:var(--color-text-muted);margin-bottom:16px;line-height:1.6;font-style:italic;">Examples: Amazon–Bol.com inventory sync · Supplier RFQ auto-response · Order-to-ERP routing · Customer reconciliation</p>
           <ul style="list-style:none;margin-bottom:24px;">
             <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>4–6 core workflows built</li>
             <li style="font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>n8n or Make.com setup</li>
@@ -1137,6 +1161,7 @@
             <span style="font-family:'Playfair Display',serif;font-size:40px;font-weight:800;color:var(--slate);">€2,200</span>
             <span style="font-size:15px;color:var(--muted);">/month</span>
             <p style="font-size:13px;color:var(--color-accent);font-weight:600;margin-top:4px;">6-month minimum — here's why</p>
+            <p style="font-size:13px;color:var(--color-text-muted);margin-top:4px;font-weight:400;font-style:normal;">Currently accepting 1 new client per quarter.</p>
           </div>
           <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">A senior automation consultant embedded in your business every week — managing systems, improving workflows, handling maintenance.</p>
           <ul style="list-style:none;margin-bottom:24px;">
@@ -1172,7 +1197,7 @@
         <div class="process-step reveal reveal-delay-1">
           <div class="step-num">2</div>
           <div class="step-name">Build</div>
-          <div class="step-desc">We build 3–5 production workflows in n8n, test them in your real environment, and train your team. Done in 4–6 weeks. You own everything.</div>
+          <div class="step-desc">We build 4–6 core workflows in n8n, test them in your real environment, and train your team. Done in 4–6 weeks. You own everything.</div>
         </div>
         <div class="process-step reveal reveal-delay-2">
           <div class="step-num">3</div>
