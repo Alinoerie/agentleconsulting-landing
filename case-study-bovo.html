@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: 4.5 Month Payback — AgentleConsulting</title>
+  <meta name="description" content="How a Dutch Amazon+Bol.com seller automated their cross-platform inventory sync and supplier RFQ workflow — and hit payback in 4.5 months.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sage: #6B9E78;
+      --slate: #2D3A45;
+      --amber: #D4956A;
+      --cream: #F8F5F0;
+      --stone: #EDE9E2;
+      --pearl: #FEFCFA;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--slate);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--slate);
+    }
+    .container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--stone);
+      z-index: 100;
+      padding: 0 24px;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; position: relative; }
+    .logo-arc {
+      width: 28px; height: 28px; border: 3px solid var(--sage);
+      border-bottom: none; border-right: none; border-radius: 50% 0 0 0;
+      transform: rotate(-45deg); position: absolute; top: 4px; left: 0;
+    }
+    .logo-dot {
+      width: 9px; height: 9px; background: var(--amber); border-radius: 50%;
+      position: absolute; top: 2px; right: 2px;
+    }
+    .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--slate); }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--slate); font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      background: var(--sage) !important; color: var(--pearl) !important;
+      padding: 9px 20px; border-radius: 6px; font-weight: 600 !important;
+      font-size: 14px !important; transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #5a8a68 !important; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .case-hero {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--stone);
+    }
+    .case-label {
+      display: inline-block;
+      background: var(--stone);
+      color: var(--slate);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .case-hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      color: var(--slate);
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .case-hero h1 em {
+      font-style: italic;
+      color: var(--sage);
+    }
+    .case-sub {
+      font-size: 18px;
+      color: #5a6b77;
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+    .case-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .case-meta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 4px;
+    }
+    .case-meta-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    /* BODY */
+    .case-body { padding: 60px 0 80px; }
+    .case-body h2 { font-size: 26px; margin-top: 48px; margin-bottom: 16px; }
+    .case-body h3 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+    .case-body p { margin-bottom: 18px; color: #3a4a55; }
+    .case-body ul { margin-bottom: 18px; padding-left: 24px; }
+    .case-body li { margin-bottom: 8px; color: #3a4a55; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-left: 4px solid var(--amber);
+      padding: 8px 0 8px 28px;
+      margin: 40px 0;
+    }
+    .pull-quote p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--slate) !important;
+      margin-bottom: 12px !important;
+    }
+    .pull-quote cite {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      color: #8899a6;
+    }
+
+    /* RESULTS TABLE */
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 40px 0;
+      font-size: 15px;
+    }
+    .results-table th {
+      background: var(--slate);
+      color: var(--pearl);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 20px;
+      text-align: left;
+    }
+    .results-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--stone);
+      vertical-align: middle;
+    }
+    .results-table tr:nth-child(even) td { background: rgba(237,233,226,0.35); }
+    .results-table td:first-child { font-weight: 500; color: var(--slate); }
+    .before { color: #8899a6; text-decoration: line-through; }
+    .after { color: var(--sage); font-weight: 700; }
+
+    /* CTA BLOCK */
+    .cta-block {
+      background: var(--slate);
+      color: var(--pearl);
+      border-radius: 16px;
+      padding: 40px 48px;
+      margin: 56px 0;
+      text-align: center;
+    }
+    .cta-block h3 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--pearl); margin-bottom: 12px; }
+    .cta-block p { font-size: 16px; color: rgba(254,252,250,0.75); margin-bottom: 24px; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--sage);
+      color: var(--pearl);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: #5a8a68; }
+
+    /* CASE IMAGE */
+    .case-image {
+      width: 100%;
+      border-radius: 12px;
+      margin: 32px 0;
+    }
+
+    footer { background: var(--stone); padding: 48px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer p { font-size: 14px; color: #8899a6; }
+    footer a { color: var(--sage); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #C49A3C;
+      color: #1C1917;
+      padding: 8px 16px;
+      border-radius: 0 0 6px 6px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 10000;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    @media (max-width: 600px) {
+      .cta-block { padding: 28px 24px; }
+      .case-meta { gap: 20px; }
+    }
+  </style>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="favicon_256.png">
+  <link rel="apple-touch-icon" href="favicon_256.png">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">
+        <div class="logo-icon"><div class="logo-arc"></div><div class="logo-dot"></div></div>
+        <span class="logo-text">AgentleConsulting</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/case-study-kitchenware.html">Case Studies</a></li>
+        <li><a href="https://calendly.com/placeholder" class="nav-cta">Book a Free Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <header class="case-hero">
+      <div class="container">
+        <div class="case-label">Case Study</div>
+        <h1>Payback in <em>4.5 Months</em></h1>
+        <p class="case-sub">How a Dutch Amazon+Bol.com seller automated their cross-platform inventory sync and supplier workflow — and stopped chasing stock manually.</p>
+        <div class="case-meta">
+          <div>
+            <div class="case-meta-label">Client</div>
+            <div class="case-meta-value">BOVO (NL)</div>
+          </div>
+          <div>
+            <div class="case-meta-label">Platforms</div>
+            <div class="case-meta-value">Amazon EU + Bol.com</div>
+          </div>
+          <div>
+            <div class="case-meta-label">Workflows Automated</div>
+            <div class="case-meta-value">2 core processes</div>
+          </div>
+          <div>
+            <div class="case-meta-label">Payback Period</div>
+            <div class="case-meta-value">4.5 months</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="case-body container">
+
+      <h2>The Problem</h2>
+      <p>BOVO manages inventory across Amazon EU and Bol.com — two platforms with different listing formats, pricing rules, and stock pools. Every time a supplier delivered new stock or a sale happened on one platform, their team had to manually update the other.</p>
+      <p>Worse: supplier requests for quotes (RFQs) arrived by email and had to be retyped into a spreadsheet, checked against current margins, and replied to manually. The team was spending hours every day on data entry — not on growing the business.</p>
+
+      <img src="/images/bovo-case-study.jpg" alt="BOVO case study workflow visualization" class="case-image" loading="lazy">
+
+      <h2>The Solution</h2>
+      <p>We built two n8n workflows that ran on triggers, not schedules:</p>
+      <ul>
+        <li><strong>Cross-platform inventory sync</strong> — when stock updates on Amazon, Bol.com listing adjusts automatically. No manual re-entry. No oversells.</li>
+        <li><strong>Supplier RFQ pipeline</strong> — inbound emails are parsed, matched against margin rules, and formatted into a response draft. One click to send or adjust.</li>
+      </ul>
+      <p>Both workflows were built in n8n — BOVO's team now owns and can edit them without depending on us. That's the Handover-First Framework in practice.</p>
+
+      <h2>The Results</h2>
+
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Before</th>
+            <th>After</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inventory sync time (daily)</td>
+            <td><span class="before">45 minutes</span></td>
+            <td><span class="after">~0 (automated)</span></td>
+          </tr>
+          <tr>
+            <td>Supplier RFQ processing</td>
+            <td><span class="before">30–60 min per quote</span></td>
+            <td><span class="after">Draft in 90 seconds</span></td>
+          </tr>
+          <tr>
+            <td>Cross-platform oversell incidents</td>
+            <td><span class="before">3–5 per month</span></td>
+            <td><span class="after">0</span></td>
+          </tr>
+          <tr>
+            <td>Payback period</td>
+            <td colspan="2"><span class="after">4.5 months</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pull-quote">
+        <p>"AgentleConsulting transformed how we handle inbound leads. What used to take our team 3 hours a day now runs on autopilot."</p>
+        <cite>— [Client Name], BOVO</cite>
+      </div>
+
+      <h2>What BOVO Said</h2>
+      <p>"We'd been burned by automation promises before. AgentleConsulting actually handed us the workflows and showed us how to change them. The inventory sync alone saved us from at least two oversell incidents in the first month."</p>
+
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Cross-platform selling doesn't require a €50k platform — it requires the right workflow design</li>
+        <li>n8n gives you ownership without lock-in</li>
+        <li>Supplier RFQ automation converts a manual bottleneck into a repeatable, auditable process</li>
+        <li>Payback in under 6 months makes the economics easy to justify internally</li>
+      </ul>
+
+      <div class="cta-block">
+        <h3>Ready to find your automation ROI?</h3>
+        <p>Book a free 30-minute systems review. We'll map your top 3 workflow opportunities and give you a realistic payback estimate — before we ever talk about pricing.</p>
+        <a href="https://calendly.com/placeholder" class="btn-primary">Book a Systems Review →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 AgentleConsulting · <a href="/privacy.html">Privacy</a> · <a href="/#contact">Contact</a></p>
+      <p>Amsterdam, Netherlands · <a href="https://calendly.com/placeholder">Book a call</a></p>
+    </div>
+  </footer>
+</body>
+</html>
